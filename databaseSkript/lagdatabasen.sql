@@ -1,4 +1,4 @@
-# hei
+
 
 # Dette trenger kun å kjøre om dere ikke har en schema (en database partisjon.)
 #lager databasen om den ikke finnes. navnet er bare tilfeldig.
