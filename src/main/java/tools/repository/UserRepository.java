@@ -10,6 +10,7 @@ import java.util.ArrayList;
 
 import jdk.internal.org.jline.utils.Log;
 import models.UserModel;
+import servlets.Ovelse;
 import tools.DbTool;
 
 public class UserRepository {
@@ -214,6 +215,33 @@ public class UserRepository {
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
                 toReturn = rs.getString("User_password");
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return toReturn;
+    }
+
+    public static ArrayList<Ovelse> getAllOvelser() {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        ArrayList<Ovelse> toReturn = new ArrayList<>();
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM otra.ovelser";
+            prepareStatement = db.prepareStatement(query);
+            rs = prepareStatement.executeQuery();
+
+            while (rs.next()) {
+                Ovelse ovelse = new Ovelse();
+                ovelse.setOvelseID(rs.getInt("OvelseID"));
+                ovelse.setOvelseNavn(rs.getString("OvelseNavn"));
+                toReturn.add(ovelse);
             }
             rs.close();
 

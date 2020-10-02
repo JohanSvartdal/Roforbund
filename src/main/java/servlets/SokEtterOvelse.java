@@ -1,17 +1,23 @@
 package servlets;
 
+import tools.repository.UserRepository;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 
-@WebServlet(name= "LeggTilOvelser", urlPatterns = {"/LeggTilOvelser"})
+@WebServlet(name= "SokEtterOvelse", urlPatterns = {"/SokEtterOvelse"})
 public class SokEtterOvelse extends AbstractAppServlet {
 
     int UID = 1;
+
+    ArrayList<Ovelse> ovelsesList = new ArrayList<>();
 
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -21,6 +27,7 @@ public class SokEtterOvelse extends AbstractAppServlet {
 
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
+        ovelsesList = UserRepository.getAllOvelser();
         out.println("<html>");
         out.println("<head><title>Hvem er her?</title>");
         out.println("<link rel='stylesheet' href='style.css'>");
@@ -62,6 +69,13 @@ public class SokEtterOvelse extends AbstractAppServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+
+        String ovelsesListString = "Test";
+        for (Ovelse ovelse: ovelsesList) {
+            ovelsesListString = ovelsesListString + "," + ovelse.getOvelseNavn();
+        }
+        Cookie ck = new Cookie("allAOvelser", ovelsesListString);
+        response.addCookie(ck);
         processRequest(request, response);
     }
 
