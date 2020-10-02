@@ -1,6 +1,7 @@
 package servlets;
 
-import tools.repository.UserRepository;
+import tools.repository.DatabaseReader;
+import tools.repository.UserManagement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -35,7 +36,7 @@ public class HvemErHer extends AbstractAppServlet {
         out.println("<h1>Hvem er her i dag?</h1>");
 
 
-        ArrayList<ArrayList<String>> profiles = UserRepository.getAllMembers(1, out);
+        ArrayList<ArrayList<String>> profiles = UserManagement.getAllMembers(1, out);
 
         out.println("<form action = 'LeggTilOvelser' method='POST'>");
 

@@ -1,7 +1,7 @@
 package servlets;
 
-import models.UserModel;
-import tools.repository.UserRepository;
+import tools.repository.DatabaseReader;
+import tools.repository.OvelseManagement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -43,7 +43,7 @@ public class UtoverDash extends AbstractAppServlet {
             }
         }
 
-        String[] cats = UserRepository.getAllCats(UID, out);
+        String[] cats = OvelseManagement.getAllUserOvelser(UID, out);
 
         for (int i = 0; i < cats.length; i++) {
             out.println("<div id = 'loginButton'>" + cats[i] + "</div>");

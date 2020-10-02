@@ -1,6 +1,7 @@
 package servlets;
 
-import tools.repository.UserRepository;
+import tools.repository.DatabaseReader;
+import tools.repository.UserManagement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,16 +22,16 @@ public class CheckLogin extends AbstractAppServlet {
         String userName = request.getParameter("uname");
         String password = request.getParameter("password");
 
-        String passwordFromDB = UserRepository.getUserPassword(userName);
+        String passwordFromDB = UserManagement.getUserPassword(userName);
 
         if (passwordFromDB.equals(password)) {
-            int userID = UserRepository.getInt("otra.users", "User_email", userName, "User_id");
+            int userID = DatabaseReader.getInt("otra.users", "User_email", userName, "User_id");
             Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
             ck.setMaxAge(2700000);//changing the maximum age to 0 seconds
             ck.setPath("/");
             response.addCookie(ck);
 
-            Integer userRole = UserRepository.getInt("otra.users", "User_email", userName, "User_role");
+            Integer userRole = DatabaseReader.getInt("otra.users", "User_email", userName, "User_role");
             if (userRole == 0) {
                 response.sendRedirect("../UtoverDash");
             }else if (userRole == 1) {

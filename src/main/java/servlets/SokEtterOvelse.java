@@ -1,6 +1,7 @@
 package servlets;
 
-import tools.repository.UserRepository;
+import tools.repository.DatabaseReader;
+import tools.repository.OvelseManagement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,7 +28,7 @@ public class SokEtterOvelse extends AbstractAppServlet {
 
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
-        ovelsesList = UserRepository.getAllOvelser();
+        ovelsesList = OvelseManagement.getAllOvelser();
         out.println("<html>");
         out.println("<head><title>Hvem er her?</title>");
         out.println("<link rel='stylesheet' href='style.css'>");

@@ -8,9 +8,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.UserModel;
-import tools.repository.UserRepository;
-
 
 @WebServlet(name= "ReceiveUserNameFromDb", urlPatterns = {"/ReceiveUserNameFromDb"})
 public class ReceiveUserNameFromDb extends AbstractAppServlet {
