@@ -1,16 +1,10 @@
 package tools.repository;
 
-import java.io.Console;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
-import jdk.internal.org.jline.utils.Log;
-import models.UserModel;
-import servlets.Ovelse;
 import tools.DbTool;
 
 public class DatabaseReader {
