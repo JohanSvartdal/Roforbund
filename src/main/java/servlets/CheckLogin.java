@@ -37,7 +37,7 @@ public class CheckLogin extends AbstractAppServlet {
             }else if (userRole == 1) {
                 response.sendRedirect("../TrenerDash");
             }else if (userRole == 2) {
-                response.sendRedirect("../UtoverDash");
+                response.sendRedirect("../SuperDash");
             }
         }
     }
