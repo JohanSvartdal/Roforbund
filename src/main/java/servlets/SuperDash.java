@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name= "SuperDash", urlPatterns = {"/SuperDash"})
+@WebServlet(name= "SuperDash")
 public class SuperDash extends AbstractAppServlet {
 
     int UID = 1;
