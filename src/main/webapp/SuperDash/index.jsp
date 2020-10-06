@@ -10,7 +10,7 @@
 </head>
 <body>
     <div id = "loginBox">
-        <h1> <% = request.getAttribute("WelcomeMessage") %> </h1>
+        <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
             <input type = "submit" id = "klubbBox" class = "smallButton" value = "Administrere klubber"/>
         </form>
     </div>
