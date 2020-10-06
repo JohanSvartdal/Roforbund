@@ -11,8 +11,31 @@
 <body>
     <div id = "loginBox">
         <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
-            <input type = "submit" id = "klubbBox" class = "smallButton" value = "Administrere klubber"/>
-        </form>
+        <a href = "linkTilSiden">
+            <div class = "knapp" id = "adminklubber">
+                <div class = "knappbilde"> <img src = "Ikoner/Hus.jpg"></div>
+                Administrere klubber
+            </div>
+
+        </a>
+
+
+        <a href = "linkTilSiden">
+            <div class = "knapp" id = "adminutøvere">
+                <div class = "knappbilde"> <img src = "Ikoner/Hus.jpg"></div>
+                Administrere utovere
+            </div>
+
+        </a>
+
+
+        <a href = "linkTilSiden">
+            <div class = "knapp" id = "godkjenneresults">
+                <div class = "knappbilde"> <img src = "Ikoner/Hus.jpg"></div>
+                Godkjenne resultater
+            </div>
+
+        </a>
     </div>
     
 </body>

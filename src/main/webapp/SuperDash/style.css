@@ -1,32 +1,58 @@
-#loginBox {
-    width: 1000px;
-
+body {
+    background-color: white !important;
+    background-image: none !important;
 }
 
-#klubbBox {
-    background-color: seagreen;
-    width: 100px;
-    height: 100px;
-    margin-left: auto;
-    margin-right: auto;
+#loginBox {
+    width: 1000px;
+    height: 300px;
+    text-align: center;
+    box-shadow: none !important;
 }
 
 #loginBox h1 {
     font-size: 30px;
 }
 
-.smallButton {
-    margin-top: 20px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 40px;
-    padding-right: 40px;
-    background-color: #00AAAA;
-    font-size: 18px;
-    border-radius: 20px;
+.knapp {
+    width: 100px;
+    height: 100px;
+    font-size: 25px;
     border-width: 0px;
-    color: white;
-    box-shadow: 0px 2px 4px #AAAAAA;
+    float: left;
+    margin-left: 70px;
+    text-align: center;
+}
 
-    transition: ease 0.2s;
+.knappbilde {
+    width: 80%;
+    margin-top: 10px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.knappbilde img {
+    width: 100%;
+}
+
+.knapp a{
+    color: white !important;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#adminutøvere {
+    background-color: yellow;
+}
+
+#adminklubber {
+    background-color: mediumseagreen;
+}
+
+#godkjenneresults {
+    background-color: indianred;
 }
