@@ -11,9 +11,7 @@
 <body>
     <div id = "loginBox">
         <h1> <% = request.getAttribute("WelcomeMessage") %> </h1>
-        <form action='CheckLogin' method='POST'>
-            <input type = "text" name = "uname" id = "uname" class="textField" value="root"/>
-            <input type = "submit" id = "loginButton" class = "smallButton" value = "Login"/>
+            <input type = "submit" id = "klubbBox" class = "smallButton" value = "Administrere klubber"/>
         </form>
     </div>
     
