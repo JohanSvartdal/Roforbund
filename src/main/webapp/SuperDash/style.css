@@ -1,0 +1,16 @@
+#loginBox {
+    width: 1000px;
+
+}
+
+#klubbBox {
+    background-color: seagreen;
+    width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#loginBox h1 {
+    font-size: 30px;
+}
