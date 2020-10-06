@@ -37,11 +37,15 @@ public class SuperDash extends AbstractAppServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+        /*
+        request.setAttribute("WelcomeMessage", "Velkommen Jahn Teigen!");
+        request.getRequestDispatcher("index.jsp").forward(request, response);
+         */
         processRequest(request, response);
     }
 
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 }
