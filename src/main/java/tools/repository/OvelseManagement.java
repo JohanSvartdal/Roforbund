@@ -19,14 +19,14 @@ public class OvelseManagement {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
-            String query = "SELECT * FROM otra.ovelser";
+            String query = "SELECT * FROM roforbund.ovelser";
             prepareStatement = db.prepareStatement(query);
             rs = prepareStatement.executeQuery();
 
             while (rs.next()) {
                 Ovelse ovelse = new Ovelse();
-                ovelse.setOvelseID(rs.getInt("OvelseID"));
-                ovelse.setOvelseNavn(rs.getString("OvelseNavn"));
+                ovelse.setOvelseID(rs.getInt("Ovelse_id"));
+                ovelse.setOvelseNavn(rs.getString("Navn"));
                 toReturn.add(ovelse);
             }
             rs.close();
@@ -46,17 +46,17 @@ public class OvelseManagement {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
-            String query = "SELECT * FROM otra.resultater where UserID = ?";
+            String query = "SELECT * FROM roforbund.resultater where Bruker_id = ?";
             prepareStatement = db.prepareStatement(query);
             prepareStatement.setInt(1, userID);
             rs = prepareStatement.executeQuery();
             String alreadyAdded = "";
 
             while (rs.next()) {
-                int currentAdd = rs.getInt("OvelseID");
+                int currentAdd = rs.getInt("Ovelse_id");
                 if (!alreadyAdded.contains(String.valueOf(currentAdd))) {
                     alreadyAdded = alreadyAdded + String.valueOf(currentAdd);
-                    String ovelsesNavn = DatabaseReader.getString("otra.ovelser", "Ovelse_ID", currentAdd,"Ovelse_navn");
+                    String ovelsesNavn = DatabaseReader.getString("roforbund.ovelser", "Ovelse_id", currentAdd,"Navn");
                     toReturn.add(ovelsesNavn);
                 }
             }

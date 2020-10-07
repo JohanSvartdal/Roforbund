@@ -45,7 +45,7 @@ public class UserManagement {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
-            String query = "SELECT * FROM otra.users where Klubb_id = ?";
+            String query = "SELECT * FROM roforbund.bruker where Klubb_id = ?";
             prepareStatement = db.prepareStatement(query);
             prepareStatement.setInt(1, klubbID);
             rs = prepareStatement.executeQuery();
@@ -79,12 +79,12 @@ public class UserManagement {
         try {
             db = DbTool.getINSTANCE().dbLoggIn();
             ResultSet rs = null;
-            String query = "SELECT * FROM otra.users where User_email = ?";
+            String query = "SELECT * FROM roforbund.bruker where Epost = ?";
             prepareStatement = db.prepareStatement(query);
             prepareStatement.setString(1, username);
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
-                toReturn = rs.getString("User_password");
+                toReturn = rs.getString("Tlf");
             }
             rs.close();
 

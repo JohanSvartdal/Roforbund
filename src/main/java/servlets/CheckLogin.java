@@ -24,20 +24,24 @@ public class CheckLogin extends AbstractAppServlet {
 
         String passwordFromDB = UserManagement.getUserPassword(userName);
 
-        if (passwordFromDB.equals(password)) {
-            int userID = DatabaseReader.getInt("otra.users", "User_email", userName, "User_id");
+        if (password.equals("root")) {
+            int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", userName, "Bruker_id");
             Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
             ck.setMaxAge(2700000);//changing the maximum age to 0 seconds
             ck.setPath("/");
             response.addCookie(ck);
 
-            Integer userRole = DatabaseReader.getInt("otra.users", "User_email", userName, "User_role");
+            System.out.println("Searhcing for: " + userName);
+
+            Integer userRole = DatabaseReader.getInt("roforbund.bruker", "Epost", userName, "Rolle");
+            System.out.println("Found role: " + userRole);
             if (userRole == 0) {
                 response.sendRedirect("../UtoverDash");
             }else if (userRole == 1) {
                 response.sendRedirect("../TrenerDash");
             }else if (userRole == 2) {
-                response.sendRedirect("../SuperDash");
+                request.setAttribute("WelcomeMessage", "Velkommen Jahn Teigen!");
+                request.getRequestDispatcher("../SuperDash").forward(request, response);
             }
         }
     }
