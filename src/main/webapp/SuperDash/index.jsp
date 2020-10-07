@@ -5,38 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id = "loginBox">
-        <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
-        <a href = "linkTilSiden">
-            <div class = "knapp" id = "adminklubber">
-                <div class = "knappbilde"> <img src = "Ikoner/Hus.jpg"></div>
-                Administrere klubber
+    <div class = "container">
+        <div id = "loginBox">
+            <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
+            <div class = "row">
+                <div class = "col-sm" >
+                    <a href = "linkTilSiden">
+                        <div class = "knapp" id = "adminklubber">
+                            <div class = "knappbilde"> <img src = "Ikoner/hus.png"></div>
+
+                            Administrere klubber
+                        </div>
+                    </a>
+                </div>
+                <div class = "col-sm" >
+                    <a href = "linkTilSiden">
+                        <div class = "knapp" id = "godkjenneresults">
+                            <div class = "knappbilde"> <img src = "Ikoner/resultat.png"></div>
+
+                            Godkjenne resultater
+                        </div>
+                    </a>
+                </div>
+                <div class = "col-sm" >
+                    <a href = "linkTilSiden">
+                        <div class = "knapp" id = "minprofil">
+                            <div class = "knappbilde"> <img src = "Ikoner/person.png"></div>
+
+                             Min profil
+                        </div>
+                    </a>
+                </div>
             </div>
-
-        </a>
-
-
-        <a href = "linkTilSiden">
-            <div class = "knapp" id = "adminutøvere">
-                <div class = "knappbilde"> <img src = "Ikoner/Hus.jpg"></div>
-                Administrere utovere
-            </div>
-
-        </a>
-
-
-        <a href = "linkTilSiden">
-            <div class = "knapp" id = "godkjenneresults">
-                <div class = "knappbilde"> <img src = "Ikoner/Hus.jpg"></div>
-                Godkjenne resultater
-            </div>
-
-        </a>
+        </div>
     </div>
-    
+    <footer>
+        <div class = "container">
+            <div class = "row">
+                <div class = "col-sm" > Hei </div>
+                <div class = "col-sm" > Hei </div>
+                <div class = "col-sm" > Hei </div>
+            </div>
+        </div>
+    </footer>
 </body>
-</html>
