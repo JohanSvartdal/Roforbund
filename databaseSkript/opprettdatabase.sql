@@ -11,7 +11,7 @@ create table if not EXISTS roforbund.postnummere
 (
     Postnummer       int UNSIGNED auto_increment,
     Poststed         varchar(45),
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Postnummer)
+    CONSTRAINT Postnummer PRIMARY KEY (Postnummer)
 );
 
 create table if not EXISTS roforbund.adresser
@@ -20,7 +20,7 @@ create table if not EXISTS roforbund.adresser
     Gatenavn         varchar(45),
     Husnummer        varchar(5),
     Postnummer       int(4) UNSIGNED,
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Adresse_id),
+    CONSTRAINT Adresse_id PRIMARY KEY (Adresse_id),
     FOREIGN KEY (Postnummer) REFERENCES postnummere(Postnummer)
 );
 
@@ -30,7 +30,7 @@ create table if not EXISTS roforbund.klubber
     Navn            varchar(60),
     Adresse_id      int UNSIGNED,
     Tlf             int(8) UNSIGNED,
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Klubb_id),
+    CONSTRAINT Klubb_id PRIMARY KEY (Klubb_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id)
 );
 
@@ -48,7 +48,7 @@ create table if not EXISTS roforbund.bruker
     Ranking         int(10) UNSIGNED,
     Vekt            float(5) UNSIGNED,
     Hoyde           int(3) UNSIGNED,
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Bruker_id),
+    CONSTRAINT Bruker_id PRIMARY KEY (Bruker_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id),
     FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id)
 );
@@ -57,7 +57,7 @@ create table if not EXISTS roforbund.ovelser
 (
     Ovelse_id        int UNSIGNED auto_increment,
     Navn             varchar(60) NOT NULL,
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Ovelse_id)
+    CONSTRAINT Ovelse_id PRIMARY KEY (Ovelse_id)
 );
 
 create table if not EXISTS roforbund.tester
@@ -66,7 +66,7 @@ create table if not EXISTS roforbund.tester
     Dato            TIMESTAMP,
     Trener_id       INT UNSIGNED,
     Godkjent        int(1) UNSIGNED NOT NULL,
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Test_id)
+    CONSTRAINT Test_id PRIMARY KEY (Test_id)
 );
 
 create table if not EXISTS roforbund.resultater
@@ -79,7 +79,7 @@ create table if not EXISTS roforbund.resultater
     Watt             int(4) UNSIGNED,
     KG               int(3) UNSIGNED,
     Repetisjoner     int(3) UNSIGNED,
-    CONSTRAINT U_User_ID_PK PRIMARY KEY (Resultat_id),
+    CONSTRAINT Resultat_id PRIMARY KEY (Resultat_id),
     FOREIGN KEY (Ovelse_id) REFERENCES ovelser(Ovelse_id),
     FOREIGN KEY (Test_id) REFERENCES tester(Test_id),
     FOREIGN KEY (Bruker_id) REFERENCES bruker(Bruker_id)
