@@ -11,36 +11,31 @@
 </head>
 <body>
     <div class = "container">
-        <div id = "loginBox">
-            <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
-            <div class = "row">
-                <div class = "col-sm" >
-                    <a href = "linkTilSiden">
-                        <div class = "knapp" id = "adminklubber">
-                            <div class = "knappbilde"> <img src = "Ikoner/hus.png"></div>
-
-                            Administrere klubber
-                        </div>
-                    </a>
-                </div>
-                <div class = "col-sm" >
-                    <a href = "linkTilSiden">
-                        <div class = "knapp" id = "godkjenneresults">
-                            <div class = "knappbilde"> <img src = "Ikoner/resultat.png"></div>
-
-                            Godkjenne resultater
-                        </div>
-                    </a>
-                </div>
-                <div class = "col-sm" >
-                    <a href = "linkTilSiden">
-                        <div class = "knapp" id = "minprofil">
-                            <div class = "knappbilde"> <img src = "Ikoner/person.png"></div>
-
-                             Min profil
-                        </div>
-                    </a>
-                </div>
+        <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
+        <div class = "row">
+            <div class = "col-sm" >
+                <a href = "linkTilSiden">
+                    <div class = "knapp">
+                        <div class = "knappbilde" id = "adminklubber"> <img src = "Ikoner/resultat.png"></div>
+                        Administrere klubber
+                    </div>
+                </a>
+            </div>
+            <div class = "col-sm" >
+                <a href = "linkTilSiden">
+                    <div class = "knapp">
+                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "Ikoner/resultat.png"></div>
+                        Godkjenne resultater
+                    </div>
+                </a>
+            </div>
+            <div class = "col-sm" >
+                <a href = "linkTilSiden">
+                    <div class = "knapp">
+                        <div class = "knappbilde" id = "minprofil"> <img src = "Ikoner/resultat.png"></div>
+                        Min profil
+                    </div>
+                </a>
             </div>
         </div>
     </div>
