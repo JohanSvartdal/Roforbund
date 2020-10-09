@@ -84,7 +84,7 @@ public class UserManagement {
             prepareStatement.setString(1, username);
             rs = prepareStatement.executeQuery();
             while (rs.next()) {
-                toReturn = rs.getString("Tlf");
+                toReturn = rs.getString("Passord");
             }
             rs.close();
 

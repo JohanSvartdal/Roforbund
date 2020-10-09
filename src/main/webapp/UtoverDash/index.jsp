@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Superuser homepage</title>
+    <title>Utover homepage</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -16,7 +16,7 @@
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "adminklubber"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
+                        <div class = "knappbilde" id = "adminklubber"><img src = "../UtoverDash/Ikoner/resultat.png"></div>
                         Administrere klubber
                     </div>
                 </a>
@@ -24,7 +24,7 @@
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
+                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
                         Godkjenne resultater
                     </div>
                 </a>
@@ -32,7 +32,7 @@
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "minprofil"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
+                        <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
                         Min profil
                     </div>
                 </a>
