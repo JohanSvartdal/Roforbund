@@ -35,7 +35,6 @@ public class UtoverDash extends AbstractAppServlet {
         out.println("<div id = 'loginBox'>");
         out.println("<h1>Velg kategori</h1>");
 
-
         Cookie[] ck = req.getCookies();
         for(int i=0;i<ck.length;i++) {
             if (ck[i].getName().equals("UID")) {
