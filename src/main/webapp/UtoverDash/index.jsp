@@ -11,12 +11,12 @@
 </head>
 <body>
     <div class = "container">
-        <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
+        <h1>Utover</h1>
         <div class = "row">
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "adminklubber"> <img src = "Ikoner/resultat.png"></div>
+                        <div class = "knappbilde" id = "adminklubber"><img src = "Ikoner/resultat.png"></div>
                         Administrere klubber
                     </div>
                 </a>

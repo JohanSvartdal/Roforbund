@@ -24,7 +24,7 @@ public class CheckLogin extends AbstractAppServlet {
 
         String passwordFromDB = UserManagement.getUserPassword(userName);
 
-        if (password.equals("root")) {
+        if (password.equals(passwordFromDB)) {
             int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", userName, "Bruker_id");
             Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
             ck.setMaxAge(2700000);//changing the maximum age to 0 seconds
@@ -35,13 +35,14 @@ public class CheckLogin extends AbstractAppServlet {
 
             Integer userRole = DatabaseReader.getInt("roforbund.bruker", "Epost", userName, "Rolle");
             System.out.println("Found role: " + userRole);
-            if (userRole == 0) {
+            if (userRole == 1) {
                 response.sendRedirect("../UtoverDash");
-            }else if (userRole == 1) {
-                response.sendRedirect("../TrenerDash");
             }else if (userRole == 2) {
-                request.setAttribute("WelcomeMessage", "Velkommen Jahn Teigen!");
-                request.getRequestDispatcher("../SuperDash").forward(request, response);
+                response.sendRedirect("../TrenerDash");
+            }else if (userRole == 3) {
+                //request.setAttribute("WelcomeMessage", "Velkommen Jahn Teigen!");
+                //request.getRequestDispatcher("../SuperDash").forward(request, response);
+                response.sendRedirect("../SuperDash");
             }
         }
     }

@@ -42,6 +42,7 @@ create table if not EXISTS roforbund.bruker
     Fodseldato      DATE,
     Tlf             int(8) UNSIGNED,
     Epost           varchar(60),
+    Passord         varchar(60) NOT NULL,
     Adresse_id      int(7) UNSIGNED,
     Klubb_id        int(5) UNSIGNED,
     Rolle           int(1) UNSIGNED,
@@ -123,24 +124,24 @@ values ('Kristiansand Roklubb', 4, 93064217);
 
 
 
-insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Johan', 'Svartdal', '2000-10-02', 46968676, 'Johan.svartdal30@gmail.com', 1, 1, 1, 1, 75, 181);
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Johan', 'Svartdal', '2000-10-02', 46968676, 'Johan.svartdal30@gmail.com', 'root', 1, 1, 1, 1, 75, 181);
 
-insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Gordon', 'Ramsey', '1966-10-02', 93724120, 'gordon.ramsey@kitchen.com', 5, 1, 2, null, 90, 188);
-
-
-
-insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Mari', 'Tveiten', '1999-10-17', 92678341, 'mari@hotmail.com', 6, 2, 1, 3, 60.8, 174);
-
-insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Hermann', 'Flesvig', '1992-03-18', 43762182, 'Hermann.flesvig@gmail.com', 7, 2, 2, null, 80, 183);
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Gordon', 'Ramsey', '1966-10-02', 93724120, 'gordon.ramsey@kitchen.com', 'root', 5, 1, 2, null, 90, 188);
 
 
 
-insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Superbruker', null, null, 98261732, 'superbruker@roing.no', null, null, 3, null, null, null);
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Mari', 'Tveiten', '1999-10-17', 92678341, 'mari@hotmail.com', 'root', 6, 2, 1, 3, 60.8, 174);
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Hermann', 'Flesvig', '1992-03-18', 43762182, 'Hermann.flesvig@gmail.com', 'root', 7, 2, 2, null, 80, 183);
+
+
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Superbruker', null, null, 98261732, 'superbruker@roing.no', 'root', null, null, 3, null, null, null);
 
 
 insert into roforbund.ovelser (Navn)
