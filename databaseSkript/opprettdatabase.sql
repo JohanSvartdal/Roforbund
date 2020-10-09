@@ -49,7 +49,7 @@ create table if not EXISTS roforbund.bruker
     Ranking         int(10) UNSIGNED,
     Vekt            float(5) UNSIGNED,
     Hoyde           int(3) UNSIGNED,
-    CONSTRAINT Bruker_tilgang_id PRIMARY KEY (Bruker_id),
+    CONSTRAINT Bruker_id PRIMARY KEY (Bruker_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id),
     FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id)
 );
@@ -64,13 +64,10 @@ create table if not EXISTS roforbund.ovelser
 create table if not EXISTS roforbund.tester
 (
     Test_id         int UNSIGNED auto_increment,
-    Klubb_id        int UNSIGNED,
     Dato            TIMESTAMP,
     Trener_id       INT UNSIGNED,
     Godkjent        int(1) UNSIGNED NOT NULL,
-    CONSTRAINT Test_id PRIMARY KEY (Test_id),
-    FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id),
-    FOREIGN KEY (Trener_id) REFERENCES bruker(Bruker_id)
+    CONSTRAINT Test_id PRIMARY KEY (Test_id)
 );
 
 create table if not EXISTS roforbund.resultater
