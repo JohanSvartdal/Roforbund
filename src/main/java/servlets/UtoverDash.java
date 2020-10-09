@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name= "UtoverDash", urlPatterns = {"/UtoverDash"})
+@WebServlet(name= "UtoverDash")
 public class UtoverDash extends AbstractAppServlet {
 
     int UID = 1;
