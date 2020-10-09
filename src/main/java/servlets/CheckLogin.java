@@ -18,7 +18,7 @@ public class CheckLogin extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-//heu
+
         String email = request.getParameter("uname");
         String password = request.getParameter("password");
 
