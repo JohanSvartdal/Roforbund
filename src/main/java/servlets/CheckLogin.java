@@ -19,30 +19,32 @@ public class CheckLogin extends AbstractAppServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
-        String userName = request.getParameter("uname");
+        String email = request.getParameter("uname");
         String password = request.getParameter("password");
 
-        String passwordFromDB = UserManagement.getUserPassword(userName);
+        String passwordFromDB = UserManagement.getUserPassword(email);
 
         if (password.equals(passwordFromDB)) {
-            int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", userName, "Bruker_id");
+            int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Bruker_id");
             Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
             ck.setMaxAge(2700000);//changing the maximum age to 0 seconds
             ck.setPath("/");
             response.addCookie(ck);
 
-            System.out.println("Searhcing for: " + userName);
+            System.out.println("Searhcing for: " + email);
 
-            Integer userRole = DatabaseReader.getInt("roforbund.bruker", "Epost", userName, "Rolle");
-            System.out.println("Found role: " + userRole);
+            Integer userRole = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Rolle");
+            String welcomeName = DatabaseReader.getString("roforbund.bruker", "Epost", email, "Fornavn");
+
             if (userRole == 1) {
-                response.sendRedirect("../UtoverDash");
+                request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
+                request.getRequestDispatcher("../UtoverDash/index.jsp").forward(request, response);
             }else if (userRole == 2) {
-                response.sendRedirect("../TrenerDash");
+                request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
+                request.getRequestDispatcher("../TrenerDash/index.jsp").forward(request, response);
             }else if (userRole == 3) {
-                //request.setAttribute("WelcomeMessage", "Velkommen Jahn Teigen!");
-                //request.getRequestDispatcher("../SuperDash").forward(request, response);
-                response.sendRedirect("../SuperDash");
+                request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
+                request.getRequestDispatcher("../SuperDash/index.jsp").forward(request, response);
             }
         }
     }
