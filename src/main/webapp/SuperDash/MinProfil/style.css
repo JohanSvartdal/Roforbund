@@ -25,15 +25,16 @@ body {
 }
 
 .knapp {
+    width: 180px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .knappbilde {
-    width: 125px;
-    height: 125px;
+    width: 80%;
+    height: 120px;
     margin-top: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
