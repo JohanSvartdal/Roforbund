@@ -1,9 +1,11 @@
 package tools.repository;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import tools.DbTool;
 
@@ -91,5 +93,68 @@ public class DatabaseReader {
         }
 
         return toReturn;
+    }
+
+    public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey, String searchString, String returnColumn) {
+        return getListOfIds(databaseNavn, searchKey, 0, searchString, returnColumn);
+    }
+
+    public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey, int searchInt, String returnColumn) {
+        return getListOfIds(databaseNavn, searchKey, searchInt, null, returnColumn);
+    }
+
+    //DENNE ER IKKE TESTET OM FUNKER ENDA
+    public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey,int searchInt, String searchString, String returnColumn) {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        ArrayList<Integer> returnList = new ArrayList<>();
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
+            prepareStatement = db.prepareStatement(query);
+            if (searchString == null) {
+                prepareStatement.setInt(1, searchInt);
+            }else {
+                prepareStatement.setString(1, searchString);
+            }
+
+            rs = prepareStatement.executeQuery();
+
+            while (rs.next()) {
+                returnList.add(rs.getInt(returnColumn));
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return returnList;
+    }
+
+    //DENNE ER IKKE TESTET OM FUNKER ENDA
+    public static ArrayList<Integer> getAllEntries(String databaseNavn, String returnColumn) {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        ArrayList<Integer> returnList = new ArrayList<>();
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM " + databaseNavn;
+            prepareStatement = db.prepareStatement(query);
+            rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                returnList.add(rs.getInt(returnColumn));
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return returnList;
     }
 }

@@ -11,10 +11,11 @@
 </head>
 <body>
     <div class = "container">
+        <% //TODO her må det legges inn sånn at den loader riktig navn, selvom man kommer tilbake til denne siden fra en annen side. (IKKE BARE CHECKLOGIN) %>
         <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
         <div class = "row">
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "../SuperDash/AdminKlubber">
                     <div class = "knapp">
                         <div class = "knappbilde" id = "adminklubber"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
                         Administrere klubber
