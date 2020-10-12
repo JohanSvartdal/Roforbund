@@ -1,5 +1,5 @@
-package TrenerDash;
+// package TrenerDash;
 
-public interface TestDAO {
-    public Integer getTest_id(Test getTest);
-}
+// public interface TestDAO {
+    // public Integer getTest_id(Test getTest);
+//}
