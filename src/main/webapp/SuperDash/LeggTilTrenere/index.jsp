@@ -65,7 +65,7 @@
         </div>
     </a>
 
-    <a href = "../../SuperDash/FullscreenMessage">
+    <a href = "../../SuperDash/FullscreenMessage?Navn=Test&Tlf=40640382&Adresse=Cappelensgate61&Postnummer=3015&Poststed=Drammen">
         <div class = "footerButton" id ="footerRight">
             <img src = "../../images/ikoner/forward_button.png">
             <h2>Opprett klubb</h2>
