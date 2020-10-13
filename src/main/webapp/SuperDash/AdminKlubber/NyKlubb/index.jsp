@@ -81,7 +81,7 @@
         </div>
     </a>
 
-    <a href = "../../LeggTilTrenere">
+    <a href = "../../LeggTilTrenere?Klubbnavn=Test&Klubbtlf=40640382&Adresse=Cappelensgate61&Postnummer=3015&Poststed=Drammen">
         <div class = "footerButton" id ="footerRight">
             <img src = "../../../images/ikoner/forward_button.png">
             <h2>Gå videre</h2>
