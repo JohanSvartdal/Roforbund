@@ -8,25 +8,30 @@ import java.sql.SQLException;
 
 public class DatabaseWriter {
 
-    public static void safeAdd() {
+    public static String createAdress(String gatenavn, int husnummer, int postnummer, String poststed) {
+        String compKey = postnummer + gatenavn + husnummer;
+        compKey = compKey.toLowerCase();
+        boolean adresseExist = DatabaseReader.getString("roforbund.adresser", "Adresse_id", compKey, "Husnummer") != null;
 
-        String query = "INSERT INTO klubber(Navn, Adresse_id, Tlf) values (?, ?, ?)";
-
-        try {
-            Connection db = DbTool.getINSTANCE().dbLoggIn();
-
-            PreparedStatement dbUse = db.prepareStatement("USE roforbund");
-            dbUse.executeQuery();
-
-            PreparedStatement preparedStatement = db.prepareStatement(query);
-            preparedStatement.setString(1, "SafeTest");
-            preparedStatement.setInt(2, 2);
-            preparedStatement.setInt(3, 93064217);
-            System.out.println("SafePrepState: " + preparedStatement.toString());
-            preparedStatement.executeQuery();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        if (adresseExist) {
+            System.out.println("Adressen eksisterer allerede. Lager ingen ny");
+            return compKey;
         }
+
+        System.out.println("HEr er det: " + poststed+postnummer+gatenavn+husnummer);
+
+        boolean postnummerExists = DatabaseReader.getString("roforbund.postnummere", "Postnummer", postnummer, "Poststed") != null;
+
+        if (!postnummerExists) {
+            System.out.println("Postnummer eksisterer ikke. Legger til " + postnummer);
+            DatabaseValue[] postnummerTableVerdier = {new DatabaseValue(postnummer), new DatabaseValue(poststed)};
+            DatabaseWriter.addRowToTable("postnummere", "Postnummer, Poststed", postnummerTableVerdier);
+        }
+
+        DatabaseValue[] adresseTableVerdier = {new DatabaseValue(compKey),new DatabaseValue(gatenavn), new DatabaseValue(husnummer), new DatabaseValue(postnummer)};
+        DatabaseWriter.addRowToTable("adresser", "Adresse_id, Gatenavn, Husnummer, Postnummer", adresseTableVerdier);
+
+        return compKey;
     }
 
     /*
