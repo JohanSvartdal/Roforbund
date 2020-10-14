@@ -48,10 +48,18 @@
         </div>
         <div class = "row">
             <div class = "col-sm-4">
-                <label for = "adresse">Adresse:</label>
+                <label for = "gatenavn">Gatenavn:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "adresse" id = "adresse" class="textField" value=""/>
+                <input type = "text" name = "adresse" id = "gatenavn" class="textField" value=""/>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-sm-4">
+                <label for = "husnummer">Husnummer:</label>
+            </div>
+            <div class = "col-sm-8">
+                <input type = "text" name = "klubbtlf" id = "husnummer" class="textField smallText" value=""/>
             </div>
         </div>
         <div class = "row">
