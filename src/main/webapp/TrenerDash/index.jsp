@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Utover homepage</title>
+    <title>Trener dashboard</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,42 +10,51 @@
     <link rel="stylesheet" href="../TrenerDash/style.css">
 </head>
 <body>
-    <div class = "container">
-        <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
-        <div class = "row">
-            <div class = "col-sm" >
-                <a href = "linkTilSiden">
-                    <div class = "knapp">
-                        <div class = "knappbilde" id = "adminklubber"><img src = "../UtoverDash/Ikoner/resultat.png"></div>
-                        Administrere klubber
-                    </div>
-                </a>
-            </div>
-            <div class = "col-sm" >
-                <a href = "linkTilSiden">
-                    <div class = "knapp">
-                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
-                        Godkjenne resultater
-                    </div>
-                </a>
-            </div>
-            <div class = "col-sm" >
-                <a href = "linkTilSiden">
-                    <div class = "knapp">
-                        <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
-                        Min profil
-                    </div>
-                </a>
-            </div>
+<div class = "container">
+    <% //TODO her må det legges inn sånn at den loader riktig navn, selvom man kommer tilbake til denne siden fra en annen side. (IKKE BARE CHECKLOGIN) %>
+    <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
+    <div class = "row">
+        <div class = "col-sm" >
+            <a href = "../TrenerDash/SokEtterTest">
+                <div class = "knapp">
+                    <div class = "knappbilde" id = "administreutøvere"> <img src = "../SuperDash/Ikoner/hus.png"></div>
+                    Administrere utøvere
+                </div>
+            </a>
+        </div>
+        <div class = "col-sm" >
+            <a href = "linkTilSiden">
+                <div class = "knapp">
+                    <div class = "knappbilde" id = "opprettnytest"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
+                    Opprett ny test
+                </div>
+            </a>
+        </div>
+        <div class = "col-sm" >
+            <a href = "../TrenerDash/Tester">
+                <div class = "knapp">
+                    <div class = "knappbilde" id = "resultater"> <img src = "../SuperDash/Ikoner/person.png"></div>
+                    Resultater
+                </div>
+            </a>
+        </div>
+        <div class = "col-sm" >
+            <a href = "linkTilSiden">
+                <div class = "knapp">
+                    <div class = "knappbilde" id = "minprofil"> <img src = "../SuperDash/Ikoner/person.png"></div>
+                    Min profil
+                </div>
+            </a>
         </div>
     </div>
-    <footer>
-        <div class = "container">
-            <div class = "row">
-                <div class = "col-sm" > Hei </div>
-                <div class = "col-sm" > Hei </div>
-                <div class = "col-sm" > Hei </div>
-            </div>
+</div>
+<footer>
+    <div class = "container">
+        <div class = "row">
+            <div class = "col-sm" > Hei </div>
+            <div class = "col-sm" > Hei </div>
+            <div class = "col-sm" > Hei </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
