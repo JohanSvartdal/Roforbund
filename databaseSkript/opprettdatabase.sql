@@ -66,8 +66,10 @@ create table if not EXISTS roforbund.tester
     Test_id         int UNSIGNED auto_increment,
     Dato            TIMESTAMP,
     Trener_id       INT UNSIGNED,
+    Klubb_id        INT UNSIGNED,
     Godkjent        int(1) UNSIGNED NOT NULL,
-    CONSTRAINT Test_id PRIMARY KEY (Test_id)
+    CONSTRAINT Test_id PRIMARY KEY (Test_id),
+    FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id)
 );
 
 create table if not EXISTS roforbund.resultater
@@ -186,3 +188,5 @@ values (2, 3, 3, 100, 1900, 80, 2);
 
 insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
 values (3, 4, 3, 270, 2100, 40, 1);
+
+SELECT * FROM postnummere;
