@@ -120,6 +120,7 @@ public class DatabaseReader {
                 prepareStatement.setString(1, searchString);
             }
 
+            System.out.println(prepareStatement.toString());
             rs = prepareStatement.executeQuery();
 
             while (rs.next()) {
