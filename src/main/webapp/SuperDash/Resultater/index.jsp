@@ -18,8 +18,8 @@
         </a>
     </div>
     <div class="centerObjects">
-        <img src = "../../images/ikoner/person.png">
-        <h1>Min profil</h1>
+        <img src = "../../images/ikoner/blokk.png">
+        <h1>Resultater</h1>
     </div>
 </div>
 </body>

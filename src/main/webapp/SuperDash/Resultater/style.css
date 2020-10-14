@@ -7,7 +7,7 @@ body {
 .titleBar {
     width: 100%;
     height: 50px;
-    background-color: #6E8BD6;
+    background-color: #F25454;
     color: black;
 }
 
@@ -65,12 +65,3 @@ body {
     height: 100%;
 }
 
-
-.mininfoBox {
-    background-color: white ;
-    width:500px;
-    height: 300px;
-    margin-top: 350px;
-    text-align: center;
-    box-shadow: lightgrey;
-}

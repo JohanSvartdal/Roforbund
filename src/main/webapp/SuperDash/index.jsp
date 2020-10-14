@@ -10,28 +10,34 @@
     <link rel="stylesheet" href="../SuperDash/style.css">
 </head>
 <body>
-    <div class = "container">
+<div class =  "titleBar">
+    <div class = "bellButton">
+        <a href = "../">
+            <img src = "../images/ikoner/bell.png">
+        </a>
+         </div>
+         <div class = "container">
         <% //TODO her må det legges inn sånn at den loader riktig navn, selvom man kommer tilbake til denne siden fra en annen side. (IKKE BARE CHECKLOGIN) %>
         <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
-        <div class = "row">
-            <div class = "col-sm" >
+            <div class = "row">
+                <div class = "col-sm" >
                 <a href = "../SuperDash/AdminKlubber">
                     <div class = "knapp">
                         <div class = "knappbilde" id = "adminklubber"> <img src = "../SuperDash/Ikoner/hus.png"></div>
                         Administrere klubber
                     </div>
                 </a>
-            </div>
+                </div>
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "../SuperDash/Resultater">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
-                        Godkjenne resultater
+                        <div class = "knappbilde" id = "resultater"> <img src = "../SuperDash/Ikoner/blokk.png"></div>
+                        Resultater
                     </div>
                 </a>
             </div>
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "../SuperDash/MinProfil">
                     <div class = "knapp">
                         <div class = "knappbilde" id = "minprofil"> <img src = "../SuperDash/Ikoner/person.png"></div>
                         Min profil
@@ -49,4 +55,5 @@
             </div>
         </div>
     </footer>
+    </div>
 </body>
