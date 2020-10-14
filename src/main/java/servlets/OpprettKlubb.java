@@ -26,16 +26,21 @@ public class OpprettKlubb extends AbstractAppServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*
-        TODO MIDLERTIDIG DEAKTIVERT FUNKSJON FOR Å SLIPPE AT DET BLIR LAGET MANGE KLUBBER
+        String gatenavn = request.getParameter("Gatenavn");
+        String husnummerString = request.getParameter("Husnummer");
+        int husnummer = Integer.parseInt(husnummerString);
+        String postnummerString = request.getParameter("Postnummer");
+        int postnummer = Integer.parseInt(postnummerString);
+        String poststed = request.getParameter("Poststed");
+
+        String adresseId = DatabaseWriter.createAdress(gatenavn, husnummer, postnummer, poststed);
 
         String klubbKolonner = "Navn, Adresse_id, Tlf";
         String tlfString = request.getParameter("Tlf");
         int tlf = Integer.parseInt(tlfString);
 
-        DatabaseValue[] klubbVerdier = {new DatabaseValue(request.getParameter("Navn")), new DatabaseValue(1), new DatabaseValue(tlf)};
+        DatabaseValue[] klubbVerdier = {new DatabaseValue(request.getParameter("Navn")), new DatabaseValue(adresseId), new DatabaseValue(tlf)};
         DatabaseWriter.addRowToTable("klubber", klubbKolonner, klubbVerdier);
-         */
 
         request.setAttribute("doneMessage", "Ferdig, klubb opprettet!");
         RequestDispatcher rq = request.getRequestDispatcher("../FullscreenMessage/index.jsp");
