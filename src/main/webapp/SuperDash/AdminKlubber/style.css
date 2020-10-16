@@ -40,8 +40,9 @@ body {
 }
 
 .titleBar img {
-    margin-top: 5px;
-    height: 40px;
+    margin-top: 10px;
+    height: 30px;
+    margin-right: 10px;
 }
 
 .centerObjects {

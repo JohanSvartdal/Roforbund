@@ -21,7 +21,7 @@
         </a>
     </div>
     <div class="centerObjects">
-        <img src = "">
+        <img src = "../../images/ikoner/hus.png">
         <h1>Administrer klubber</h1>
     </div>
 </div>
