@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name= "TrenerDash", urlPatterns = {"/TrenerDash"})
+@WebServlet(name= "TrenerDash")
 public class TrenerDash extends AbstractAppServlet {
 
     int UID = 1;
