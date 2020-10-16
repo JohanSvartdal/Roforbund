@@ -18,7 +18,7 @@ public class DatabaseWriter {
             return compKey;
         }
 
-        System.out.println("HEr er det: " + poststed+postnummer+gatenavn+husnummer);
+        System.out.println("Her er det: " + poststed+postnummer+gatenavn+husnummer);
 
         boolean postnummerExists = DatabaseReader.getString("roforbund.postnummere", "Postnummer", postnummer, "Poststed") != null;
 
@@ -70,6 +70,37 @@ public class DatabaseWriter {
             }
 
             System.out.println("PrepState:" + preparedStatement.toString());
+            preparedStatement.executeQuery();
+        } catch (SQLException throwables) {
+            System.out.println("Feil");
+            throwables.printStackTrace();
+        } finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+
+    public static void changeCellValue(String tableName, String searchKey, String searchString, String columnToChange, DatabaseValue newValue) {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        String toReturn = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            PreparedStatement dbUse = db.prepareStatement("USE roforbund");
+            dbUse.executeQuery();
+
+            String query = "UPDATE " + tableName + " SET " + columnToChange + "=?" + " WHERE " + searchKey + "=" + searchString;
+
+            PreparedStatement preparedStatement = db.prepareStatement(query);
+            if (newValue.text != null) {
+                preparedStatement.setString(1, newValue.text);
+            }else {
+                preparedStatement.setInt(1, newValue.number);
+            }
             preparedStatement.executeQuery();
         } catch (SQLException throwables) {
             System.out.println("Feil");

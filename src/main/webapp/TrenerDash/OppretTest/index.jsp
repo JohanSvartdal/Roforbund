@@ -52,18 +52,6 @@
         <div class = "col-sm-3"><b>Antall medlemmer</b></div>
     </div>
     <hr/>
-    <%
-        ArrayList<Klubb> klubbListe = (ArrayList<Klubb>) request.getAttribute("klubbListe");
-        for(int i = 0; i < klubbListe.size(); i++) {
-    %>
-    <div class = "row">
-        <div class = "col-sm-3" ><div class = "rowFirst"><%=klubbListe.get(i).getNavn()%></div></div>
-        <div class = "col-sm-4" ><%=klubbListe.get(i).getAdresse()%></div>
-        <div class = "col-sm-2" ><%=klubbListe.get(i).getTlf()%></div>
-        <div class = "col-sm-3" ><%=klubbListe.get(i).getAntallMedlemmer()%></div>
-    </div>
-    <%
-        }
-    %>
+
 </div>
 </body>

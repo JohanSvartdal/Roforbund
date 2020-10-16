@@ -1,6 +1,7 @@
 package servlets;
 
 public class Trener {
+    private int ID;
     private String fornavn;
     private String etternavn;
     private String adresse;
@@ -36,5 +37,13 @@ public class Trener {
 
     public void setTlf(int tlf) {
         this.tlf = tlf;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

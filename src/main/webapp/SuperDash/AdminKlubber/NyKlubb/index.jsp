@@ -35,7 +35,7 @@
                 <label for = "klubbnavn">Klubbnavn:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "klubbnavn" id = "klubbnavn" class="textField" value=""/>
+                <input type = "text" name = "klubbnavn" id = "klubbnavn" class="textField" value="Reykjavik Roklubb"/>
             </div>
         </div>
         <div class = "row">
@@ -43,7 +43,7 @@
                 <label for = "klubbtlf">Klubbtlf:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "klubbtlf" id = "klubbtlf" class="textField smallText" value=""/>
+                <input type = "text" name = "klubbtlf" id = "klubbtlf" class="textField smallText" value="93064217"/>
             </div>
         </div>
         <div class = "row">
@@ -51,7 +51,7 @@
                 <label for = "gatenavn">Gatenavn:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "adresse" id = "gatenavn" class="textField" value=""/>
+                <input type = "text" name = "adresse" id = "gatenavn" class="textField" value="Marknadsveien"/>
             </div>
         </div>
         <div class = "row">
@@ -59,7 +59,7 @@
                 <label for = "husnummer">Husnummer:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "klubbtlf" id = "husnummer" class="textField smallText" value=""/>
+                <input type = "text" name = "klubbtlf" id = "husnummer" class="textField smallText" value="29"/>
             </div>
         </div>
         <div class = "row">
@@ -67,7 +67,7 @@
                 <label for = "postnummer">Postnummer:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "postnummer" id = "postnummer" class="textField smallText" value=""/>
+                <input type = "text" name = "postnummer" id = "postnummer" class="textField smallText" value="2549"/>
             </div>
         </div>
         <div class = "row">
@@ -75,7 +75,7 @@
                 <label for = "poststed">Poststed:</label>
             </div>
             <div class = "col-sm-8">
-                <input type = "text" name = "poststed" id = "poststed" class="textField" value=""/>
+                <input type = "text" name = "poststed" id = "poststed" class="textField" value="Reykjavik"/>
             </div>
         </div>
     </form>
@@ -89,11 +89,11 @@
         </div>
     </a>
 
-    <a href = "../../LeggTilTrenere?Klubbnavn=Test&Klubbtlf=40640382&Adresse=Cappelensgate61&Postnummer=3015&Poststed=Drammen">
-        <div class = "footerButton" id ="footerRight">
-            <img src = "../../../images/ikoner/forward_button.png">
-            <h2>Gå videre</h2>
-        </div>
-    </a>
+    <div class = "footerButton" id ="footerRight">
+        <img src = "../../../images/ikoner/forward_button.png">
+        <h2>Gå videre</h2>
+    </div>
+
+    <script src = "javascript.js" type="text/javascript"></script>
 </footer>
 </body>

@@ -44,6 +44,8 @@ public class LeggTilTrenere extends AbstractAppServlet {
 
             current.setAdresse(gatenavn + " " + husnummer + ", " + postnummer + " " + poststed);
 
+            current.setID(trenerIds.get(i));
+
 
             Integer tlf = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Tlf");
             current.setTlf(tlf);
