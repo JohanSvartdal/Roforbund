@@ -23,7 +23,7 @@
             </a>
         </div>
         <div class = "col-sm" >
-            <a href = "linkTilSiden">
+            <a href = "../TrenerDash/OppretTest">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "opprettnytest"> <img src = "../SuperDash/Ikoner/resultat.png"></div>
                     Opprett ny test
