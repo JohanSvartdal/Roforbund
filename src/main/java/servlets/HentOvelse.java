@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(name= "HentOvelse", urlPatterns = {"/HentOvelse"})
+@WebServlet(name= "HentOvelse", urlPatterns = {"/TrenerDash/HentOvelse/"})
 public class HentOvelse extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,8 +37,8 @@ public class HentOvelse extends AbstractAppServlet {
             ovelseList.add(ovelse);
         }
 
-        request.setAttribute("doneMessage", "Ferdig, klubb opprettet!");
-        RequestDispatcher rq = request.getRequestDispatcher("../FullscreenMessage/index.jsp");
+        request.setAttribute("ovelseList", ovelseList);
+        RequestDispatcher rq = request.getRequestDispatcher("../HentOvelse/index.jsp");
         rq.forward(request, response);
 
     }

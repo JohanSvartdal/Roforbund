@@ -12,18 +12,23 @@
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 <div class =  "titleBar">
+    <div class = "backButton">
+        <a href = "../">
+            <img src = "../../images/ikoner/back_button.png">
+            <h3>Hjem</h3>
+        </a>
+    </div>
     <div class="centerObjects">
         <img src = "../../images/ikoner/klokke.png">
         <h1>Opprett ny test</h1>
     </div>
+</div>
+
     <div class="container">
         <h1>Velg deltakere til ny test:</h1>
-        <center><hr/></center>
     </div>
-    <div class = "container">
         <center>
             <div class = "searchBar">
                 <label for="sokefelt">Sorter etter gruppe:</label>
@@ -31,19 +36,25 @@
             </div>
         </center>
         <div class = "row">
-            <div class = "col-sm-3"><b>Navn:</b></div>
+            <div class = "col-sm-4"><b>Navn:</b></div>
             <div class = "col-sm-4"><b>Gruppe:</b></div>
-            <div class = "col-sm-2"><b>Til stede:</b></div>
+            <div class = "col-sm-4"><b>Til stede:</b></div>
         </div>
-        <hr/>
             <%ArrayList<Utover> utoverListe = (ArrayList<Utover>) request.getAttribute("utoverListe");
                 for(int i = 0; i < utoverListe.size(); i++) {     %>
 
-        <div class = "row">
-            <div class = "col-sm-3" ><%=utoverListe.get(i).getEtternavn() + " " + utoverListe.get(i).getFornavn()%></div><div>
-            <div class = "col-sm-3" >
-                <div class = "col-sm-3" ><input type = "checkbox"></div>
-            </div>
+                    <div class = "row">
+                         <div class = "col-sm-4" ><%=utoverListe.get(i).getEtternavn() + " " + utoverListe.get(i).getFornavn()%></div>
+                         <div class = "col-sm-4" ></div>
+                         <div class = "col-sm-4" ><input type = "checkbox"></div>
+                    </div>
                 <%}%>
+            <footer>
+                <a href = "../HentOvelse">
+                <div class = "footerButton" id ="footerRight">
+                    <img src = "../../images/ikoner/forward_button.png">
+                    <h2>Gå til øvelser</h2>
+                </div>
+                </a>
+            </footer>
 </body>
-

@@ -65,10 +65,6 @@ body {
     height: 100%;
 }
 
-.searchBar {
-    font-weight: 300;
-    margin-bottom: 30px;
-}
 
 .row {
     height: 55px;
@@ -78,13 +74,6 @@ body {
     color: #6E8BD6;
 }
 
-#sokefelt {
-    width: 250px;
-    height: 40px;
-    padding: 10px;
-    margin-left: 10px;
-    margin-bottom: 20px;
-}
 
 a {
     color: black;
@@ -179,7 +168,7 @@ h1 b {
 }
 
 
-.col-sm-4 {
+.col-sm-3 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;

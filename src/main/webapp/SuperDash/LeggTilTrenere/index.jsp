@@ -17,7 +17,7 @@
     <div class = "backButton">
         <a href = "../">
             <img src = "../../images/ikoner/back_button.png">
-            <h3>Dashboard</h3>
+            <h3>Hjem</h3>
         </a>
     </div>
     <div class="centerObjects">
