@@ -24,14 +24,6 @@
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
-                        Godkjenne resultater
-                    </div>
-                </a>
-            </div>
-            <div class = "col-sm" >
-                <a href = "linkTilSiden">
-                    <div class = "knapp">
                         <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
                         Min profil
                     </div>
