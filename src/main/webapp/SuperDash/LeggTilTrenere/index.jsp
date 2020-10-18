@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Superuser homepage</title>
+    <title>Legg til trenere</title>
     <meta charset="UTF-8">
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,7 +51,7 @@
         <div class = "col-sm-3" ><div class = "rowFirst"><%=trenerListe.get(i).getFornavn() + " " + trenerListe.get(i).getEtternavn()%></div></div>
         <div class = "col-sm-4" ><%=trenerListe.get(i).getAdresse()%></div>
         <div class = "col-sm-2" ><%=trenerListe.get(i).getTlf()%></div>
-        <div class = "col-sm-3" ><input type = "checkbox"></div>
+        <div class = "col-sm-3" ><input type = "checkbox" class = "checker" id = "<%=trenerListe.get(i).getID()%>"></div>
     </div>
     <%
         }
@@ -65,11 +65,11 @@
         </div>
     </a>
 
-    <a href = "../../SuperDash/FullscreenMessage?Navn=Testklubb&Tlf=93064217&Gatenavn=Stavagata&Husnummer=12&Postnummer=4780&Poststed=Stavanger">
-        <div class = "footerButton" id ="footerRight">
-            <img src = "../../images/ikoner/forward_button.png">
-            <h2>Opprett klubb</h2>
-        </div>
-    </a>
+    <div class = "footerButton" id ="footerRight">
+        <img src = "../../images/ikoner/forward_button.png">
+        <h2>Opprett klubb</h2>
+    </div>
+
+    <script src = "javascript.js" type="text/javascript"></script>
 </footer>
 </body>

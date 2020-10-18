@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(name= "xxx", urlPatterns = {"/"})
+@WebServlet(name= "HentOvelse", urlPatterns = {"/HentOvelse"})
 public class HentOvelse extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -33,14 +33,28 @@ public class OpprettKlubb extends AbstractAppServlet {
         int postnummer = Integer.parseInt(postnummerString);
         String poststed = request.getParameter("Poststed");
 
+        String trenere = request.getParameter("TrenereToAdd");
+        String[] trenerListe = trenere.split(",");
+
         String adresseId = DatabaseWriter.createAdress(gatenavn, husnummer, postnummer, poststed);
 
         String klubbKolonner = "Navn, Adresse_id, Tlf";
         String tlfString = request.getParameter("Tlf");
         int tlf = Integer.parseInt(tlfString);
 
-        DatabaseValue[] klubbVerdier = {new DatabaseValue(request.getParameter("Navn")), new DatabaseValue(adresseId), new DatabaseValue(tlf)};
+        String klubbNavn = request.getParameter("Navn");
+
+        DatabaseValue[] klubbVerdier = {new DatabaseValue(klubbNavn), new DatabaseValue(adresseId), new DatabaseValue(tlf)};
         DatabaseWriter.addRowToTable("klubber", klubbKolonner, klubbVerdier);
+
+        int klubbId = DatabaseReader.getInt("roforbund.klubber","Navn", klubbNavn, "Klubb_id");
+
+        for (int i = 0; i < trenerListe.length; i++) {
+            //TODO lag en metode for å endre en celle i databasen
+            DatabaseWriter.changeCellValue("bruker", "Bruker_id", trenerListe[i], "Klubb_id", new DatabaseValue(klubbId));
+        }
+
+
 
         request.setAttribute("doneMessage", "Ferdig, klubb opprettet!");
         RequestDispatcher rq = request.getRequestDispatcher("../FullscreenMessage/index.jsp");
