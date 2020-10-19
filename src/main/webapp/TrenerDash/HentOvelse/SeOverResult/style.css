@@ -16,13 +16,6 @@ body {
     text-decoration: none;
 }
 
-.titleBar .backButton {
-    width: 100px;
-    height: 40px;
-    margin-left: 10px;
-    display: inline;
-}
-
 .titleBar h1 {
     font-size: 19px;
     margin-top: 15px;
@@ -53,26 +46,6 @@ body {
 
 .container {
     margin-top: 40px;
-    text-align: center;
-}
-
-.sideButton {
-    height: 60px;
-    position: absolute;
-    margin-top: 10px;
-}
-
-.sideButton img {
-    height: 100%;
-}
-
-
-.row {
-    height: 55px;
-}
-
-.rowFirst {
-    color: #6E8BD6;
 }
 
 
@@ -122,12 +95,8 @@ footer {
 
 #footerRight {
     float: right;
+    background-color: #3ECC43;
 }
-
-.checkbox {
-    margin-right: 90px;
-}
-
 
 h1 {
     margin-bottom: 50px;
@@ -135,28 +104,10 @@ h1 {
     font-weight: 200;
     font-size: 23px;
     font-family: 'Helvetica', serif;
+    text-align: center;
+    margin-top: 75px;
 }
 
 h1 b {
-    font-weight: 500;
+    font-weight: 510;
 }
-
-.row {
-    width: 40%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
-}
-
-.smallText {
-    width: 40%;
-}
-
-
-.col-sm-3 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-}
-

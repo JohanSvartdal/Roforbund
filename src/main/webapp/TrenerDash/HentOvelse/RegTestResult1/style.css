@@ -51,34 +51,58 @@ body {
     transform: translateX(-50%);
 }
 
-.container {
-    margin-top: 40px;
-    text-align: center;
-}
+.textField {
+    height: 35px;
+    width: 100%;
+    border-radius: 0px;
+    border-color: #6E8BD6;
+    border-width: 1px;
+    border-style: solid;
 
-.sideButton {
-    height: 60px;
-    position: absolute;
-    margin-top: 10px;
-}
-
-.sideButton img {
-    height: 100%;
-}
-
-
-.row {
-    height: 55px;
+    text-align: left;
 }
 
 .rowFirst {
     color: #6E8BD6;
 }
 
-
 a {
     color: black;
     text-decoration: none;
+}
+
+.container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 60px;
+    margin-bottom: 50px;
+    color: black;
+    font-weight: 200;
+    font-size: 23px;
+    font-family: 'Helvetica', serif;
+}
+
+h1 b {
+    font-weight: 500;
+}
+
+.row {
+    height: 55px;
+    width: 45%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.col-sm-3 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 footer {
@@ -100,9 +124,28 @@ footer {
 .footerButton h2 {
     margin-top: 16px;
     font-size: 18px;
+    margin-right: 27px;
 }
 
 .footerButton img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+.footerButton1 {
+    width: 200px;
+    height: 100%;
+    background-color: #B0B5C3;
+    text-align: center;
+}
+
+.footerButton1 h2 {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+.footerButton1 img {
     width: 50px;
     height: 50px;
     position: absolute;
@@ -122,41 +165,5 @@ footer {
 
 #footerRight {
     float: right;
-}
-
-.checkbox {
-    margin-right: 90px;
-}
-
-
-h1 {
-    margin-bottom: 50px;
-    color: black;
-    font-weight: 200;
-    font-size: 23px;
-    font-family: 'Helvetica', serif;
-}
-
-h1 b {
-    font-weight: 500;
-}
-
-.row {
-    width: 40%;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
-}
-
-.smallText {
-    width: 40%;
-}
-
-
-.col-sm-3 {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
 
