@@ -60,14 +60,16 @@ a {
     background-color: rgba(90, 127, 228, 0.91);
 }
 
-#adminklubber {
+#administreutøvere {
     background-color: rgb(130, 198, 149);
 }
 
-#godkjenneresults {
+#resultater {
     background-color: rgb(244, 83, 83);
 }
-
+#resultater {
+    background-color: rgb(244, 83, 83);
+}
 
 footer {
     position: absolute;

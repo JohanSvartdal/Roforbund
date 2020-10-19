@@ -16,19 +16,12 @@
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "adminklubber"><img src = "../UtoverDash/Ikoner/resultat.png"></div>
-                        Administrere klubber
+                        <div class = "knappbilde" id = "resultater"><img src = "../UtoverDash/Ikoner/resultat.png"></div>
+                        Resultater
                     </div>
                 </a>
             </div>
-            <div class = "col-sm" >
-                <a href = "linkTilSiden">
-                    <div class = "knapp">
-                        <div class = "knappbilde" id = "godkjenneresults"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
-                        Godkjenne resultater
-                    </div>
-                </a>
-            </div>
+
             <div class = "col-sm" >
                 <a href = "linkTilSiden">
                     <div class = "knapp">
