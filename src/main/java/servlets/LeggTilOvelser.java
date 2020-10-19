@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name= "LeggTilOvelser", urlPatterns = {"/LeggTilOvelser"})
+@WebServlet(name= "LeggTilOvelse")
 public class LeggTilOvelser extends AbstractAppServlet {
 
     int UID = 1;
@@ -16,7 +16,7 @@ public class LeggTilOvelser extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        writeResponse(request, response, "Legg til ovelser");
+        writeResponse(request, response, "LeggTilOvelse");
     }
 
     @Override
@@ -30,7 +30,7 @@ public class LeggTilOvelser extends AbstractAppServlet {
 
         out.println("<div id = 'loginBox'>");
         out.println("<h1>Øvelser</h1>");
-        out.println("<button class = 'smallButton'>Legg til øvelse</button>");
+        out.println("<button class = 'smallButton'>Legg til øvelser</button>");
         out.println("</br>");
         out.println("</br>");
         out.println("<button class = 'smallButton'>Send til godkjenning</button>");

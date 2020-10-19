@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(name= "OppretTest", urlPatterns = {"/TrenerDash/OppretTest/"})
+@WebServlet(name= "OpprettTest", urlPatterns = {"/TrenerDash/OpprettTest/"})
 public class OpprettTest extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,7 +40,7 @@ public class OpprettTest extends AbstractAppServlet {
         }
 
         request.setAttribute("utoverListe", utoverList);
-        RequestDispatcher rq = request.getRequestDispatcher("../OppretTest/index.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("../OpprettTest/index.jsp");
         rq.forward(request, response);
 
     }
