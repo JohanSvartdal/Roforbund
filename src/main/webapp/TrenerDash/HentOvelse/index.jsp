@@ -36,13 +36,15 @@
                     </div>
                 <%}%>
             <footer>
+                <a href ="../OpprettTest">
                     <div class = "footerButton" id ="footerLeft">
                         <img src = "../../images/ikoner/back_button.png">
                         <h2>Tilbake</h2>
-                    </div>
+                    </div> </a>
+                <a href = "../HentOvelse/RegTestResult">
                 <div class = "footerButton" id ="footerRight">
                     <img src = "../../images/ikoner/forward_button.png">
                     <h2>Gå til test</h2>
-                </div>
+                </div> </a>
             </footer>
 </body>

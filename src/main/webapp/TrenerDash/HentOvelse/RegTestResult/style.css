@@ -51,9 +51,19 @@ body {
     transform: translateX(-50%);
 }
 
+.textField {
+    height: 35px;
+    width: 100%;
+    border-radius: 0px;
+    border-color: #6E8BD6;
+    border-width: 1px;
+    border-style: solid;
+
+    text-align: left;
+}
+
 .container {
     margin-top: 40px;
-    text-align: center;
 }
 
 .sideButton {
@@ -66,10 +76,6 @@ body {
     height: 100%;
 }
 
-
-.row {
-    height: 55px;
-}
 
 .rowFirst {
     color: #6E8BD6;
@@ -110,6 +116,10 @@ footer {
 
 #footerLeft img {
     left: 2px;
+    margin-top: 6px;
+    margin-left: 5px;
+    height: 37px;
+    width: 37px;
 }
 
 #footerRight img {
@@ -118,18 +128,31 @@ footer {
 
 #footerLeft {
     float: left;
+    background-color: #FD3721;
 }
 
 #footerRight {
     float: right;
 }
 
-.checkbox {
-    margin-right: 90px;
+body {
+    background-color: #F7FAFF !important;
+    background-image: none !important;
+    font-size: 18px;
 }
 
+.container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
 
 h1 {
+    margin-top: 60px;
     margin-bottom: 50px;
     color: black;
     font-weight: 200;
@@ -142,15 +165,13 @@ h1 b {
 }
 
 .row {
-    width: 40%;
+    height: 55px;
+    width: 45%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 30px;
-}
-
-.smallText {
-    width: 40%;
+    text-align: center;
 }
 
 
