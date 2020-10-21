@@ -1,10 +1,10 @@
 body {
-    background-color: rgb(244, 245, 249) !important;
+    background-color: #F7FAFF !important;
     background-image: none !important;
 }
 
 #loginBox {
-    background-color: rgb(244, 245, 249);
+    background-color: #F7FAFF ;
     width: 1000px;
     height: 300px;
     margin-top: 350px;
@@ -12,10 +12,39 @@ body {
     box-shadow: none !important;
 }
 
+
+.titleBar {
+    width: 100%;
+    height: 50px;
+    background-color: #F7FAFF ;
+    color: black;
+}
+
+.titleBar a {
+    color: black !important;
+    text-decoration: none;
+}
+
+.titleBar .bellButton img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.titleBar .bellButton {
+    width: 50px;
+    height: 50px;
+    display: inline;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+}
+
 #loginBox h1 {
     font-size: 30px;
-    margin-top: -180px;
-    margin-bottom: 40px;
+    margin-top: 100px;
+    margin-bottom: 100px;
 
 }
 
@@ -25,16 +54,16 @@ body {
 }
 
 .knapp {
-    width: 180px;
+
     margin-left: auto;
     margin-right: auto;
 }
 
 .knappbilde {
-    width: 80%;
-    height: 120px;
+    width: 125px;
+    height: 125px;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
@@ -42,8 +71,9 @@ body {
 }
 
 .knappbilde img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 70%;
+    max-height: 70%;
+    margin-top: 20px;
 }
 
 .knapp a{
@@ -57,27 +87,25 @@ a {
 }
 
 #minprofil {
-    background-color: rgba(90, 127, 228, 0.91);
+    background-color: #6E8BD6;
 }
 
-#administreutøvere {
-    background-color: rgb(130, 198, 149);
-}
+
 
 #resultater {
-    background-color: rgb(244, 83, 83);
+    background-color: #F25454;
 }
 #resultater {
-    background-color: rgb(244, 83, 83);
+    background-color: #F25454;
 }
 
 footer {
     position: absolute;
     bottom: 0px;
-    background-color: rgb(221, 233, 255);
+    background-color: #ECF1FF ;
     padding: 20px;
     width: 100%;
-    height: 150px;
+    height: 200px;
 }
 
 footer h2 {
@@ -87,9 +115,11 @@ footer h2 {
 
 .col-sm {
     text-align: center;
+    margin-top: 30px;
 }
 
 h1 {
-    margin-top: 200px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     text-align: center;
 }
