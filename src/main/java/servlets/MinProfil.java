@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(name= "UtoverDash")
+@WebServlet(name= "MinProfil")
 
 public class MinProfil extends AbstractAppServlet {
     @Override
