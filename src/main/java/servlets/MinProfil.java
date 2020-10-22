@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
-@WebServlet(name= "TrenerDash")
+@WebServlet(name= "UtoverDash")
 
 public class MinProfil extends AbstractAppServlet {
     @Override
@@ -24,28 +24,28 @@ public class MinProfil extends AbstractAppServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-        ArrayList<Integer> trenerId = DatabaseReader.getAllEntries("roforbund.tester", "Test_id");
+        ArrayList<Integer> utoverId = DatabaseReader.getAllEntries("roforbund.tester", "Test_id");
         ArrayList<Test> TestListe = new ArrayList<>();
 
-        for (int i = 0; i < trenerId.size(); i++ ) {
+        for (int i = 0; i < utoverId.size(); i++ ) {
             Test current = new Test();
 
-            Integer test_id = DatabaseReader.getInt("roforbund.tester", "Trener_id", trenerId.get(i), "Test_id");
-            Integer klubb_id = DatabaseReader.getInt("roforbund.tester", "Trener_id", trenerId.get(i), "Klubb_id");
-            String dato = DatabaseReader.getString("roforbund.tester", "Trener_id", trenerId.get(i), "Dato");
-            Integer trener_id = DatabaseReader.getInt("roforbund.tester", "Trener_id", trenerId.get(i), "Trener_id");
-            Integer godkjent = DatabaseReader.getInt("roforbund.tester", "Trener_id", trenerId.get(i), "Godkjent");
+            Integer test_id = DatabaseReader.getInt("roforbund.tester", "Utover_id", utoverId.get(i), "Test_id");
+            Integer klubb_id = DatabaseReader.getInt("roforbund.tester", "Utover_id", utoverId.get(i), "Klubb_id");
+            String dato = DatabaseReader.getString("roforbund.tester", "Utover_id", utoverId.get(i), "Dato");
+            Integer utover_id = DatabaseReader.getInt("roforbund.tester", "Utover_id", utoverId.get(i), "Trener_id");
+            Integer godkjent = DatabaseReader.getInt("roforbund.tester", "Utover_id", utoverId.get(i), "Godkjent");
 
-            current.setTestListe(test_id + " " + klubb_id + " " + dato + " " + trener_id + " " + godkjent);
+            current.setTestListe(test_id + " " + klubb_id + " " + dato + " " + utover_id + " " + godkjent);
 
-            ArrayList<Integer> testIds = DatabaseReader.getListOfIds("roforbund.tester", "trener_id", trenerId.get(i), "Test_id");
+            ArrayList<Integer> testIds = DatabaseReader.getListOfIds("roforbund.tester", "utover_id", utoverId.get(i), "Test_id");
             current.setAntallTester(testIds.size());
 
 
             TestListe.add(current);
         }
         request.setAttribute("TestListe", TestListe);
-        RequestDispatcher rq = request.getRequestDispatcher("../Trenerdash/index.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("../Utoverdash/index.jsp");
         rq.forward(request, response);
     }
 }

@@ -8,24 +8,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../UtoverDash/style.css">
-</head>
+<head>
 <body>
+<div class =  "titleBar">
+    <div class = "bellButton">
+        <a href = "../">
+            <img src = "../images/ikoner/bell.png">
+        </a>
+    </div>
     <div class = "container">
+
         <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
         <div class = "row">
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "Resulater">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "resultater"><img src = "../UtoverDash/Ikoner/resultat.png"></div>
+                        <div class = "knappbilde" id = "resultater"><img src = "../UtoverDash/Ikoner/Resultater.png"></div>
                         Resultater
                     </div>
                 </a>
             </div>
 
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "MinProfil">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/resultat.png"></div>
+                        <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/MinProfil.png"></div>
                         Min profil
                     </div>
                 </a>
