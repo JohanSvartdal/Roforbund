@@ -34,7 +34,7 @@ public class AdminKlubber extends AbstractAppServlet {
             String navn = DatabaseReader.getString("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Navn");
             current.setNavn(navn);
 
-            Integer adresseID = DatabaseReader.getInt("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Adresse_id");
+            String adresseID = DatabaseReader.getString("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Adresse_id");
             String gatenavn = DatabaseReader.getString("roforbund.adresser", "Adresse_id", adresseID, "Gatenavn");
             Integer husnummer = DatabaseReader.getInt("roforbund.adresser", "Adresse_id", adresseID, "Husnummer");
             Integer postnummer = DatabaseReader.getInt("roforbund.adresser", "Adresse_id", adresseID, "Postnummer");

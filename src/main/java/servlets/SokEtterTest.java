@@ -24,6 +24,7 @@ public class SokEtterTest extends AbstractAppServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
+
         ArrayList<Integer> trenerId = DatabaseReader.getAllEntries("roforbund.tester", "Test_id");
         ArrayList<Test> TestListe = new ArrayList<>();
 
