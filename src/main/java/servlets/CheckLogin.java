@@ -45,6 +45,8 @@ public class CheckLogin extends AbstractAppServlet {
             }else if (userRole == 3) {
                 request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
                 request.getRequestDispatcher("../SuperDash/index.jsp").forward(request, response);
+            }else {
+                return;
             }
         }
     }

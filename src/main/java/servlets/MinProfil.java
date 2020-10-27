@@ -39,7 +39,7 @@ public class MinProfil extends AbstractAppServlet {
             current.setTestListe(test_id + " " + klubb_id + " " + dato + " " + utover_id + " " + godkjent);
 
             ArrayList<Integer> testIds = DatabaseReader.getListOfIds("roforbund.tester", "utover_id", utoverId.get(i), "Test_id");
-            current.setAntallTester(testIds.size());
+            current.setAntallOvelser(testIds.size());
 
 
             TestListe.add(current);

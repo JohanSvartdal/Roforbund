@@ -80,3 +80,13 @@ a {
     text-decoration: none;
 }
 
+.ovelsesBox {
+    background-color: white;
+    margin-bottom: 30px;
+
+    padding: 10px;
+
+    border-width: 1px;
+    border-bottom-color: #6E8BD6;
+    border-style: solid;
+}
