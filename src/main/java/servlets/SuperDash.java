@@ -1,7 +1,9 @@
 package servlets;
 
+import tools.repository.DatabaseReader;
 import tools.repository.OvelseManagement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -12,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name= "SuperDash")
+@WebServlet(name= "SuperDash", urlPatterns = "/SuperDash/")
 public class SuperDash extends AbstractAppServlet {
 
     int UID = 1;
@@ -31,16 +33,34 @@ public class SuperDash extends AbstractAppServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        processRequest(request, response);
+        Cookie cookies[] = request.getCookies();
+        int UID = -1;
+        for (Cookie cookie: cookies) {
+            if (cookie.getName().equals("UID")) {
+                String uidString = cookie.getValue();
+                UID = Integer.parseInt(uidString);
+            }
+        }
+        if (UID == -1) {
+            request.setAttribute("title", "Fant ikke UID");
+            request.setAttribute("description", "Vennligst kontakt IT avdelingen for hjelp");
+            request.setAttribute("backlink", "../");
+
+            RequestDispatcher rq = request.getRequestDispatcher("../Error/index.jsp");
+            rq.forward(request, response);
+            return;
+        }
+
+        String name = DatabaseReader.getString("roforbund.bruker","Bruker_id", UID, "Fornavn");
+
+        request.setAttribute("WelcomeMessage", "Velkommen, " + name + "!");
+        RequestDispatcher rq = request.getRequestDispatcher("../SuperDash/index.jsp");
+        rq.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        /*
-        request.setAttribute("WelcomeMessage", "Velkommen Jahn Teigen!");
-        request.getRequestDispatcher("index.jsp").forward(request, response);
-         */
         processRequest(request, response);
     }
 

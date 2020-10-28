@@ -40,7 +40,7 @@ public class SokEtterTest extends AbstractAppServlet {
             current.setTestListe(test_id + " " + klubb_id + " " + dato + " " + trener_id + " " + godkjent);
 
             ArrayList<Integer> testIds = DatabaseReader.getListOfIds("roforbund.tester", "trener_id", trenerId.get(i), "Test_id");
-            current.setAntallTester(testIds.size());
+            current.setAntallOvelser(testIds.size());
 
 
             TestListe.add(current);

@@ -28,6 +28,8 @@ public class AdminKlubber extends AbstractAppServlet {
         ArrayList<Integer> klubbIds = DatabaseReader.getAllEntries("roforbund.klubber", "Klubb_id");
         ArrayList<Klubb> klubbListe = new ArrayList<>();
 
+
+
         for (int i = 0; i < klubbIds.size(); i++) {
             Klubb current = new Klubb();
 

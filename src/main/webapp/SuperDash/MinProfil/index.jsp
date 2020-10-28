@@ -24,25 +24,17 @@
      </div>
     </div>
     <div class="container">
-        <h1>Line Pettersen</h1>
+        <h1><%= request.getAttribute("fornavn")%></h1>
         <center><hr/></center>
     </div>
     <div id ="mininfoBox">
         <div class = "row">
-            <div class = "col-sm" > <b>Fødselsdato:</b> </div>
-            <div class = "col-sm" > 13.07.1990 </div>
-        </div>
-        <div class = "row">
-            <div class = "col-sm" > <b> Adressse: </b> </div>
-            <div class = "col-sm" > Skøyerlia 19, Kristiansand </div>
-        </div>
-        <div class = "row">
             <div class = "col-sm" > <b>E-post:</b> </div>
-            <div class = "col-sm" > line.p@roing.no </div>
+            <div class = "col-sm" > <%= request.getAttribute("epost")%> </div>
         </div>
         <div class = "row">
             <div class = "col-sm" > <b>Mobil:</b> </div>
-            <div class = "col-sm" > 909 09 090 </div>
+            <div class = "col-sm" > <%= request.getAttribute("tlf")%> </div>
         </div>
         <div class = "row">
             <div class = "col-sm" > <b>Type bruker:</b> </div>
