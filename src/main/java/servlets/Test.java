@@ -2,12 +2,16 @@ package servlets;
 
 public class Test {
     private Integer Test_id;
+
     private Integer Klubb_id;
+    private String klubbNavn;
+
     private String Dato;
     private Integer Trener_id;
+    private String trenerNavn;
     private Integer Godkjent;
     private String TestListe;
-    private Integer AntallTester;
+    private Integer AntallOvelser;
 
 public Integer getTest_id() {return Test_id;}
 
@@ -33,7 +37,23 @@ public String getTestListe() {return TestListe;}
 
 public void setTestListe(String testListe) {this.TestListe = testListe;}
 
-public Integer getAntallTester() {return AntallTester;}
+public Integer getAntallOvelser() {return AntallOvelser;}
 
-public void setAntallTester(Integer antallTester) {this.AntallTester = antallTester;}
+public void setAntallOvelser(Integer antallTester) {this.AntallOvelser = antallTester;}
+
+    public String getKlubbNavn() {
+        return klubbNavn;
+    }
+
+    public void setKlubbNavn(String klubbNavn) {
+        this.klubbNavn = klubbNavn;
+    }
+
+    public String getTrenerNavn() {
+        return trenerNavn;
+    }
+
+    public void setTrenerNavn(String trenerNavn) {
+        this.trenerNavn = trenerNavn;
+    }
 }
