@@ -6,7 +6,7 @@ body {
     background-image: url('images/background_main.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Helvetica';
 }
 
 #loginBox {

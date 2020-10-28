@@ -16,7 +16,7 @@ create table if not EXISTS roforbund.postnummere
 
 create table if not EXISTS roforbund.adresser
 (
-    Adresse_id       int UNSIGNED auto_increment,
+    Adresse_id       varchar(100) not null,
     Gatenavn         varchar(45),
     Husnummer        varchar(5),
     Postnummer       int(4) UNSIGNED,
@@ -28,7 +28,7 @@ create table if not EXISTS roforbund.klubber
 (
     Klubb_id        int UNSIGNED auto_increment,
     Navn            varchar(60),
-    Adresse_id      int UNSIGNED,
+    Adresse_id      varchar(100),
     Tlf             int(8) UNSIGNED,
     CONSTRAINT Klubb_id PRIMARY KEY (Klubb_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id)
@@ -43,7 +43,7 @@ create table if not EXISTS roforbund.bruker
     Tlf             int(8) UNSIGNED,
     Epost           varchar(60),
     Passord         varchar(60) NOT NULL,
-    Adresse_id      int(7) UNSIGNED,
+    Adresse_id      varchar(100),
     Klubb_id        int(5) UNSIGNED,
     Rolle           int(1) UNSIGNED,
     Ranking         int(10) UNSIGNED,
@@ -65,11 +65,13 @@ create table if not EXISTS roforbund.tester
 (
     Test_id         int UNSIGNED auto_increment,
     Dato            TIMESTAMP,
-    Trener_id       INT UNSIGNED,
     Klubb_id        INT UNSIGNED,
+    Trener_id       INT UNSIGNED,
     Godkjent        int(1) UNSIGNED NOT NULL,
+    Antall_ovelser  int(3) UNSIGNED NOT NULL,
     CONSTRAINT Test_id PRIMARY KEY (Test_id),
-    FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id)
+    FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id),
+    FOREIGN KEY (Trener_id) REFERENCES bruker(Bruker_id)
 );
 
 create table if not EXISTS roforbund.resultater
@@ -97,49 +99,58 @@ values (4624, 'Kristiansand');
 insert into roforbund.postnummere (Postnummer, Poststed)
 values (4754, 'Bykle');
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Cappelens Gate', 61, 3015);
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (3057, 'Solbergelva');
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Bragernes Torg', 4, 3015);
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('3015cappelensgate61', 'Cappelens Gate', 61, 3015);
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Marikåpeveien', 10, 4624);
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('3015bragernestorg4', 'Bragernes Torg', 4, 3015);
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Tollbodgata', 20, 4624);
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('4624marikåpeveien10', 'Marikåpeveien', 10, 4624);
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Rosenkransgate', 112, 3015);
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('4624tollbodgata20', 'Tollbodgata', 20, 4624);
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Kongensgate', 65, 4624);
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('3015rosengransgate112', 'Rosenkransgate', 112, 3015);
 
-insert into roforbund.adresser (Gatenavn, Husnummer, Postnummer)
-values ('Haugenstuegata', 22, 4624);
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('4624kongensgate65', 'Kongensgate', 65, 4624);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('4624haugenstuegata22', 'Haugenstuegata', 22, 4624);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('3057hallingstadveien13', 'Hallingstadveien', 13, 3057);
 
 insert into roforbund.klubber (Navn, Adresse_id, Tlf)
-values ('Drammen Roklubb', 2, 40640382);
+values ('Drammen Roklubb', '3015bragernestorg4', 40640382);
 
 insert into roforbund.klubber (Navn, Adresse_id, Tlf)
-values ('Kristiansand Roklubb', 4, 93064217);
+values ('Kristiansand Roklubb', '4624tollbodgata20', 93064217);
 
 
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Johan', 'Svartdal', '2000-10-02', 46968676, 'Johan.svartdal30@gmail.com', 'root', 1, 1, 1, 1, 75, 181);
+values ('Johan', 'Svartdal', '2000-10-02', 46968676, 'Johan.svartdal30@gmail.com', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Gordon', 'Ramsey', '1966-10-02', 93724120, 'gordon.ramsey@kitchen.com', 'root', 5, 1, 2, null, 90, 188);
+values ('Gordon', 'Ramsey', '1966-10-02', 93724120, 'gordon.ramsey@kitchen.com', 'root', '3015rosengransgate112', 1, 2, null, 90, 188);
 
 
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Mari', 'Tveiten', '1999-10-17', 92678341, 'mari@hotmail.com', 'root', 6, 2, 1, 3, 60.8, 174);
+values ('Mari', 'Tveiten', '1999-10-17', 92678341, 'mari@hotmail.com', 'root', '4624kongensgate65', 2, 1, 3, 60.8, 174);
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
-values ('Hermann', 'Flesvig', '1992-03-18', 43762182, 'Hermann.flesvig@gmail.com', 'root', 7, 2, 2, null, 80, 183);
+values ('Hermann', 'Flesvig', '1992-03-18', 43762182, 'Hermann.flesvig@gmail.com', 'root', '4624haugenstuegata22', 2, 2, null, 80, 183);
 
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Oscar', 'Riise', '2000-09-19', 99226981, 'riisep00@gmail.com', 'root', '3057hallingstadveien13', 1, 1, 2, 68, 179);
 
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
@@ -156,20 +167,20 @@ insert into roforbund.ovelser (Navn)
 values ('Planken');
 
 
-insert into roforbund.tester (Trener_id, Godkjent)
-values (2, 2);
+insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
+values (1, 2, 2, 2);
 
-insert into roforbund.tester (Trener_id, Godkjent)
-values (2, 2);
-
-
+insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
+values (1, 2, 2, 3);
 
 
-insert into roforbund.tester (Trener_id, Godkjent)
-values (4, 2);
 
-insert into roforbund.tester (Trener_id, Godkjent)
-values (4, 3);
+
+insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
+values (2, 4, 2, 1);
+
+insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
+values (2, 4, 3, 1);
 
 
 
@@ -182,11 +193,28 @@ values (3, 1, 1, 202, 1800, 70, 3);
 
 
 
-
 insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
 values (2, 3, 3, 100, 1900, 80, 2);
 
 insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
 values (3, 4, 3, 270, 2100, 40, 1);
 
-SELECT * FROM postnummere;
+
+
+insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid)
+values (3, 2, 1, 90);
+
+insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid)
+values (3, 2, 5, 35);
+
+insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, Repetisjoner)
+values (2, 2, 1, 420, 2100, 2);
+
+insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, Repetisjoner)
+values (2, 2, 5, 780, 1600, 2);
+
+insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
+values (1, 2, 1, 960, 2050, 5, 1);
+
+insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
+values (1, 2, 5, 1140, 1310, 5, 1);
