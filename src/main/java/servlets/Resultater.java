@@ -43,7 +43,7 @@ public class Resultater extends AbstractAppServlet {
 
 
 
-        request.setAttribute("TestListe", TestListe);
+        //request.setAttribute("TestListe", TestListe);
         RequestDispatcher rq = request.getRequestDispatcher("../Utoverdash/index.jsp");
         rq.forward(request, response);
     }
