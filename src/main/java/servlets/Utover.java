@@ -4,7 +4,10 @@ public class Utover {
     private String fornavn;
     private String etternavn;
     private String adresse;
+    private String epost;
     private int tlf;
+    private int klasseID;
+    private String klasseNavn;
 
     public String getFornavn() {
         return fornavn;
@@ -36,5 +39,29 @@ public class Utover {
 
     public void setTlf(int tlf) {
         this.tlf = tlf;
+    }
+
+    public String getEpost() {
+        return epost;
+    }
+
+    public void setEpost(String epost) {
+        this.epost = epost;
+    }
+
+    public int getKlasseID() {
+        return klasseID;
+    }
+
+    public void setKlasseID(int klasseID) {
+        this.klasseID = klasseID;
+    }
+
+    public String getKlasseNavn() {
+        return klasseNavn;
+    }
+
+    public void setKlasseNavn(String klasseNavn) {
+        this.klasseNavn = klasseNavn;
     }
 }

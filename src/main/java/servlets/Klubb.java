@@ -1,6 +1,7 @@
 package servlets;
 
 public class Klubb {
+    private int klubbID;
     private String navn;
     private String adresse;
     private int tlf;
@@ -36,5 +37,13 @@ public class Klubb {
 
     public void setAntallMedlemmer(int antallMedlemmer) {
         this.antallMedlemmer = antallMedlemmer;
+    }
+
+    public int getKlubbID() {
+        return klubbID;
+    }
+
+    public void setKlubbID(int klubbID) {
+        this.klubbID = klubbID;
     }
 }

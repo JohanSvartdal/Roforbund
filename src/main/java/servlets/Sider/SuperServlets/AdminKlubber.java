@@ -35,6 +35,7 @@ public class AdminKlubber extends AbstractAppServlet {
         for (int i = 0; i < klubbIds.size(); i++) {
             Klubb current = new Klubb();
 
+            current.setKlubbID(klubbIds.get(i));
             String navn = DatabaseReader.getString("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Navn");
             current.setNavn(navn);
 
