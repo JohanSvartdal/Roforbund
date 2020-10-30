@@ -2,6 +2,11 @@ a {
     text-decoration: none;
 
 }
+
+a:hover {
+    text-underline: none;
+}
+
 body {
     background-image: url('images/background_main.jpg');
     background-repeat: no-repeat;

@@ -114,6 +114,7 @@ public class SuperResultat extends AbstractAppServlet {
             request.setAttribute("GodkjentStatus", "GodkjenningKlar");
         }
 
+        request.setAttribute("TestID", testID);
         request.setAttribute("Dato", datoString);
         RequestDispatcher rq = request.getRequestDispatcher("../../../SuperDash/Resultater/Resultat/index.jsp");
         rq.forward(request, response);

@@ -81,6 +81,7 @@ create table if not EXISTS roforbund.tester
     Trener_id       INT UNSIGNED,
     Godkjent        int(1) UNSIGNED NOT NULL,
     Antall_ovelser  int(3) UNSIGNED NOT NULL,
+    Kommentar       varchar(800),
     CONSTRAINT Test_id PRIMARY KEY (Test_id),
     FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id),
     FOREIGN KEY (Trener_id) REFERENCES bruker(Bruker_id)
@@ -257,7 +258,7 @@ values ('Planken');
 
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
-values (1, 2, 2, 2);
+values (1, 2, 1, 2);
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
 values (1, 2, 2, 3);

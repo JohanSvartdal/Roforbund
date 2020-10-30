@@ -7,7 +7,7 @@ body {
 .titleBar {
     width: 100%;
     height: 50px;
-    background-color: #F25454;
+    background-color: #94C98D;
     color: black;
 }
 
@@ -55,34 +55,27 @@ body {
     margin-top: 40px;
 }
 
-.godkjent {
-    color: #92C88A;
-    text-underline: #92C88A;
+.sideButton {
+    height: 60px;
+    position: absolute;
+    margin-top: 10px;
 }
 
-.ikke {
-    color: #F25454 !important;
+.sideButton img {
+    height: 100%;
 }
 
-.resultButton {
-    width: 250px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    margin-left: 10px;
-    color: black;
-    text-align: center;
+#addKlubb {
+    left: 10px;
 }
 
-.buttonHolder {
-    display: inline-flex;
+#removeKlubb {
+    right: 10px;
 }
 
-#godkjennKnapp {
-    background-color: #92C88A;
-}
-
-#avvisKnapp {
-    background-color: #B1B6C4;
+.searchBar {
+    font-weight: 300;
+    margin-bottom: 30px;
 }
 
 .row {
@@ -93,7 +86,57 @@ body {
     color: #6E8BD6;
 }
 
+#sokefelt {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
 a {
     color: black;
     text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    background-color: #CFE6D0;
+    color: black;
+}
+
+.footerButton {
+    width: 200px;
+    height: 100%;
+    background-color: #92C88A;
+    text-align: center;
+}
+
+.footerButton h2 {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+.footerButton img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+#footerLeft img {
+    left: 2px;
+}
+
+#footerRight img {
+    right: 2px;
+}
+
+#footerLeft {
+    float: left;
+}
+
+#footerRight {
+    float: right;
 }

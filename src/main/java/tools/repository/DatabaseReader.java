@@ -46,6 +46,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return toReturn;
@@ -88,6 +94,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return toReturn;
@@ -130,6 +142,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return toReturn;
@@ -172,6 +190,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return toReturn;
@@ -212,6 +236,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return returnList;
@@ -236,6 +266,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return returnList;
@@ -279,6 +315,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return rs;
