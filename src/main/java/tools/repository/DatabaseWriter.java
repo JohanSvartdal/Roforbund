@@ -84,6 +84,14 @@ public class DatabaseWriter {
     }
 
     public static void changeCellValue(String tableName, String searchKey, String searchString, String columnToChange, DatabaseValue newValue) {
+        changeCellValue(tableName, searchKey, searchString, 0, columnToChange, newValue);
+    }
+
+    public static void changeCellValue(String tableName, String searchKey, int searchInt, String columnToChange, DatabaseValue newValue) {
+        changeCellValue(tableName, searchKey, null, searchInt, columnToChange, newValue);
+    }
+
+    public static void changeCellValue(String tableName, String searchKey, String searchString, int searchInt, String columnToChange, DatabaseValue newValue) {
         Connection db = null;
         PreparedStatement prepareStatement = null;
 
@@ -93,7 +101,7 @@ public class DatabaseWriter {
             PreparedStatement dbUse = db.prepareStatement("USE roforbund");
             dbUse.executeQuery();
 
-            String query = "UPDATE " + tableName + " SET " + columnToChange + "=?" + " WHERE " + searchKey + "=" + searchString;
+            String query = "UPDATE " + tableName + " SET " + columnToChange + "=?" + " WHERE " + searchKey + "=?";
 
             PreparedStatement preparedStatement = db.prepareStatement(query);
             if (newValue.text != null) {
@@ -101,6 +109,13 @@ public class DatabaseWriter {
             }else {
                 preparedStatement.setInt(1, newValue.number);
             }
+
+            if (searchString != null) {
+                preparedStatement.setString(2, searchString);
+            }else {
+                preparedStatement.setInt(2, searchInt);
+            }
+
             preparedStatement.executeQuery();
         } catch (SQLException throwables) {
             System.out.println("Feil");

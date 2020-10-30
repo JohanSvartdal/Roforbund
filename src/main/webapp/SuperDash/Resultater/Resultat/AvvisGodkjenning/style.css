@@ -68,7 +68,8 @@ body {
     width: 250px;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     color: black;
     text-align: center;
 }
@@ -78,11 +79,21 @@ body {
 }
 
 #godkjennKnapp {
-    background-color: #92C88A;
+    background-color: #F25454;
 }
 
 #avvisKnapp {
     background-color: #B1B6C4;
+}
+
+.commentBox {
+    width: 510px;
+    height: 300px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    padding: 10px;
+    line-height: unset;
 }
 
 .row {

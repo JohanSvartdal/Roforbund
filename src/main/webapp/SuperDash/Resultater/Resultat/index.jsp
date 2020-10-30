@@ -94,15 +94,20 @@
 
     <%
         if (godkjentStatus.equals("GodkjenningKlar")) {
+
     %>
     <center>
-        <div class="resultButton" id = "godkjennKnapp">
-            Godkjenn
-        </div>
+        <a href = "BekreftGodkjenning?testID=<%=request.getAttribute("TestID")%>&godkjenne=ja">
+            <div class="resultButton" id = "godkjennKnapp">
+                Godkjenn
+            </div>
+        </a>
         <br/>
-        <div class="resultButton" id = "avvisKnapp">
-            Ikke godkjenn
-        </div>
+        <a href = "AvvisGodkjenning?testID=<%=request.getAttribute("TestID")%>">
+            <div class="resultButton" id = "avvisKnapp">
+                Ikke godkjenn
+            </div>
+        </a>
     </center>
     <%
         }

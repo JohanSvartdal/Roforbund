@@ -1,10 +1,7 @@
-<%
-    String godkjentStatus = (String) request.getAttribute("GodkjentStatus");
-%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><%=godkjentStatus%></title>
+    <title>Avvise godkjenning</title>
     <meta charset="UTF-8">
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,30 +21,29 @@
     </div>
     <div class="centerObjects">
         <img src = "../../../../images/ikoner/blokk.png">
-        <h1> <%=godkjentStatus%></h1>
+        <h1>Ikke godkjenn</h1>
     </div>
 </div>
 <div class="container">
     <center>
-        <h2>Testen er markert som <b class = "<%=godkjentStatus%>"><%=godkjentStatus%></b></h2>
+        <h2>Hvorfor er den <b class = "ikke">ikke godkjent</b>?</h2>
         <br/>
         <p>
-            Treneren vil få varsel på sin side om at testen er <%=godkjentStatus%>
+            Vennligst legg ved en kommentar
         </p>
-        <br/>
-        <div class="buttonHolder">
-            <a href = "../../">
-                <div class="resultButton" id = "avvisKnapp">
-                    Gå tilbake til alle resultater
-                </div>
-            </a>
-            <a href = "../../../Resultater?mode=1">
-                <div class="resultButton" id = "godkjennKnapp">
-                    Godkjenn flere resultater
-                </div>
-            </a>
-        </div>
+        <form action="../AvvisGodkjenning/" method="post">
+            <textarea name="comment" id = "commentBox" class="commentBox" placeholder="Skriv kommentar her"></textarea>
+            <br/>
+            <div class="buttonHolder">
+                <a href = "../../../Resultater?mode=1">
+                    <div class="resultButton" id = "avvisKnapp">
+                        Avbryt
+                    </div>
+                </a>
+                <input type = "submit"  class="resultButton" id = "godkjennKnapp" value="Avvis"/>
+            </div>
+        </form>
     </center>
-
+    <script src = "javascript.js" type="text/javascript"></script>
 </div>
 </body>

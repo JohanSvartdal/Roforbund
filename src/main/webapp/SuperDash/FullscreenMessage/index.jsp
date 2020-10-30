@@ -21,8 +21,10 @@
 </div>
 
 <div class="container">
-    <h1><%=request.getAttribute("doneMessage")%></h1>
-    <center><hr/></center>
+    <center>
+        <h1><%=request.getAttribute("doneMessage")%></h1>
+        <hr/>
+    </center>
     <h3></h3>
     <center>
         <a href = "../../SuperDash"><div class = "footerButton">Ferdig</div></a>
