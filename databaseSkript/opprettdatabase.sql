@@ -104,6 +104,15 @@ create table if not EXISTS roforbund.resultater
 
 
 
+create table if not EXISTS roforbund.klasser
+(
+    Klasse_id        varchar(100) NOT NULL,
+    Klasse_navn      varchar(100) NOT NULL,
+    alder_min        int(3) UNSIGNED,
+    alder_max        int(3) UNSIGNED,
+    CONSTRAINT Resultat_id PRIMARY KEY (Klasse_id)
+);
+
 insert into roforbund.postnummere (Postnummer, Poststed)
 values (3015, 'Drammen');
 
