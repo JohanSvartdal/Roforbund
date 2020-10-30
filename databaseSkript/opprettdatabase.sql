@@ -22,7 +22,7 @@ create table if not EXISTS roforbund.klasser
 
 
     CONSTRAINT Klasse_id PRIMARY KEY (Klasse_id)
-)
+);
 
 create table if not EXISTS roforbund.adresser
 (
