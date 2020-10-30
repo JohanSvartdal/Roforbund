@@ -1,5 +1,6 @@
-package servlets;
+package servlets.Sider;
 
+import servlets.AbstractAppServlet;
 import tools.repository.DatabaseReader;
 import tools.repository.UserManagement;
 

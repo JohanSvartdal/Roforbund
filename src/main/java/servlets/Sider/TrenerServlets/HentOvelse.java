@@ -1,9 +1,8 @@
-package servlets;
+package servlets.Sider.TrenerServlets;
 
+import servlets.AbstractAppServlet;
+import servlets.Ovelse;
 import tools.repository.DatabaseReader;
-import tools.repository.DatabaseValue;
-import tools.repository.DatabaseWriter;
-import tools.repository.UserManagement;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,5 +1,6 @@
-package servlets;
+package servlets.Sider.UtoverServlets;
 
+import servlets.AbstractAppServlet;
 import tools.repository.DatabaseReader;
 import tools.repository.OvelseManagement;
 
@@ -10,44 +11,47 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 
-@WebServlet(name= "SokEtterOvelse", urlPatterns = {"/SokEtterOvelse"})
-public class SokEtterOvelse extends AbstractAppServlet {
+@WebServlet(name= "UtoverDash", urlPatterns = {"/UtoverDash"})
+public class UtoverDash extends AbstractAppServlet {
 
     int UID = 1;
-
-    ArrayList<Ovelse> ovelsesList = new ArrayList<>();
 
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-        writeResponse(request, response, "Legg til ovelser");
+        writeResponse(request, response, "Dashboard!");
     }
 
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
-        ovelsesList = OvelseManagement.getAllOvelser();
         out.println("<html>");
-        out.println("<head><title>Hvem er her?</title>");
+        out.println("<head><title>Mine resultater</title>");
         out.println("<link rel='stylesheet' href='style.css'>");
         out.println("</head>");
         out.println("<body>");
 
 
         out.println("<div id = 'loginBox'>");
-        out.println("<h1>Søk etter øvelse</h1>");
-        out.println("<form action = 'RegistrerResultater' method = 'POST'>");
-        out.println("<input type = 'text' name = 'ovelsesName' class = 'textField' placeholder = 'Søk etter øvelse'/>");
-        out.println("</form>");
-        out.println("</br>");
-        out.println("</br>");
-        out.println("<button class = 'smallButton'>Gå videre</button>");
+        out.println("<h1>Velg kategori</h1>");
+        String firstName = DatabaseReader.getString("Users", "User_email", "ulv_mygland@hotmail.com", "firstName");
+        out.println(firstName);
+
+        Cookie[] ck = req.getCookies();
+        for(int i=0;i<ck.length;i++) {
+            if (ck[i].getName().equals("UID")) {
+                UID = Integer.parseInt(ck[i].getValue());
+            }
+        }
+
+        String[] cats = OvelseManagement.getAllUserOvelser(UID, out);
+
+        for (int i = 0; i < cats.length; i++) {
+            out.println("<div id = 'loginButton'>" + cats[i] + "</div>");
+        }
 
         out.println("</div>");
-
-
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -70,13 +74,6 @@ public class SokEtterOvelse extends AbstractAppServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-
-        String ovelsesListString = "Test";
-        for (Ovelse ovelse: ovelsesList) {
-            ovelsesListString = ovelsesListString + "," + ovelse.getOvelseNavn();
-        }
-        Cookie ck = new Cookie("allAOvelser", ovelsesListString);
-        response.addCookie(ck);
         processRequest(request, response);
     }
 
