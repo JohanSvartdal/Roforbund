@@ -1,5 +1,7 @@
-package servlets;
+package servlets.Sider.SuperServlets;
 
+import servlets.AbstractAppServlet;
+import servlets.Trener;
 import tools.repository.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;

@@ -1,5 +1,6 @@
-package servlets;
+package servlets.Sider.SuperServlets;
 
+import servlets.AbstractAppServlet;
 import tools.repository.DatabaseReader;
 import tools.repository.DatabaseValue;
 import tools.repository.DatabaseWriter;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 @WebServlet(name= "FullscreenMessage", urlPatterns = {"/SuperDash/FullscreenMessage/"})
 public class OpprettKlubb extends AbstractAppServlet {

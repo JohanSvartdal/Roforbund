@@ -30,4 +30,8 @@ public class OvelsesResultat {
     public void setResultater(ArrayList<Resultat> resultater) {
         this.resultater = resultater;
     }
+
+    public void addToResultater(Resultat resultat) {
+        resultater.add(resultat);
+    }
 }

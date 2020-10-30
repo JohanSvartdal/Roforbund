@@ -1,6 +1,7 @@
 <%@ page import="servlets.Test" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="servlets.OvelsesResultat" %>
+<%@ page import="servlets.StaticValues" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,16 +15,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<%
+    String godkjentStatus = (String) request.getAttribute("GodkjentStatus");
+%>
 <div class =  "titleBar">
     <div class = "backButton">
         <a href = "../">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Hjem</h3>
+            <h3>Resultater</h3>
         </a>
     </div>
     <div class="centerObjects">
         <img src = "../../../images/ikoner/blokk.png">
-        <h1>Resultater</h1>
+        <h1> <%=request.getAttribute("Dato")%></h1>
     </div>
 </div>
 <div class="container">
@@ -32,7 +36,7 @@
         for(int i = 0; i < ovelsesResultatList.size(); i++) {
     %>
     <h2><%= ovelsesResultatList.get(i).getOvelsesNavn()%></h2>
-    <div class="ovelsesBox">
+    <div class="ovelsesBox <%=godkjentStatus%>">
         <div class = "row">
             <div class = "col-sm"><b>Navn</b></div>
 
@@ -83,8 +87,23 @@
         <%
         }
         %>
-
     </div>
+    <%
+        }
+    %>
+
+    <%
+        if (godkjentStatus.equals("GodkjenningKlar")) {
+    %>
+    <center>
+        <div class="resultButton" id = "godkjennKnapp">
+            Godkjenn
+        </div>
+        <br/>
+        <div class="resultButton" id = "avvisKnapp">
+            Ikke godkjenn
+        </div>
+    </center>
     <%
         }
     %>

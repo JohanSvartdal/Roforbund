@@ -240,4 +240,47 @@ public class DatabaseReader {
 
         return returnList;
     }
+
+    public static ResultSet getResultSet(String databaseNavn) {
+        return getResultSet(databaseNavn, null, null, 0);
+    }
+
+    public static ResultSet getResultSet(String databaseNavn, String searchKey, String searchString) {
+        return getResultSet(databaseNavn, searchKey, searchString, 0);
+    }
+
+    public static ResultSet getResultSet(String databaseNavn, String searchKey, int searchInt) {
+        return getResultSet(databaseNavn, searchKey, null, searchInt);
+    }
+
+    public static ResultSet getResultSet(String databaseNavn, String searchKey, String searchString, int searchInt) {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        ResultSet rs = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            String query = null;
+            if (searchKey != null) {
+                query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
+            }else {
+                query = "SELECT * FROM " + databaseNavn;
+            }
+            prepareStatement = db.prepareStatement(query);
+
+            if (searchKey != null) {
+                if (searchString == null) {
+                    prepareStatement.setInt(1, searchInt);
+                }else {
+                    prepareStatement.setString(1, searchString);
+                }
+            }
+            rs = prepareStatement.executeQuery();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return rs;
+    }
 }
