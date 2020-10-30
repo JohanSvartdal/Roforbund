@@ -38,14 +38,11 @@ public class CheckLogin extends AbstractAppServlet {
             String welcomeName = DatabaseReader.getString("roforbund.bruker", "Epost", email, "Fornavn");
 
             if (userRole == 1) {
-                request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
-                request.getRequestDispatcher("../UtoverDash/index.jsp").forward(request, response);
+                response.sendRedirect("../UtoverDash/");
             }else if (userRole == 2) {
-                request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
-                request.getRequestDispatcher("../TrenerDash/index.jsp").forward(request, response);
+                response.sendRedirect("../TrenerDash/");
             }else if (userRole == 3) {
-                request.setAttribute("WelcomeMessage", "Velkommen " + welcomeName);
-                request.getRequestDispatcher("../SuperDash/index.jsp").forward(request, response);
+                response.sendRedirect("../SuperDash/");
             }else {
                 return;
             }
