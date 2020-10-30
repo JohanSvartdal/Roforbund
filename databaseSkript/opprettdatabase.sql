@@ -14,6 +14,16 @@ create table if not EXISTS roforbund.postnummere
     CONSTRAINT Postnummer PRIMARY KEY (Postnummer)
 );
 
+create table if not EXISTS roforbund.klasser
+(
+    Klasse_id INT UNSIGNED auto_increment,
+    Min_alder INT(3) UNSIGNED,
+    Max_alder INT(3) UNSIGNED,
+
+
+    CONSTRAINT Klasse_id PRIMARY KEY (Klasse_id)
+)
+
 create table if not EXISTS roforbund.adresser
 (
     Adresse_id       varchar(100) not null,
@@ -49,7 +59,9 @@ create table if not EXISTS roforbund.bruker
     Ranking         int(10) UNSIGNED,
     Vekt            float(5) UNSIGNED,
     Hoyde           int(3) UNSIGNED,
+    Klasse_id       int(5) UNSIGNED,
     CONSTRAINT Bruker_id PRIMARY KEY (Bruker_id),
+    FOREIGN KEY (Klasse_id) REFERENCES klasser(Klasse_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id),
     FOREIGN KEY (Klubb_id) REFERENCES klubber(Klubb_id)
 );
@@ -89,6 +101,8 @@ create table if not EXISTS roforbund.resultater
     FOREIGN KEY (Test_id) REFERENCES tester(Test_id),
     FOREIGN KEY (Bruker_id) REFERENCES bruker(Bruker_id)
 );
+
+
 
 insert into roforbund.postnummere (Postnummer, Poststed)
 values (3015, 'Drammen');
