@@ -125,6 +125,28 @@ values (4754, 'Bykle');
 insert into roforbund.postnummere (Postnummer, Poststed)
 values (3057, 'Solbergelva');
 
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (4568, 'Hovden');
+
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (4677, 'Stavanger');
+
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (7932, 'Volda');
+
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (1101, 'Oslo');
+
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (2264, 'Lillesand');
+
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (6709, 'Kongsberg');
+
+insert into roforbund.postnummere (Postnummer, Poststed)
+values (5376, 'Sogndal');
+
+
 insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
 values ('3015cappelensgate61', 'Cappelens Gate', 61, 3015);
 
@@ -149,12 +171,60 @@ values ('4624haugenstuegata22', 'Haugenstuegata', 22, 4624);
 insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
 values ('3057hallingstadveien13', 'Hallingstadveien', 13, 3057);
 
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('4568hovdenveien', 'Hovdenveien', 46, 4568);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('4677jareveien', 'Jareveien', 55, 4677);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('7932tregata', 'Tregata', 39, 7932);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('1101bolstadveien', 'Bolstadveien', 48, 1101);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('2264senterveien', 'Senterveien', 81, 2264);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('6709kongeveien', 'Kongeveien', 13, 6709);
+
+insert into roforbund.adresser (Adresse_id, Gatenavn, Husnummer, Postnummer)
+values ('5376fjellgata', 'Fjellgata', 24, 5376);
+
+
 insert into roforbund.klubber (Navn, Adresse_id, Tlf)
 values ('Drammen Roklubb', '3015bragernestorg4', 40640382);
 
 insert into roforbund.klubber (Navn, Adresse_id, Tlf)
 values ('Kristiansand Roklubb', '4624tollbodgata20', 93064217);
 
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Arendal roklubb', '3057hallingstadveien13', 99223991);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Hovden roklubb', '4568hovdenveien', 34675899);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Hovden roklubb', '4568hovdenveien', 34675899);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Stavanger roklubb', '4677jareveien', 40936082);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Volda roklubb', '7932tregata', 96852273);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Oslo roklubb', '1101bolstadveien', 45732289);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Lillesand roklubb', '2264senterveien', 84576233);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Kongsberg roklubb', '6709kongeveien', 91287654);
+
+insert into roforbund.klubber (Navn, Adresse_id, Tlf)
+values ('Sogndal roklubb', '5376fjellgata', 91283345);
 
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
@@ -163,18 +233,14 @@ values ('Johan', 'Svartdal', '2000-10-02', 46968676, 'Johan.svartdal30@gmail.com
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
 values ('Gordon', 'Ramsey', '1966-10-02', 93724120, 'gordon.ramsey@kitchen.com', 'root', '3015rosengransgate112', 1, 2, null, 90, 188);
 
-
-
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
 values ('Mari', 'Tveiten', '1999-10-17', 92678341, 'mari@hotmail.com', 'root', '4624kongensgate65', 2, 1, 3, 60.8, 174);
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
 values ('Hermann', 'Flesvig', '1992-03-18', 43762182, 'Hermann.flesvig@gmail.com', 'root', '4624haugenstuegata22', 2, 2, null, 80, 183);
 
-
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
 values ('Oscar', 'Riise', '2000-09-19', 99226981, 'riisep00@gmail.com', 'root', '3057hallingstadveien13', 1, 1, 2, 68, 179);
-
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
 values ('Superbruker', null, null, 98261732, 'superbruker@roing.no', 'root', null, null, 3, null, null, null);
@@ -213,8 +279,6 @@ values (1, 1, 1, 983, 2000, 10, 1);
 
 insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
 values (3, 1, 1, 202, 1800, 70, 3);
-
-
 
 insert into roforbund.resultater (Ovelse_id, Test_id, Bruker_id, Tid, Watt, KG, Repetisjoner)
 values (2, 3, 3, 100, 1900, 80, 2);
