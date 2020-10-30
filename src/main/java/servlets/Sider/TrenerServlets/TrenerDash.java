@@ -1,4 +1,4 @@
-package servlets.Sider.UtoverServlets;
+package servlets.Sider.TrenerServlets;
 
 import servlets.AbstractAppServlet;
 import tools.repository.DatabaseReader;
@@ -13,8 +13,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 
-@WebServlet(name= "UtoverDash", urlPatterns = "/UtoverDash/")
-public class UtoverDash extends AbstractAppServlet {
+@WebServlet(name= "TrenerDash", urlPatterns = "/TrenerDash/")
+public class TrenerDash extends AbstractAppServlet {
 
     int UID = 1;
 
@@ -53,7 +53,7 @@ public class UtoverDash extends AbstractAppServlet {
         String name = DatabaseReader.getString("roforbund.bruker","Bruker_id", UID, "Fornavn");
 
         request.setAttribute("WelcomeMessage", "Velkommen, " + name + "!");
-        RequestDispatcher rq = request.getRequestDispatcher("../UtoverDash/index.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("../TrenerDash/index.jsp");
         rq.forward(request, response);
     }
 
