@@ -135,6 +135,48 @@ public class DatabaseReader {
         return toReturn;
     }
 
+    public static Date getDate(String database, String searchKey, int searchInt, String whatData) {
+        return getDate(database, searchKey, null, String.valueOf(searchInt), whatData);
+    }
+
+    public static Date getDate(String database, String searchKey, String searchString, String whatData) {
+        return getDate(database, searchKey, searchString, null, whatData);
+    }
+
+    public static Date getDate(String database, String searchKey, String searchString, String searchInter, String whatData) {
+        int searchInt = 0;
+        if (searchInter != null) {
+            searchInt = Integer.parseInt(searchInter);
+        }
+
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        Date toReturn = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
+            prepareStatement = db.prepareStatement(query);
+            if (searchInter == null) {
+                prepareStatement.setString(1, searchString);
+            }else {
+                prepareStatement.setInt(1, searchInt);
+            }
+
+            rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                toReturn = rs.getDate(whatData);
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return toReturn;
+    }
+
     public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey, String searchString, String returnColumn) {
         return getListOfIds(databaseNavn, searchKey, 0, searchString, returnColumn);
     }
