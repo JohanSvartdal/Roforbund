@@ -53,6 +53,11 @@ body {
 
 .container {
     margin-top: 40px;
+    margin-left: 10px;
+}
+
+.col-sm {
+    font-size: 25px;
 }
 
 .sideButton {
