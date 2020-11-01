@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Superuser homepage</title>
+    <title>Administrer klubber</title>
     <meta charset="UTF-8">
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,26 +23,26 @@
     </div>
     <div class="centerObjects">
         <img src = "../../../../images/ikoner/hus.png">
-        <h1>Administrer utøvere</h1>
+        <h1>Administrer <%=request.getAttribute("rolestring")%></h1>
     </div>
 </div>
 
-<a href = "NyKlubb">
+<a href = "NyBruker?role=<%=request.getParameter("role")%>&klubbID=<%=request.getParameter("klubbID")%>">
     <div class = "sideButton" id = "addKlubb">
         <img src = "../../../../images/ikoner/add_button.png">
-        <b>Legg til</b> ny klubb
+        <b>Legg til</b> ny <%=request.getAttribute("rolestring")%>
     </div>
 </a>
 
 <div class = "sideButton" id = "removeKlubb">
-    <b>Fjern</b> eksisterende klubb
+    <b>Fjern</b> eksisterende <%=request.getAttribute("rolestring")%>
     <img src = "../../../../images/ikoner/remove_button.png">
 </div>
 
 <div class = "container">
     <center>
         <div class = "searchBar">
-            <label for="sokefelt">Søk etter utøver:</label>
+            <label for="sokefelt">Søk etter <%=request.getAttribute("rolestring")%>:</label>
             <input type="text" placeholder="Søk" id = "sokefelt"/>
         </div>
     </center>

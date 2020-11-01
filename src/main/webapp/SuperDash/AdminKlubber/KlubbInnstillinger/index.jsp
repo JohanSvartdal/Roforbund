@@ -35,12 +35,12 @@
                 Administrer klubb informasjon
             </div>
         </a>
-        <a href = "">
+        <a href = "AdminBrukere?klubbID=<%=request.getParameter("klubbID")%>&role=2">
             <div class="resultButton" id = "adminTrenere">
                 Administrer trenere
             </div>
         </a>
-        <a href = "AdminUtovere?klubbID=<%=request.getParameter("klubbID")%>">
+        <a href = "AdminBrukere?klubbID=<%=request.getParameter("klubbID")%>&role=1">
             <div class="resultButton" id = "adminUtovere">
                 Administrer utøvere
             </div>

@@ -17,8 +17,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-@WebServlet(name= "AdminKlubbUtovere", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/AdminUtovere/"})
-public class AdminKlubbUtovere extends AbstractAppServlet {
+@WebServlet(name= "AdminKlubbBrukere", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/AdminBrukere/"})
+public class AdminKlubbBrukere extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -31,6 +31,15 @@ public class AdminKlubbUtovere extends AbstractAppServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String wantedUserRoleString = request.getParameter("role");
+        int wantedUserRole = Integer.parseInt(wantedUserRoleString);
+
+        if (wantedUserRole == StaticValues.UTOVER) {
+            request.setAttribute("rolestring", "utøver");
+        }else if (wantedUserRole == StaticValues.TRENER) {
+            request.setAttribute("rolestring", "trener");
+        }
+
         System.out.println("DO get");
         String klubbIDString = request.getParameter("klubbID");
         int klubbID = 0;
@@ -47,7 +56,7 @@ public class AdminKlubbUtovere extends AbstractAppServlet {
             System.out.println("Trying: ");
             while (resultSet.next()) {
                 System.out.println("While: ");
-                if (resultSet.getInt("Rolle") == StaticValues.UTOVER) {
+                if (resultSet.getInt("Rolle") == wantedUserRole) {
                     Utover utover = new Utover();
                     utover.setFornavn(resultSet.getString("Fornavn"));
                     utover.setEtternavn(resultSet.getString("Etternavn"));
@@ -63,7 +72,7 @@ public class AdminKlubbUtovere extends AbstractAppServlet {
         }
 
         request.setAttribute("utoverListe", utoverList);
-        RequestDispatcher rq = request.getRequestDispatcher("../AdminUtovere/index.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("../AdminBrukere/index.jsp");
         rq.forward(request, response);
     }
 }
