@@ -24,36 +24,43 @@
     </div>
 </div>
 
-<div class = "container">
-    <div class = "row">
-        <center><hr/></center>
-        <div class = "col-sm-2"><b>Dato:</b></div>
-        <div class = "col-sm-3"><b>Antall øvelser:</b></div>
-        <div class = "col-sm-3"><b>Antall deltakere:</b></div>
-        <div class = "col-sm-2"><b>Gruppe:</b></div>
+<div class="container">
+    <div class ="row">
+        <div class="col-sm"><b>Tidligere tester:</b></div>
     </div>
 </div>
 
+<div class = "container">
+    <div class = "row">
+        <div class = "col-sm-2"><b>Dato:</b></div><center><hr/></center>
+        <div class = "col-sm-3"><b>Antall øvelser:</b></div><center><hr/></center>
+        <div class = "col-sm-3"><b>Antall deltakere:</b></div><center><hr/></center>
+        <div class = "col-sm-2"><b>Gruppe:</b></div><center><hr/></center>
+    </div>
+</div>
+
+<div class="container">
     <div id = "venteBox">
         <div class = "container">
             <h2><b>Venter på godkjenning</b></h2>
             <center><hr/></center>
-            <div class ="row">
-            <div class ="col-sm"></div>
-            </div>
-            <div class="row">
-            <div class ="col-sm"></div>
-            </div>
-            <div class ="row">
-            <div class ="col-sm"></div>
-            </div>
-            <div class = "row">
-            <div class ="col-sm"></div>
-            </div>
-             <div class = "row">
-            <div class ="col-sm"></div>
-            </div>
-        </div>
+                         <div class ="row">
+                         <div class ="col-sm"></div>
+                         </div>
+                         <div class="row">
+                            <div class ="col-sm"></div>
+                        </div>
+                        <div class ="row">
+                            <div class ="col-sm"></div>
+                        </div>
+                        <div class = "row">
+                            <div class ="col-sm"></div>
+                         </div>
+                         <div class = "row">
+                            <div class ="col-sm"></div>
+                         </div>
+                </div>
+          </div>
     </div>
 </div>
 </body>

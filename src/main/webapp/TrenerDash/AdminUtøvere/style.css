@@ -7,7 +7,7 @@ body {
 .titleBar {
     width: 100%;
     height: 50px;
-    background-color: #F25454;
+    background-color: #FCE76E;
     color: black;
 }
 
@@ -49,15 +49,11 @@ body {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+
 }
 
 .container {
     margin-top: 40px;
-    margin-left: 10px;
-}
-
-.col-sm {
-    font-size: 25px;
 }
 
 .sideButton {
@@ -70,16 +66,78 @@ body {
     height: 100%;
 }
 
-#venteBox {
-    background-color: #F5CFD3;
-    width: 400px;
-    height: 500px;
-    margin-left: 1090px;
-    box-shadow: 0px 2px 5px lightgray;
-    text-align: center;
-    border-radius: 0px;
+#addUtøver {
+    left: 10px;
 }
 
-h2 {
-   font-size: 20px;
+#removeUtøver{
+    right: 10px;
+}
+
+.searchBar {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.row {
+    height: 55px;
+}
+
+.rowFirst {
+    color: #6E8BD6;
+}
+
+#sokefelt {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+footer {
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+    background-color: #FFF9D9;
+    color: black;
+}
+
+.footerButton {
+    width: 200px;
+    height: 100%;
+    background-color: #FCE76E;
+    text-align: center;
+}
+
+.footerButton h2 {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+.footerButton img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+#footerLeft img {
+    left: 2px;
+}
+
+#footerRight img {
+    right: 2px;
+}
+
+#footerLeft {
+    float: left;
+}
+
+#footerRight {
+    float: right;
 }

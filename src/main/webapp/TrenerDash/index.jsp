@@ -11,12 +11,19 @@
     <link rel="stylesheet" href="../TrenerDash/style.css">
 </head>
 <body>
+<div class =  "titleBar">
+    <div class = "bellButton">
+        <a href = "../">
+            <img src = "../images/ikoner/bell.png">
+        </a>
+    </div>
+</div>
 <div class = "container">
     <% //TODO her må det legges inn sånn at den loader riktig navn, selvom man kommer tilbake til denne siden fra en annen side. (IKKE BARE CHECKLOGIN) %>
     <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
     <div class = "row">
         <div class = "col-sm" >
-            <a href = "../TrenerDash/">
+            <a href = "../TrenerDash/AdminUtøvere">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "administreutøvere"> <img src = "../TrenerDash/Ikoner/roer.png"></div>
                     Administrere utøvere
