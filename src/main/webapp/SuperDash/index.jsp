@@ -24,7 +24,7 @@
                 <div class = "col-sm" >
                 <a href = "../SuperDash/AdminKlubber">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "adminklubber"> <img src = "../SuperDash/Ikoner/hus.png"></div>
+                        <div class = "knappbilde" id = "adminklubber"> <img src = "../images/ikoner/hus.png"></div>
                         Administrere klubber
                     </div>
                 </a>
@@ -32,7 +32,7 @@
             <div class = "col-sm" >
                 <a href = "../SuperDash/Resultater">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "resultater"> <img src = "../SuperDash/Ikoner/blokk.png"></div>
+                        <div class = "knappbilde" id = "resultater"> <img src = "../images/ikoner/blokk.png"></div>
                         Resultater
                     </div>
                 </a>
@@ -40,7 +40,7 @@
             <div class = "col-sm" >
                 <a href = "../SuperDash/MinProfil">
                     <div class = "knapp">
-                        <div class = "knappbilde" id = "minprofil"> <img src = "../SuperDash/Ikoner/person.png"></div>
+                        <div class = "knappbilde" id = "minprofil"> <img src = "../images/ikoner/person.png"></div>
                         Min profil
                     </div>
                 </a>
