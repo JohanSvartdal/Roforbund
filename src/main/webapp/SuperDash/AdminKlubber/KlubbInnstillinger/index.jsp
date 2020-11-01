@@ -26,22 +26,22 @@
 </div>
 
 <div class="container">
-    <h1>Arendal roklubb (placeholder)</h1>
+    <h1><%=request.getAttribute("KlubbNavn")%></h1>
     <center><hr/></center>
 
     <div class = "centerObjects">
         <a href = "">
-            <div class="resultButton" id = "klubbInfo">
+            <div class="bigButton" id = "klubbInfo">
                 Administrer klubb informasjon
             </div>
         </a>
         <a href = "AdminBrukere?klubbID=<%=request.getParameter("klubbID")%>&role=2">
-            <div class="resultButton" id = "adminTrenere">
+            <div class="bigButton" id = "adminTrenere">
                 Administrer trenere
             </div>
         </a>
         <a href = "AdminBrukere?klubbID=<%=request.getParameter("klubbID")%>&role=1">
-            <div class="resultButton" id = "adminUtovere">
+            <div class="bigButton" id = "adminUtovere">
                 Administrer utøvere
             </div>
         </a>

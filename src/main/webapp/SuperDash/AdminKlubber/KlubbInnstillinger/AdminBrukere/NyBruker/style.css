@@ -1,29 +1,15 @@
-body {
-    background-color: #F7FAFF !important;
-    background-image: none !important;
-    font-size: 18px;
-}
-
 .container {
     margin-top: 40px;
     text-align: center;
 }
 
-a {
-    color: black;
-    text-decoration: none;
+form {
+    display: table;
+    width: 100%;
 }
 
-h1 {
-    margin-top: 110px;
-    color: #26396A;
-    font-weight: 200;
-    font-size: 26px;
-    font-family: 'Helvetica', serif;
-}
-
-h1 b {
-    font-weight: 500;
+.footerButton {
+    height: 50px;
 }
 
 .row {
@@ -70,4 +56,9 @@ hr {
 .errorMessage {
     color: red;
     text-align: center;
+}
+
+#deleteButton {
+    background-color: #F25454;
+    margin-bottom: 20px;
 }

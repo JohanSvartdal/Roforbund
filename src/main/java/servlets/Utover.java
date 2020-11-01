@@ -8,6 +8,7 @@ public class Utover {
     private int tlf;
     private int klasseID;
     private String klasseNavn;
+    private int brukerID;
 
     public String getFornavn() {
         return fornavn;
@@ -63,5 +64,13 @@ public class Utover {
 
     public void setKlasseNavn(String klasseNavn) {
         this.klasseNavn = klasseNavn;
+    }
+
+    public int getBrukerID() {
+        return brukerID;
+    }
+
+    public void setBrukerID(int brukerID) {
+        this.brukerID = brukerID;
     }
 }

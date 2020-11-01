@@ -26,7 +26,7 @@
 </div>
 <form action="../NyBruker/" method="post">
     <div class="container">
-        <h1>For å opprette en ny <%=request.getAttribute("rolestring")%> må du først legge inn <b>grunnleggende informasjon</b> om <%=request.getAttribute("rolestring")%>en</h1>
+        <h1>Fyll inn <b>informasjonen</b> om <%=request.getAttribute("rolestring")%>en her</h1>
         <center><hr/></center>
 
         <div class="fieldContainers">
@@ -35,7 +35,7 @@
                     <label for = "fornavn">Fornavn:</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "fornavn" id = "fornavn" class="textField" placeholder="Ola"/>
+                    <input type = "text" name = "fornavn" id = "fornavn" class="textField" placeholder="Ola" value="<%=request.getAttribute("Fornavn")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -43,7 +43,7 @@
                     <label for = "etternavn">Etternavn:</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "etternavn" id = "etternavn" class="textField" placeholder="Nordmann"/>
+                    <input type = "text" name = "etternavn" id = "etternavn" class="textField" placeholder="Nordmann" value="<%=request.getAttribute("Etternavn")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -51,7 +51,7 @@
                     <label for = "fodselsdato">Fødselsdato (dd.mm.åååå):</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "fodselsdato" id = "fodselsdato" class="textField" placeholder="dd.mm.åååå"/>
+                    <input type = "text" name = "fodselsdato" id = "fodselsdato" class="textField" placeholder="dd.mm.åååå" value="<%=request.getAttribute("Fodseldato")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -59,7 +59,7 @@
                     <label for = "tlf">Telefon</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "tlf" id = "tlf" class="textField" placeholder="40640382"/>
+                    <input type = "text" name = "tlf" id = "tlf" class="textField" placeholder="40640382" value="<%=request.getAttribute("Tlf")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -67,7 +67,7 @@
                     <label for = "email">E-post</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "email" id = "email" class="textField" placeholder="ola.nordmann@gmail.com"/>
+                    <input type = "text" name = "email" id = "email" class="textField" placeholder="ola.nordmann@gmail.com" value="<%=request.getAttribute("Epost")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -75,7 +75,7 @@
                     <label for = "gatenavn">Gatenavn</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "gatenavn" id = "gatenavn" class="textField" placeholder="Abborveien"/>
+                    <input type = "text" name = "gatenavn" id = "gatenavn" class="textField" placeholder="Abborveien" value="<%=request.getAttribute("Gatenavn")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -83,7 +83,7 @@
                     <label for = "husnummer">Husnummer:</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "husnummer" id = "husnummer" class="textField smallText" placeholder="29"/>
+                    <input type = "text" name = "husnummer" id = "husnummer" class="textField smallText" placeholder="29" value="<%=request.getAttribute("Husnummer")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -91,7 +91,7 @@
                     <label for = "postnummer">Postnummer:</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "postnummer" id = "postnummer" class="textField smallText" placeholder="3298"/>
+                    <input type = "text" name = "postnummer" id = "postnummer" class="textField smallText" placeholder="3298" value="<%=request.getAttribute("Postnummer")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -99,7 +99,7 @@
                     <label for = "poststed">Poststed:</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "poststed" id = "poststed" class="textField" placeholder="Stenseth"/>
+                    <input type = "text" name = "poststed" id = "poststed" class="textField" placeholder="Stenseth" value="<%=request.getAttribute("Poststed")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -107,7 +107,7 @@
                     <label for = "hoyde">Høyde (cm):</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "hoyde" id = "hoyde" class="textField smallText" placeholder="183"/>
+                    <input type = "text" name = "hoyde" id = "hoyde" class="textField smallText" placeholder="183" value="<%=request.getAttribute("Hoyde")%>"/>
                 </div>
             </div>
             <div class = "row">
@@ -115,11 +115,18 @@
                     <label for = "vekt">Vekt:</label>
                 </div>
                 <div class = "col-sm-8">
-                    <input type = "text" name = "vekt" id = "vekt" class="textField smallText" placeholder="83"/>
+                    <input type = "text" name = "vekt" id = "vekt" class="textField smallText" placeholder="83" value="<%=request.getAttribute("Vekt")%>"/>
                 </div>
             </div>
+            <br/>
+            <center>
+                <div class = "bigButton" id ="deleteButton">
+                    Slett brukeren
+                </div>
+            </center>
             <input type="text" name="role" value="<%=request.getParameter("role")%>" class="hidden">
             <input type="text" name="klubbID" value="<%=request.getParameter("klubbID")%>" class="hidden">
+            <input type="text" name="brukerID" value="<%=request.getParameter("brukerID")%>" class="hidden">
             <%
                 if (request.getAttribute("errormessage") != null) {
             %>

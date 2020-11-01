@@ -38,7 +38,7 @@ public class LeggTilTrenere extends AbstractAppServlet {
             current.setFornavn(fornavn);
             current.setEtternavn(etternavn);
 
-            Integer adresseID = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Adresse_id");
+            String adresseID = DatabaseReader.getString("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Adresse_id");
             String gatenavn = DatabaseReader.getString("roforbund.adresser", "Adresse_id", adresseID, "Gatenavn");
             Integer husnummer = DatabaseReader.getInt("roforbund.adresser", "Adresse_id", adresseID, "Husnummer");
             Integer postnummer = DatabaseReader.getInt("roforbund.adresser", "Adresse_id", adresseID, "Postnummer");

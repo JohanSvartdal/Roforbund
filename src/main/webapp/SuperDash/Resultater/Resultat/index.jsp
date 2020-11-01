@@ -1,7 +1,5 @@
-<%@ page import="servlets.Test" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="servlets.OvelsesResultat" %>
-<%@ page import="servlets.StaticValues" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +61,7 @@
         <% for (int b = 0; b < ovelsesResultatList.get(i).getResultater().size(); b++) {%>
 
 
-        <div class = "row">
+        <div class = "row listRow">
             <div class = "col-sm" ><div class = "rowFirst"><%= ovelsesResultatList.get(i).getResultater().get(b).getBrukerNavn()%></div></div>
 
             <% if (ovelsesResultatList.get(i).getResultater().get(0).getTid() != 0) {%>
@@ -98,13 +96,13 @@
     %>
     <center>
         <a href = "BekreftGodkjenning?testID=<%=request.getAttribute("TestID")%>&godkjenne=ja">
-            <div class="resultButton" id = "godkjennKnapp">
+            <div class="bigButton" id = "godkjennKnapp">
                 Godkjenn
             </div>
         </a>
         <br/>
         <a href = "AvvisGodkjenning?testID=<%=request.getAttribute("TestID")%>">
-            <div class="resultButton" id = "avvisKnapp">
+            <div class="bigButton" id = "avvisKnapp">
                 Ikke godkjenn
             </div>
         </a>
