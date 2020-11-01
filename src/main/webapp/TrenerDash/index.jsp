@@ -32,7 +32,7 @@
             </a>
         </div>
         <div class = "col-sm" >
-            <a href = "../TrenerDash/Tester">
+            <a href = "../TrenerDash/Resultater">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "resultater"> <img src = "../TrenerDash/Ikoner/blokk.png"></div>
                     Resultater
@@ -40,7 +40,7 @@
             </a>
         </div>
         <div class = "col-sm" >
-            <a href = "linkTilSiden">
+            <a href = "../TrenerDash/MinProfil">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "minprofil"> <img src = "../TrenerDash/Ikoner/person.png"></div>
                     Min profil
