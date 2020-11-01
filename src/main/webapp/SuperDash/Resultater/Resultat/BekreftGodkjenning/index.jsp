@@ -37,12 +37,12 @@
         <br/>
         <div class="buttonHolder">
             <a href = "../../">
-                <div class="resultButton" id = "avvisKnapp">
+                <div class="bigButton" id = "avvisKnapp">
                     Gå tilbake til alle resultater
                 </div>
             </a>
             <a href = "../../../Resultater?mode=1">
-                <div class="resultButton" id = "godkjennKnapp">
+                <div class="bigButton" id = "godkjennKnapp">
                     Godkjenn flere resultater
                 </div>
             </a>

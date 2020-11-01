@@ -57,8 +57,8 @@
         ArrayList<Utover> utoverListe = (ArrayList<Utover>) request.getAttribute("utoverListe");
         for(int i = 0; i < utoverListe.size(); i++) {
     %>
-    <div class = "row">
-        <div class = "col-sm-3" ><div class = "rowFirst"><a href = ""><%=utoverListe.get(i).getFornavn() + " " + utoverListe.get(i).getEtternavn()%></a></div></div>
+    <div class = "row listRow">
+        <div class = "col-sm-3" ><div class = "rowFirst"><a href = "NyBruker?role=<%=request.getParameter("role")%>&klubbID=<%=request.getParameter("klubbID")%>&brukerID=<%=utoverListe.get(i).getBrukerID()%>"><%=utoverListe.get(i).getFornavn() + " " + utoverListe.get(i).getEtternavn()%></a></div></div>
         <div class = "col-sm-4" ><%=utoverListe.get(i).getEpost()%></div>
         <div class = "col-sm-2" ><%=utoverListe.get(i).getTlf()%></div>
         <div class = "col-sm-3" ><%=utoverListe.get(i).getKlasseNavn()%></div>

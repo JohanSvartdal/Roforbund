@@ -3,10 +3,7 @@ package servlets.Sider.SuperServlets;
 import servlets.AbstractAppServlet;
 import servlets.Klubb;
 import servlets.StaticValues;
-import tools.repository.DatabaseInfo;
-import tools.repository.DatabaseReader;
-import tools.repository.DatabaseValue;
-import tools.repository.DatabaseWriter;
+import tools.repository.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -16,6 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 @WebServlet(name= "NyBruker", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/AdminBrukere/NyBruker/"})
@@ -46,11 +45,84 @@ public class NyBruker extends AbstractAppServlet {
             request.setAttribute("rolestring", "trener");
         }
 
-        String klubbIDString = request.getParameter("klubbID");
-        int klubbID = 0;
-        if (klubbIDString != null) {
-            klubbID = Integer.parseInt(klubbIDString);
+        String brukerIDString = request.getParameter("brukerID");
+        int brukerID = 0;
+        if (brukerIDString != null) {
+            brukerID = Integer.parseInt(brukerIDString);
         }
+
+        System.out.println("Her er brukerid:" + brukerID + " " + brukerIDString);
+
+        ResultSet brukerInfo = DatabaseReader.getResultSet("roforbund.bruker", "Bruker_id", brukerID);
+
+        try {
+            brukerInfo.next();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        for (DatabaseColumn column:DatabaseInfo.BRUKER_INFO) {
+            System.out.println("Her er brukerid:" + brukerID + " " + brukerIDString);
+            try {
+                if (column.getColumnType() == DatabaseColumn.TYPE_STRING) {
+                    request.setAttribute(column.getColumnName(), brukerInfo.getString(column.getColumnName()));
+                }else if (column.getColumnType() == DatabaseColumn.TYPE_INT) {
+                    request.setAttribute(column.getColumnName(), brukerInfo.getInt(column.getColumnName()));
+                }else if (column.getColumnType() == DatabaseColumn.TYPE_FLOAT) {
+                    request.setAttribute(column.getColumnName(), brukerInfo.getFloat(column.getColumnName()));
+                }else if (column.getColumnType() == DatabaseColumn.TYPE_DATE) {
+                    Date date = brukerInfo.getDate(column.getColumnName());
+                    String dateString = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getYear();
+                    request.setAttribute(column.getColumnName(), dateString);
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+                request.setAttribute(column.getColumnName(), "");
+            }
+        }
+
+        ResultSet adresseResult = DatabaseReader.getResultSet("roforbund.adresser", "Adresse_id", (String) request.getAttribute("Adresse_id"));
+        try {
+            adresseResult.next();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+
+        String gateNavn = "";
+        try {
+            gateNavn = adresseResult.getString("Gatenavn");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        request.setAttribute("Gatenavn", gateNavn);
+
+        int husnummer = 0;
+        try {
+            husnummer = adresseResult.getInt("Husnummer");
+            request.setAttribute("Husnummer", husnummer);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            request.setAttribute("Husnummer", "");
+        }
+
+        int postnummer = 0;
+        try {
+            postnummer = adresseResult.getInt("Postnummer");
+            request.setAttribute("Postnummer", postnummer);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            request.setAttribute("Postnummer", "");
+        }
+
+        String postSted = DatabaseReader.getString("roforbund.postnummere", "Postnummer", postnummer, "Poststed");
+        if (postSted == null) {
+            postSted = "";
+        }
+        request.setAttribute("Poststed", postSted);
+
+
+        System.out.println("Done with for loop");
 
         RequestDispatcher rq = request.getRequestDispatcher("../NyBruker/index.jsp");
         rq.forward(request, response);
@@ -76,20 +148,42 @@ public class NyBruker extends AbstractAppServlet {
             klubbID = Integer.parseInt(klubbIDString);
         }
 
+        String brukerIDString = request.getParameter("brukerID");
+        int brukerID = 0;
+        if (brukerIDString != null) {
+            try {
+                brukerID = Integer.parseInt(brukerIDString);
+            }catch (NumberFormatException e) {
+                e.printStackTrace();
+            }
+
+        }
+
 
         String errorMessage = "";
 
         String fornavn = request.getParameter("fornavn");
+        request.setAttribute("Fornavn", fornavn);
         String etternavn = request.getParameter("etternavn");
+        request.setAttribute("Etternavn", etternavn);
         String fodselsdato = request.getParameter("fodselsdato");
+        request.setAttribute("Fodseldato", fodselsdato);
         String tlf = request.getParameter("tlf");
+        request.setAttribute("Tlf", tlf);
         String email = request.getParameter("email");
+        request.setAttribute("Epost", email);
         String gatenavn = request.getParameter("gatenavn");
+        request.setAttribute("Gatenavn", gatenavn);
         String husnummer = request.getParameter("husnummer");
+        request.setAttribute("Husnummer", husnummer);
         String postnummer = request.getParameter("postnummer");
+        request.setAttribute("Postnummer", postnummer);
         String poststed = request.getParameter("poststed");
+        request.setAttribute("Poststed", poststed);
         String hoyde = request.getParameter("hoyde");
+        request.setAttribute("Hoyde", hoyde);
         String vekt = request.getParameter("vekt");
+        request.setAttribute("Vekt", vekt);
 
         String[] fieldsToCheck = {fornavn,etternavn,fodselsdato,tlf,email,gatenavn,husnummer,postnummer,poststed,hoyde,vekt};
 
@@ -164,9 +258,19 @@ public class NyBruker extends AbstractAppServlet {
             Date date = new Date(javaDate.getTime());
             DatabaseValue fodselsdatoValue = new DatabaseValue(date);
 
-            DatabaseValue[] brukerValues = {fornavnValue, etternavnValue, fodselsdatoValue, tlfValue, epostValue, passwordValue, adresseIDValue, klubbIDValue, rolleValue, rankingValue, vektValue, hoydeValue};
-
-            DatabaseWriter.addRowToTable("bruker", DatabaseInfo.BRUKER_KOLONNER, brukerValues);
+            if (brukerID != 0) {
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Fornavn", fornavnValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Etternavn", etternavnValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Fodseldato", fodselsdatoValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Tlf", tlfValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Epost", epostValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Adresse_id", adresseIDValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Vekt", vektValue);
+                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Hoyde", hoydeValue);
+            }else {
+                DatabaseValue[] brukerValues = {fornavnValue, etternavnValue, fodselsdatoValue, tlfValue, epostValue, passwordValue, adresseIDValue, klubbIDValue, rolleValue, rankingValue, vektValue, hoydeValue};
+                DatabaseWriter.addRowToTable("bruker", DatabaseInfo.BRUKER_KOLONNER, brukerValues);
+            }
             response.sendRedirect("../../../");
         }
     }

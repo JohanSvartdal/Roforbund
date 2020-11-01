@@ -36,11 +36,11 @@
             <br/>
             <div class="buttonHolder">
                 <a href = "../../../Resultater?mode=1">
-                    <div class="resultButton" id = "avvisKnapp">
+                    <div class="bigButton" id = "avvisKnapp">
                         Avbryt
                     </div>
                 </a>
-                <input type = "submit"  class="resultButton" id = "godkjennKnapp" value="Avvis"/>
+                <input type = "submit"  class="bigButton" id = "godkjennKnapp" value="Avvis"/>
             </div>
         </form>
     </center>

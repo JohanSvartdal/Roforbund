@@ -63,6 +63,7 @@ public class AdminKlubbBrukere extends AbstractAppServlet {
                     utover.setEpost(resultSet.getString("Epost"));
                     utover.setTlf(resultSet.getInt("Tlf"));
                     utover.setKlasseNavn("Junior");
+                    utover.setBrukerID(resultSet.getInt("Bruker_id"));
                     utoverList.add(utover);
                 }
             }
