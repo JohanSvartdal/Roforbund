@@ -23,7 +23,7 @@
     <h1> <%= request.getAttribute("WelcomeMessage") %> </h1>
     <div class = "row">
         <div class = "col-sm" >
-            <a href = "../TrenerDash/">
+            <a href = "../TrenerDash/AdminUtøvere">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "administreutøvere"> <img src = "../TrenerDash/Ikoner/roer.png"></div>
                     Administrere utøvere
