@@ -40,6 +40,7 @@ create table if not EXISTS roforbund.klubber
     Navn            varchar(60),
     Adresse_id      varchar(100),
     Tlf             int(8) UNSIGNED,
+    Aktiv           boolean,
     CONSTRAINT Klubb_id PRIMARY KEY (Klubb_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id)
 );
@@ -60,6 +61,7 @@ create table if not EXISTS roforbund.bruker
     Vekt            float(5) UNSIGNED,
     Hoyde           int(3) UNSIGNED,
     Klasse_id       int(5) UNSIGNED,
+    Aktiv           boolean,
     CONSTRAINT Bruker_id PRIMARY KEY (Bruker_id),
     FOREIGN KEY (Klasse_id) REFERENCES klasser(Klasse_id),
     FOREIGN KEY (Adresse_id) REFERENCES adresser(Adresse_id),
