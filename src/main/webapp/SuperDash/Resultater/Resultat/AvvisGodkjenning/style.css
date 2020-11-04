@@ -1,0 +1,51 @@
+.titleBar {
+    background-color: #F25454;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.godkjent {
+    color: #92C88A;
+    text-underline: #92C88A;
+}
+
+.ikke {
+    color: #F25454 !important;
+}
+
+.buttonHolder {
+    display: inline-flex;
+}
+
+#godkjennKnapp {
+    background-color: #F25454;
+}
+
+#avvisKnapp {
+    background-color: #B1B6C4;
+}
+
+.commentBox {
+    width: 510px;
+    height: 300px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: gray;
+    padding: 10px;
+    line-height: unset;
+}
+
+.row {
+    height: 55px;
+}
+
+.rowFirst {
+    color: #6E8BD6;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}

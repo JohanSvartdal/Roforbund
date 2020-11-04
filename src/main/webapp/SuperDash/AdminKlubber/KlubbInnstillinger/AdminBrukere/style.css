@@ -1,0 +1,20 @@
+.container {
+    margin-top: 40px;
+}
+
+
+.titleBar {
+    background-color: #FBE771;
+}
+
+.sideButton img {
+    height: 100%;
+}
+
+#addKlubb {
+    left: 10px;
+}
+
+#removeKlubb {
+    right: 10px;
+}

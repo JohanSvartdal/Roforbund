@@ -27,13 +27,13 @@
 </div>
 
 <a href = "NyKlubb">
-    <div class = "sideButton" id = "addKlubb">
+    <div class = "sideButton leftSideButton">
         <img src = "../../images/ikoner/add_button.png">
         <b>Legg til</b> ny klubb
     </div>
 </a>
 
-<div class = "sideButton" id = "removeKlubb">
+<div class = "sideButton rightSideButton">
     <b>Fjern</b> eksisterende klubb
     <img src = "../../images/ikoner/remove_button.png">
 </div>
@@ -56,8 +56,8 @@
         ArrayList<Klubb> klubbListe = (ArrayList<Klubb>) request.getAttribute("klubbListe");
         for(int i = 0; i < klubbListe.size(); i++) {
     %>
-    <div class = "row">
-        <div class = "col-sm-3" ><div class = "rowFirst"><%=klubbListe.get(i).getNavn()%></div></div>
+    <div class = "row listRow">
+        <div class = "col-sm-3" ><div class = "rowFirst"><a href = "KlubbInnstillinger?klubbID=<%=klubbListe.get(i).getKlubbID()%>"><%=klubbListe.get(i).getNavn()%></a></div></div>
         <div class = "col-sm-4" ><%=klubbListe.get(i).getAdresse()%></div>
         <div class = "col-sm-2" ><%=klubbListe.get(i).getTlf()%></div>
         <div class = "col-sm-3" ><%=klubbListe.get(i).getAntallMedlemmer()%></div>

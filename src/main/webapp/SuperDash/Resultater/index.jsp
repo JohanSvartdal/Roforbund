@@ -25,6 +25,19 @@
         <h1>Resultater</h1>
     </div>
 </div>
+<%
+    int antallklare = (int) request.getAttribute("antallklare");
+    if (antallklare > 0) {
+%>
+<a href = "../Resultater?mode=1">
+    <div class="trengerGodkjenning">
+        Venter godkjenning (<%=antallklare%>)
+    </div>
+</a>
+<%
+    }
+%>
+
 <div class="container">
     <div class = "row">
         <div class = "col-sm-3"><b>Dato</b></div>
@@ -38,7 +51,7 @@
         for(int i = 0; i < testListe.size(); i++) {
     %>
     <div class = "row">
-        <div class = "col-sm-3" ><div class = "rowFirst"><a href = "Resultat?TestID=<%= testListe.get(i).getTest_id()%>"> <%= testListe.get(i).getDato()%></a></div></div>
+        <div class = "col-sm-3" ><div class = "rowFirst"><a href = "Resultat?TestID=<%=testListe.get(i).getTest_id()%>"><%= testListe.get(i).getDato()%></a></div></div>
         <div class = "col-sm-2" ><%= testListe.get(i).getAntallOvelser()%></div>
         <div class = "col-sm-3" ><%= testListe.get(i).getKlubbNavn()%></div>
         <div class = "col-sm-4" ><%= testListe.get(i).getTrenerNavn()%></div>

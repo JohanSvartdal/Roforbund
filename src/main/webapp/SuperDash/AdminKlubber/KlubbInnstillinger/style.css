@@ -1,0 +1,57 @@
+.container {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.row {
+    width: 60%;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.textField {
+    height: 35px;
+    width: 100%;
+    border-radius: 0px;
+    border-color: #6E8BD6;
+    border-width: 1px;
+    border-style: solid;
+
+    text-align: left;
+}
+
+.smallText {
+    width: 40%;
+}
+
+hr {
+    width: 60%;
+    background-color: #6E8BD6;
+}
+
+.col-sm-4 {
+    text-align: left;
+}
+
+.col-sm-8 {
+    text-align: left;
+}
+
+form {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#klubbInfo {
+    background-color: #92C88A;
+}
+
+#adminTrenere {
+    background-color: #6E8BD6;
+}
+
+#adminUtovere {
+    background-color: #FBE771;
+}

@@ -25,11 +25,11 @@ public class DatabaseWriter {
         if (!postnummerExists) {
             System.out.println("Postnummer eksisterer ikke. Legger til " + postnummer);
             DatabaseValue[] postnummerTableVerdier = {new DatabaseValue(postnummer), new DatabaseValue(poststed)};
-            DatabaseWriter.addRowToTable("postnummere", "Postnummer, Poststed", postnummerTableVerdier);
+            DatabaseWriter.addRowToTable("postnummere", DatabaseInfo.POSTNUMMERE_KOLONNER, postnummerTableVerdier);
         }
 
         DatabaseValue[] adresseTableVerdier = {new DatabaseValue(compKey),new DatabaseValue(gatenavn), new DatabaseValue(husnummer), new DatabaseValue(postnummer)};
-        DatabaseWriter.addRowToTable("adresser", "Adresse_id, Gatenavn, Husnummer, Postnummer", adresseTableVerdier);
+        DatabaseWriter.addRowToTable("adresser", DatabaseInfo.ADRESSER_KOLONNER, adresseTableVerdier);
 
         return compKey;
     }
@@ -64,6 +64,8 @@ public class DatabaseWriter {
             for (int i = 0; i < columnValues.length; i++) {
                 if (columnValues[i].text != null) {
                     preparedStatement.setString(i+1, columnValues[i].text);
+                }else if (columnValues[i].date != null) {
+                    preparedStatement.setDate(i+1, columnValues[i].date);
                 }else {
                     preparedStatement.setInt(i+1, columnValues[i].number);
                 }
@@ -84,6 +86,14 @@ public class DatabaseWriter {
     }
 
     public static void changeCellValue(String tableName, String searchKey, String searchString, String columnToChange, DatabaseValue newValue) {
+        changeCellValue(tableName, searchKey, searchString, 0, columnToChange, newValue);
+    }
+
+    public static void changeCellValue(String tableName, String searchKey, int searchInt, String columnToChange, DatabaseValue newValue) {
+        changeCellValue(tableName, searchKey, null, searchInt, columnToChange, newValue);
+    }
+
+    public static void changeCellValue(String tableName, String searchKey, String searchString, int searchInt, String columnToChange, DatabaseValue newValue) {
         Connection db = null;
         PreparedStatement prepareStatement = null;
 
@@ -93,14 +103,23 @@ public class DatabaseWriter {
             PreparedStatement dbUse = db.prepareStatement("USE roforbund");
             dbUse.executeQuery();
 
-            String query = "UPDATE " + tableName + " SET " + columnToChange + "=?" + " WHERE " + searchKey + "=" + searchString;
+            String query = "UPDATE " + tableName + " SET " + columnToChange + "=?" + " WHERE " + searchKey + "=?";
 
             PreparedStatement preparedStatement = db.prepareStatement(query);
             if (newValue.text != null) {
                 preparedStatement.setString(1, newValue.text);
+            }else if (newValue.date != null) {
+                preparedStatement.setDate(1, newValue.date);
             }else {
                 preparedStatement.setInt(1, newValue.number);
             }
+
+            if (searchString != null) {
+                preparedStatement.setString(2, searchString);
+            }else {
+                preparedStatement.setInt(2, searchInt);
+            }
+
             preparedStatement.executeQuery();
         } catch (SQLException throwables) {
             System.out.println("Feil");

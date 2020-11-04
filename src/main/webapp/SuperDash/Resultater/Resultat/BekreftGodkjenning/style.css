@@ -1,0 +1,28 @@
+.titleBar {
+    background-color: #F25454;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.godkjent {
+    color: #92C88A;
+    text-underline: #92C88A;
+}
+
+.ikke {
+    color: #F25454 !important;
+}
+
+.buttonHolder {
+    display: inline-flex;
+}
+
+#godkjennKnapp {
+    background-color: #92C88A;
+}
+
+#avvisKnapp {
+    background-color: #B1B6C4;
+}

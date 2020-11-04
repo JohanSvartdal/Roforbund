@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Administrer klubber</title>
+    <title>Lag ny klubb</title>
     <meta charset="UTF-8">
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -80,7 +80,6 @@
         </div>
     </form>
 </div>
-
 <footer>
     <a href = "../">
         <div class = "footerButton" id ="footerLeft">

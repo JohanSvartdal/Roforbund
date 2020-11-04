@@ -1,12 +1,34 @@
-a {
-    text-decoration: none;
-
-}
-body {
-    background-image: url('images/background_main.jpg');
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    display: table;
+    font-size: 18px;
+    background-color: #F7FAFF !important;
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Helvetica';
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:hover {
+    text-underline: none;
+}
+
+h1 {
+    margin-top: 110px;
+    color: #26396A;
+    font-weight: 200;
+    font-size: 26px;
+    font-family: 'Helvetica', serif;
+}
+
+h1 b {
+    font-weight: 500;
 }
 
 #loginBox {
@@ -75,4 +97,153 @@ body {
     text-align: center;
 
     box-shadow: 0px 2px 4px #AAAAAA;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    display: table-row;
+    clear: both;
+    width: 100%;
+    height: 50px;
+    margin-top:-50px;
+    position: relative;
+    bottom: 0px;
+    background-color: #CFE6D0;
+    color: black;
+}
+
+.footerButton {
+    width: 200px;
+    height: 100%;
+    background-color: #92C88A;
+    text-align: center;
+}
+
+.footerButton h2 {
+    margin-top: 16px;
+    font-size: 18px;
+}
+
+.footerButton img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+#footerLeft img {
+    left: 2px;
+}
+
+#footerRight img {
+    right: 2px;
+}
+
+#footerLeft {
+    float: left;
+}
+
+#footerRight {
+    float: right;
+}
+
+.bigButton {
+    width: 250px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 20px;
+    color: black;
+    text-align: center;
+    transition-duration: 200ms;
+}
+
+.bigButton:hover {
+    transform: scale(1.1);
+}
+
+#sokefelt {
+    width: 250px;
+    height: 40px;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+.searchBar {
+    font-weight: 300;
+    margin-bottom: 30px;
+}
+
+.listRow {
+    height: 55px;
+}
+
+.rowFirst {
+    color: #6E8BD6;
+}
+
+.sideButton {
+    height: 60px;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.sideButton img {
+    height: 100%;
+}
+
+.leftSideButton {
+    left: 10px;
+}
+
+.rightSideButton {
+    right: 10px;
+}
+
+.titleBar {
+    width: 100%;
+    height: 50px;
+    background-color: #94C98D;
+    color: black;
+}
+
+.titleBar a {
+    color: black !important;
+    text-decoration: none;
+}
+
+.titleBar .backButton {
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    display: inline;
+}
+
+.titleBar h1 {
+    font-size: 20px;
+    margin-top: 11px;
+    font-weight: 300;
+}
+
+.titleBar h3 {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.titleBar * {
+    display: inline-flex;
+}
+
+.titleBar img {
+    margin-top: 10px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.centerObjects {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }

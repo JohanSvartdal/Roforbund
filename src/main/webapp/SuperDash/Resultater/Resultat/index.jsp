@@ -1,4 +1,3 @@
-<%@ page import="servlets.Test" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="servlets.OvelsesResultat" %>
 <!DOCTYPE html>
@@ -14,16 +13,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<%
+    String godkjentStatus = (String) request.getAttribute("GodkjentStatus");
+%>
 <div class =  "titleBar">
     <div class = "backButton">
         <a href = "../">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Hjem</h3>
+            <h3>Resultater</h3>
         </a>
     </div>
     <div class="centerObjects">
         <img src = "../../../images/ikoner/blokk.png">
-        <h1>Resultater</h1>
+        <h1> <%=request.getAttribute("Dato")%></h1>
     </div>
 </div>
 <div class="container">
@@ -32,7 +34,7 @@
         for(int i = 0; i < ovelsesResultatList.size(); i++) {
     %>
     <h2><%= ovelsesResultatList.get(i).getOvelsesNavn()%></h2>
-    <div class="ovelsesBox">
+    <div class="ovelsesBox <%=godkjentStatus%>">
         <div class = "row">
             <div class = "col-sm"><b>Navn</b></div>
 
@@ -59,7 +61,7 @@
         <% for (int b = 0; b < ovelsesResultatList.get(i).getResultater().size(); b++) {%>
 
 
-        <div class = "row">
+        <div class = "row listRow">
             <div class = "col-sm" ><div class = "rowFirst"><%= ovelsesResultatList.get(i).getResultater().get(b).getBrukerNavn()%></div></div>
 
             <% if (ovelsesResultatList.get(i).getResultater().get(0).getTid() != 0) {%>
@@ -83,8 +85,28 @@
         <%
         }
         %>
-
     </div>
+    <%
+        }
+    %>
+
+    <%
+        if (godkjentStatus.equals("GodkjenningKlar")) {
+
+    %>
+    <center>
+        <a href = "BekreftGodkjenning?testID=<%=request.getAttribute("TestID")%>&godkjenne=ja">
+            <div class="bigButton" id = "godkjennKnapp">
+                Godkjenn
+            </div>
+        </a>
+        <br/>
+        <a href = "AvvisGodkjenning?testID=<%=request.getAttribute("TestID")%>">
+            <div class="bigButton" id = "avvisKnapp">
+                Ikke godkjenn
+            </div>
+        </a>
+    </center>
     <%
         }
     %>

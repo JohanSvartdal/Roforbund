@@ -3,16 +3,6 @@ body {
     background-image: none !important;
 }
 
-#loginBox {
-    background-color: #F7FAFF ;
-    width: 1000px;
-    height: 300px;
-    margin-top: 350px;
-    text-align: center;
-    box-shadow: none !important;
-}
-
-
 .titleBar {
     width: 100%;
     height: 50px;
@@ -41,6 +31,15 @@ body {
 
 }
 
+#loginBox {
+    background-color: #F7FAFF ;
+    width: 1000px;
+    height: 300px;
+    margin-top: 350px;
+    text-align: center;
+    box-shadow: none !important;
+}
+
 #loginBox h1 {
     font-size: 30px;
     margin-top: 100px;
@@ -54,7 +53,6 @@ body {
 }
 
 .knapp {
-
     margin-left: auto;
     margin-right: auto;
 }
@@ -90,14 +88,14 @@ a {
     background-color: #6E8BD6;
 }
 
-
+#adminklubber {
+    background-color: #94C98D;
+}
 
 #resultater {
     background-color: #F25454;
 }
-#resultater {
-    background-color: #F25454;
-}
+
 
 footer {
     position: absolute;
@@ -122,4 +120,3 @@ h1 {
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
-}
