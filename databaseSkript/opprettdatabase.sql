@@ -114,10 +114,6 @@ create table if not EXISTS roforbund.klasser
     CONSTRAINT Resultat_id PRIMARY KEY (Klasse_id)
 );
 
-SELECT Fornavn, Etternavn, Klubb_id
-FROM bruker
-WHERE Rolle = 2;
-
 insert into roforbund.postnummere (Postnummer, Poststed)
 values (3015, 'Drammen');
 
