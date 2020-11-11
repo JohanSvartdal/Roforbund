@@ -66,6 +66,8 @@ public class DatabaseWriter {
                     preparedStatement.setString(i+1, columnValues[i].text);
                 }else if (columnValues[i].date != null) {
                     preparedStatement.setDate(i+1, columnValues[i].date);
+                }else if (columnValues[i].aBoolean != null) {
+                    preparedStatement.setBoolean(i+1, columnValues[i].aBoolean);
                 }else {
                     preparedStatement.setInt(i+1, columnValues[i].number);
                 }
@@ -110,6 +112,8 @@ public class DatabaseWriter {
                 preparedStatement.setString(1, newValue.text);
             }else if (newValue.date != null) {
                 preparedStatement.setDate(1, newValue.date);
+            }else if (newValue.aBoolean != null) {
+                preparedStatement.setBoolean(1, newValue.aBoolean);
             }else {
                 preparedStatement.setInt(1, newValue.number);
             }
@@ -120,6 +124,47 @@ public class DatabaseWriter {
                 preparedStatement.setInt(2, searchInt);
             }
 
+            preparedStatement.executeQuery();
+        } catch (SQLException throwables) {
+            System.out.println("Feil");
+            throwables.printStackTrace();
+        } finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+
+    public static void removeRow(String tableName, String searchKey, String searchString) {
+        removeRow(tableName, searchKey, searchString, -1);
+    }
+
+
+    public static void removeRow(String tableName, String searchKey, int searchInt) {
+        removeRow(tableName, searchKey, null, searchInt);
+
+    }
+
+    public static void removeRow(String tableName, String searchKey, String searchString, int searchInt) {
+        Connection db = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            PreparedStatement dbUse = db.prepareStatement("USE roforbund");
+            dbUse.executeQuery();
+
+            String query = "DELETE FROM `" + tableName + "` WHERE " + searchKey + "=?";
+
+            preparedStatement = db.prepareStatement(query);
+            if (searchString != null) {
+                preparedStatement.setString(1, searchString);
+            }else {
+                preparedStatement.setInt(1, searchInt);
+            }
+
+            System.out.println("PrepState:" + preparedStatement.toString());
             preparedStatement.executeQuery();
         } catch (SQLException throwables) {
             System.out.println("Feil");

@@ -1,0 +1,30 @@
+.titleBar {
+    background-color: #F25454;
+}
+
+.container {
+    margin-top: 40px;
+}
+
+.GodkjenningKlar {
+    background-color: #F5CFD3 !important;
+}
+
+#godkjennKnapp {
+    background-color: #92C88A;
+}
+
+#avvisKnapp {
+    background-color: #F25454;
+}
+
+.ovelsesBox {
+    background-color: white;
+    margin-bottom: 30px;
+
+    padding: 10px;
+
+    border-width: 1px;
+    border-bottom-color: #6E8BD6;
+    border-style: solid;
+}
