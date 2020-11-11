@@ -325,4 +325,47 @@ public class DatabaseReader {
 
         return rs;
     }
+
+    public static Boolean getBoolean(String databaseNavn, String searchKey, String searchString, String whatData) {
+        return getBoolean(databaseNavn, searchKey, -1, searchString, whatData);
+    }
+
+    public static Boolean getBoolean(String databaseNavn, String searchKey, int searchInt, String whatData) {
+        return getBoolean(databaseNavn, searchKey, searchInt, null, whatData);
+    }
+
+    public static Boolean getBoolean(String databaseNavn, String searchKey, int searchInt, String searchString, String whatData) {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        Boolean toReturn = null;
+        try {
+            db = DbTool.getINSTANCE().dbLoggIn();
+            ResultSet rs = null;
+            String query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
+            prepareStatement = db.prepareStatement(query);
+            if (searchString != null) {
+                prepareStatement.setString(1, searchString);
+            }else {
+                prepareStatement.setInt(1, searchInt);
+            }
+
+            rs = prepareStatement.executeQuery();
+            while (rs.next()) {
+                toReturn = rs.getBoolean(whatData);
+            }
+            rs.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        return toReturn;
+    }
 }
