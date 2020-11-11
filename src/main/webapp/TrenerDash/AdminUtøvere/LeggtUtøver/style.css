@@ -67,7 +67,7 @@ form {
     margin-right: auto;
 }
 
-#finnutBox {
+#leggtilBox {
     background-color: white;
     width: 800px;
     height: 350px;
@@ -80,4 +80,35 @@ form {
     text-align: center;
 
     border-radius: 0px;
+}
+
+#tilbake {
+    background-color: #B0B5C3;
+    height: 40px;
+    border-radius: 7px;
+    padding-top: 7px;
+}
+
+#leggtil {
+    background-color: #FBE771;
+    height: 40px;
+    border-radius: 7px;
+    padding-top: 7px;
+}
+
+   .knapp-center {
+    width: 100%;
+    text-align: center;
+}
+
+.knapp {
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }

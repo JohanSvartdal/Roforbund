@@ -111,3 +111,24 @@ h1 {
 h1 b {
     font-weight: 510;
 }
+
+h3 {
+    font-size: 20px;
+    font-family: 'Helvetica', serif;
+    margin-bottom: -50px;
+}
+
+#resultBox {
+    background-color: white;
+    width: 800px;
+    height: 360px;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 70px;
+    padding: 20px;
+    box-shadow: 0px 2px 5px #6E8BD6;
+    text-align: center;
+
+    border-radius: 0px;
+}

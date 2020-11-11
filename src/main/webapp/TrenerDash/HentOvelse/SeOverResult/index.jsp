@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../../style.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 <div class =  "titleBar">
     <div class="centerObjects">
@@ -23,6 +24,20 @@
 <div class="container">
     <h1><b>Se over resultatene før du sender inn. Rediger et felt ved å trykke på blyanten.</b></h1>
 </div>
+
+<div class = "container">
+    <h3> Resultater til <b>øvelse 1</b>- 3000m: </h3>
+</div>
+
+<div id ="resultBox">
+    <div class = "row">
+        <div class = "col-sm" > <b>Navn:</b> </div>
+        <div class = "col-sm" > <b>Tid:</b> </div>
+        <div class = "col-sm" > <b> Watt: </b> </div>
+        <div class = "col-sm" > <b>Notater:</b></div>
+    </div>
+</div>
+
 
 <footer>
     <a href ="../RegTestResult1">

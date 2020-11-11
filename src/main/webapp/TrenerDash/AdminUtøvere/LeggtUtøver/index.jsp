@@ -26,24 +26,32 @@
 </div>
 
 <div class="container">
-    <h1><b>Finn en utøver uten klubb</b></h1>
+    <h1><b>Ønsker du å legge følgende utøvere til i KRS Roklubb?</b></h1>
 </div>
 
-<div class = "container">
-    <center>
-        <div class = "searchBar">
-            <label for="sokefelt">Søk etter navn:</label>
-            <input type="text" placeholder="Søk" id = "sokefelt"/>
-        </div>
-    </center>
-</div>
-
-<div id ="finnutBox">
+<div id ="leggtilBox">
     <div class = "row">
         <div class = "col-sm" > <b>Navn:</b> </div>
         <div class = "col-sm" > <b>E-post:</b> </div>
         <div class = "col-sm" > <b> Mobil: </b> </div>
-        <div class = "col-sm" > <b>Legg til: </b></div>
 </div>
+
+    <div class = "row">
+        <div class = "col-sm" >
+            <a href = "../../../TrenerDash/AdminUtøvere/NyUtøver/">
+                <div class = "knapp" id = "tilbake">
+                    Tilbake
+                </div>
+            </a>
+        </div>
+        <div class = "col-sm" >
+            <a href = "../../../TrenerDash/AdminUtøvere/">
+                <div class = "knapp" id = "leggtil">
+                    Legg til utøver
+                </div>
+            </a>
+        </div>
+    </div>
+
 </div>
 </body>
