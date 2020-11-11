@@ -26,7 +26,7 @@
 </div>
 
 <div class="container">
-    <h1><b>Finn en utøver uten klubb</b></h1>
+    <h1><b>Finn en utøver du ønsker å fjerne:</b></h1>
 </div>
 
 <div class = "container">
@@ -38,12 +38,11 @@
     </center>
 </div>
 
-<div id ="finnutBox">
+<div id ="fjernutBox">
     <div class = "row">
         <div class = "col-sm" > <b>Navn:</b> </div>
         <div class = "col-sm" > <b>E-post:</b> </div>
         <div class = "col-sm" > <b> Mobil: </b> </div>
-        <div class = "col-sm" > <b>Legg til: </b></div>
 </div>
 </div>
 </body>

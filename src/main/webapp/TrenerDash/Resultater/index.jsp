@@ -32,11 +32,12 @@
 
 <div class = "container">
     <div class = "row">
-        <div class = "col-sm-2"><b>Dato:</b></div><center><hr/></center>
-        <div class = "col-sm-3"><b>Antall øvelser:</b></div><center><hr/></center>
-        <div class = "col-sm-3"><b>Antall deltakere:</b></div><center><hr/></center>
-        <div class = "col-sm-2"><b>Gruppe:</b></div><center><hr/></center>
+        <div class = "col-sm-2"><b>Dato:</b></div>
+        <div class = "col-sm-3"><b>Antall øvelser:</b></div>
+        <div class = "col-sm-3"><b>Antall deltakere:</b></div>
+        <div class = "col-sm-2"><b>Gruppe:</b></div>
     </div>
+    <hr>
 </div>
 
 <div class="container">

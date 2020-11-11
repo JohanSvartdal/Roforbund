@@ -31,10 +31,12 @@
     </div>
 </a>
 
+<a href = "FjernUtøver">
 <div class = "sideButton" id = "removeUtøver">
     <b>Fjern</b> eksisterende utøver
     <img src = "../../images/ikoner/remove_button.png">
 </div>
+</a>
 
 <div class = "container">
     <center>
