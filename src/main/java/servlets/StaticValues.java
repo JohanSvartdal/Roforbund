@@ -2,6 +2,7 @@ package servlets;
 
 public class StaticValues {
     public static final int RESULTAT_KLAR = 1;
+    public static final int RESULTAT_UTKAST = 4;
     public static final int RESULTAT_GODKJENT = 2;
     public static final int RESULTAT_AVVIST = 3;
 
