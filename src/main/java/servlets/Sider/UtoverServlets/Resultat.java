@@ -1,8 +1,7 @@
-package servlets.Sider.SuperServlets;
+package servlets.Sider.UtoverServlets;
 
 import servlets.AbstractAppServlet;
 import servlets.OvelsesResultat;
-import servlets.Resultat;
 import servlets.StaticValues;
 import tools.repository.DatabaseReader;
 
@@ -18,15 +17,17 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
-@WebServlet(name= "SuperResultat", urlPatterns = {"/SuperDash/Resultater/Resultat/"})
+@WebServlet(name= "Resultat", urlPatterns = {"/UtoverDash/Resultater/Resultat/"})
 
-public class SuperResultat extends AbstractAppServlet {
+public class Resultat extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
+
     }
 
     @Override
@@ -38,12 +39,12 @@ public class SuperResultat extends AbstractAppServlet {
         int godkjentStatus = DatabaseReader.getInt("roforbund.tester", "Test_id", testID, "Godkjent");
         String datoString = dato.toString();
 
-        ArrayList<Resultat> resultatList = new ArrayList<>();
+        ArrayList<servlets.Resultat> resultatList = new ArrayList<>();
 
         ResultSet resultaterITest = DatabaseReader.getResultSet("roforbund.resultater", "Test_id", testIDString);
         try {
             while (resultaterITest.next()) {
-                Resultat resultat = new Resultat();
+                servlets.Resultat resultat = new servlets.Resultat();
                 resultat.setResultatID(resultaterITest.getInt("Resultat_id"));
                 resultat.setTestID(testID);
 
@@ -71,20 +72,20 @@ public class SuperResultat extends AbstractAppServlet {
             throwables.printStackTrace();
         }
 
+
+
+
         ArrayList<OvelsesResultat> ovelsesResultatList = new ArrayList<>();
 
-        for (Resultat currentResultat: resultatList) {
+        for (servlets.Resultat currentResultat: resultatList) {
             System.out.println("Skal nå jobbe med resultat: " + currentResultat.getResultatID());
             boolean alreadyAdded = false;
             for (int i = 0; i < ovelsesResultatList.size(); i++) {
                 if (currentResultat.getOvelsesID() == ovelsesResultatList.get(i).getOvelsesID()) {
                     alreadyAdded = true;
                     ovelsesResultatList.get(i).addToResultater(currentResultat);
-                    System.out.println("Fant i ovelsesliste!!: " + currentResultat.getOvelsesID());
                     break;
-                }else {
-                    System.out.println("Finner ikke i ovelsesliste: " + currentResultat.getOvelsesID());
-                }
+                }else {}
             }
 
             if (!alreadyAdded) {
@@ -113,7 +114,7 @@ public class SuperResultat extends AbstractAppServlet {
 
         request.setAttribute("TestID", testID);
         request.setAttribute("Dato", datoString);
-        RequestDispatcher rq = request.getRequestDispatcher("../../../SuperDash/Resultater/Resultat/index.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("../../../UtoverDash/Resultater/Resultat/index.jsp");
         rq.forward(request, response);
     }
 }
