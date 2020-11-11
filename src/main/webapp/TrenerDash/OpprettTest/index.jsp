@@ -15,9 +15,9 @@
 <body>
 <div class =  "titleBar">
     <div class = "backButton">
-        <a href = "../">
+        <a href = "../NyPåbegyntTest">
             <img src = "../../images/ikoner/back_button.png">
-            <h3>Hjem</h3>
+            <h3>Tilbake</h3>
         </a>
     </div>
     <div class="centerObjects">

@@ -16,12 +16,12 @@
     <div class = "backButton">
         <a href = "../">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Administrer utøvere</h3>
+            <h3>Tilbake</h3>
         </a>
     </div>
     <div class="centerObjects">
         <img src = "">
-        <h1>Legg til ny utøver</h1>
+        <h1>Administrer utøvere</h1>
     </div>
 </div>
 

@@ -27,7 +27,7 @@ h1 b {
 }
 
 .row {
-    width: 60%;
+    width: 90%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -69,8 +69,8 @@ form {
 
 #finnutBox {
     background-color: white;
-    width: 800px;
-    height: 350px;
+    width: 1000px;
+    height: 400px;
     margin-left: auto;
     margin-right: auto;
 
@@ -80,4 +80,37 @@ form {
     text-align: center;
 
     border-radius: 0px;
+}
+
+.knapp-center {
+    width: 100%;
+    text-align: center;
+}
+
+.knapp {
+    width: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.knappbilde {
+    width: 120px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding-top: 7px;
+
+}
+
+
+.knapp a{
+    color: white !important;
+}
+
+#leggtilu {
+    background-color: #FFEB79;
 }
