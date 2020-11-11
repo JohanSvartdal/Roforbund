@@ -59,14 +59,14 @@
 <footer>
     <div class = "container">
         <div class = "row">
-            <div class = "col-sm" > Hei </div>
-            <div class = "col-sm" > Hei </div>
-            <div class = "col-sm" > Hei </div>
+            <div class = "col-sm" > 13.09.2020: 3000m </div>
+            <div class = "col-sm" > 09.09.2020: 1000m </div>
+            <div class = "col-sm" > 28.08.2020: Benkpress </div>
         </div>
         <div class="row">
-            <div class = "col-sm" > Status: Venter på godkjenning</div>
-            <div class = "col-sm" > Status: Venter på godkjenning</div>
-            <div class = "col-sm" > Status: Godkjent</div>
+            <div class = "col-sm" > Kari Nord - 12:03</div>
+            <div class = "col-sm" > Kari Nord - 05:12</div>
+            <div class = "col-sm" > Kari Nord - 70 kg</div>
         </div>
     </div>
 </footer>
