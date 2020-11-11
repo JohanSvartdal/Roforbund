@@ -111,12 +111,32 @@ create table if not EXISTS roforbund.klasser
     Klasse_navn      varchar(100) NOT NULL,
     alder_min        int(3) UNSIGNED,
     alder_max        int(3) UNSIGNED,
-    CONSTRAINT Resultat_id PRIMARY KEY (Klasse_id)
+    CONSTRAINT Klasse_id PRIMARY KEY (Klasse_id)
 );
 
-SELECT Fornavn, Etternavn, Klubb_id
-FROM bruker
-WHERE Rolle = 2;
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('JuniorG15', 10, 15);
+
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('JuniorJ15', 10, 15);
+
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('JuniorG19', 16, 19);
+
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('JuniorJ19', 16, 19);
+
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('SeniorG25', 20, 25);
+
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('SeniorJ25', 20, 25);
+
+Insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('SeniorG30', 26, 30);
+
+insert into roforbund.klasser (Klasse_navn, Min_alder, Max_alder)
+values ('SeniorJ30', 26, 30);
 
 insert into roforbund.postnummere (Postnummer, Poststed)
 values (3015, 'Drammen');
