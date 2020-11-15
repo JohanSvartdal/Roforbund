@@ -23,7 +23,7 @@
             </div>
 
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "MinProfil">
                     <div class = "knapp">
                         <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/person.png"></div>
                         Min profil

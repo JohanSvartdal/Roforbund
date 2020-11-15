@@ -135,3 +135,19 @@ h1 {
     margin-bottom: 100px;
     text-align: center;
 }
+
+#notificationPopup {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: 20px;
+    background-color: darkkhaki;
+}
+
+#closeMenuButton {
+    cursor: pointer;
+}
+
+#bellButton {
+    cursor: pointer;
+}
