@@ -26,7 +26,7 @@
 </div>
 
 <div class="container">
-    <h1><b>Finn en utøver uten klubb</b></h1>
+    <h1><b>Finn en utøver uten klubb!</b></h1>
 </div>
 
 <div class = "container">
@@ -44,6 +44,25 @@
         <div class = "col-sm" > <b>E-post:</b> </div>
         <div class = "col-sm" > <b> Mobil: </b> </div>
         <div class = "col-sm" > <b>Legg til: </b></div>
+</div>
+
+    <div class = "row">
+        <div class = "col-sm" > Nora Jakobsen </div>
+        <div class = "col-sm" > nora@live.no</div>
+        <div class = "col-sm" > 90989098  </div>
+        <div class = "col-sm" ><input type = "checkbox"></div>
+    </div>
+</div>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "col-sm" >
+            <a href = "../../AdminUtøvere/LeggtUtøver">
+                <div class = "knapp">
+                    <div class = "knappbilde" id = "leggtilu"> Legg til </div>
+                </div>
+            </a>
+        </div>
 </div>
 </div>
 </body>

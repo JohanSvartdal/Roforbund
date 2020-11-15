@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class = "col-sm" >
-            <a href = "../TrenerDash/OpprettTest">
+            <a href = "../TrenerDash/NyPåbegyntTest">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "opprettnytest"> <img src = "../TrenerDash/Ikoner/klokke.png"></div>
                     Opprett ny test

@@ -14,9 +14,9 @@
 <body>
 <div class =  "titleBar">
     <div class = "backButton">
-        <a href = "../">
+        <a href = "../../../TrenerDash">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Tilbake</h3>
+            <h3>Hjem</h3>
         </a>
     </div>
     <div class="centerObjects">
@@ -26,7 +26,7 @@
 </div>
 
 <div class="container">
-    <h1><b>Ønsker du å legge følgende utøvere til i KRS Roklubb?</b></h1>
+    <h1><b>Følgende utøvere er lagt til i KRS Roklubb:</b></h1>
 </div>
 
 <div id ="leggtilBox">
@@ -44,17 +44,15 @@
 
 <div class = "container">
     <div class = "row">
-        <div class = "col-sm" >
-            <a href = "../../../TrenerDash/AdminUtøvere/NyUtøver/">
-                <div class = "knapp" id = "tilbake">
-                    Avbryt
-                </div>
-            </a>
+        <div class = "col-sm" > Du kan nå finne deres personalia under "Administrer utøvere"</div>
         </div>
+</div>
+<div class = "container">
+    <div class = "row">
         <div class = "col-sm" >
-            <a href = "../../../TrenerDash/AdminUtøvere/UtøverLagt">
+            <a href = "../../../TrenerDash/AdminUtøvere/">
                 <div class = "knapp" id = "leggtil">
-                    Legg til utøver
+                    <b>Gå til "Administrer utøvere"</b>
                 </div>
             </a>
         </div>
