@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Date;
 
 @WebServlet(name= "MinProfil", urlPatterns = {"/UtoverDash/MinProfil/"})
 
@@ -38,7 +39,7 @@ public class MinProfil extends AbstractAppServlet {
             System.out.println("User not found");
         }
 
-        Integer fodseldato = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Fodseldato");
+        Date fodseldato = DatabaseReader.getDate("roforbund.bruker", "Bruker_id", UID, "Fodseldato");
         String epost = DatabaseReader.getString("roforbund.bruker", "Bruker_id", UID, "Epost");
         Integer tlf = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Tlf");
 
