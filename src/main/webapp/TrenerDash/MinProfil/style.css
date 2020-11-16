@@ -115,3 +115,13 @@ h1 {
 .col-sm {
     font-size: 17px;
 }
+
+h4 {
+    font-size: 15px;
+    margin-left: 22px;
+    margin-top: -20px;
+}
+
+.endreBox1 img {
+   height: 15px;
+}

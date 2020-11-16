@@ -16,17 +16,17 @@
     <div class = "backButton">
         <a href = "../">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Administrer utøvere</h3>
+            <h3>Tilbake</h3>
         </a>
     </div>
     <div class="centerObjects">
         <img src = "">
-        <h1>Legg til ny utøver</h1>
+        <h1>Administrer utøvere</h1>
     </div>
 </div>
 
 <div class="container">
-    <h1><b>Finn en utøver uten klubb!</b></h1>
+    <h1><b>Finn en utøver du ønsker å fjerne:</b></h1>
 </div>
 
 <div class = "container">
@@ -38,31 +38,20 @@
     </center>
 </div>
 
-<div id ="finnutBox">
+<div id ="fjernutBox">
     <div class = "row">
+        <div class = "col-sm" > </div>
         <div class = "col-sm" > <b>Navn:</b> </div>
         <div class = "col-sm" > <b>E-post:</b> </div>
         <div class = "col-sm" > <b> Mobil: </b> </div>
-        <div class = "col-sm" > <b>Legg til: </b></div>
 </div>
-
     <div class = "row">
-        <div class = "col-sm" > Nora Jakobsen </div>
-        <div class = "col-sm" > nora@live.no</div>
-        <div class = "col-sm" > 90989098  </div>
-        <div class = "col-sm" ><input type = "checkbox"></div>
+        <div class = "col-sm" > <div class = "fjernButton">
+            <img src="../../../images/ikoner/fjern%20u.png"> </div></div>
+        <div class = "col-sm" > Ella </div>
+        <div class = "col-sm" > ella@uia.no</div>
+        <div class = "col-sm" >  90003000</div>
     </div>
-</div>
 
-<div class = "container">
-    <div class = "row">
-        <div class = "col-sm" >
-            <a href = "../../AdminUtøvere/LeggtUtøver">
-                <div class = "knapp">
-                    <div class = "knappbilde" id = "leggtilu"> Legg til </div>
-                </div>
-            </a>
-        </div>
-</div>
 </div>
 </body>

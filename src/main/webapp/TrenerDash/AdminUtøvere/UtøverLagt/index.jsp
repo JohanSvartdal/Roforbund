@@ -14,55 +14,48 @@
 <body>
 <div class =  "titleBar">
     <div class = "backButton">
-        <a href = "../">
+        <a href = "../../../TrenerDash">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Administrer utøvere</h3>
+            <h3>Hjem</h3>
         </a>
     </div>
     <div class="centerObjects">
         <img src = "">
-        <h1>Legg til ny utøver</h1>
+        <h1>Administrer utøvere</h1>
     </div>
 </div>
 
 <div class="container">
-    <h1><b>Finn en utøver uten klubb!</b></h1>
+    <h1><b>Følgende utøvere er lagt til i KRS Roklubb:</b></h1>
 </div>
 
-<div class = "container">
-    <center>
-        <div class = "searchBar">
-            <label for="sokefelt">Søk etter navn:</label>
-            <input type="text" placeholder="Søk" id = "sokefelt"/>
-        </div>
-    </center>
-</div>
-
-<div id ="finnutBox">
+<div id ="leggtilBox">
     <div class = "row">
         <div class = "col-sm" > <b>Navn:</b> </div>
         <div class = "col-sm" > <b>E-post:</b> </div>
         <div class = "col-sm" > <b> Mobil: </b> </div>
-        <div class = "col-sm" > <b>Legg til: </b></div>
-</div>
-
+    </div>
     <div class = "row">
         <div class = "col-sm" > Nora Jakobsen </div>
-        <div class = "col-sm" > nora@live.no</div>
-        <div class = "col-sm" > 90989098  </div>
-        <div class = "col-sm" ><input type = "checkbox"></div>
+        <div class = "col-sm" > nora@live.no </div>
+        <div class = "col-sm" > 90989098 </div>
     </div>
 </div>
 
 <div class = "container">
     <div class = "row">
+        <div class = "col-sm" > Du kan nå finne deres personalia under "Administrer utøvere"</div>
+        </div>
+</div>
+<div class = "container">
+    <div class = "row">
         <div class = "col-sm" >
-            <a href = "../../AdminUtøvere/LeggtUtøver">
-                <div class = "knapp">
-                    <div class = "knappbilde" id = "leggtilu"> Legg til </div>
+            <a href = "../../../TrenerDash/AdminUtøvere/">
+                <div class = "knapp" id = "leggtil">
+                    <b>Gå til "Administrer utøvere"</b>
                 </div>
             </a>
         </div>
-</div>
+    </div>
 </div>
 </body>

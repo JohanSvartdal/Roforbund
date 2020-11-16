@@ -6,6 +6,8 @@ public class Test {
     private Integer Klubb_id;
     private String klubbNavn;
 
+    private String kommentar;
+
     private String Dato;
     private Integer Trener_id;
     private String trenerNavn;
@@ -55,5 +57,13 @@ public void setAntallOvelser(Integer antallTester) {this.AntallOvelser = antallT
 
     public void setTrenerNavn(String trenerNavn) {
         this.trenerNavn = trenerNavn;
+    }
+
+    public String getKommentar() {
+        return kommentar;
+    }
+
+    public void setKommentar(String kommentar) {
+        this.kommentar = kommentar;
     }
 }

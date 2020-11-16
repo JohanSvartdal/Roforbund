@@ -27,7 +27,7 @@ h1 b {
 }
 
 .row {
-    width: 90%;
+    width: 80%;
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
@@ -67,10 +67,10 @@ form {
     margin-right: auto;
 }
 
-#finnutBox {
-    background-color: white;
-    width: 1000px;
-    height: 400px;
+#leggtilBox {
+    background-color: #EBEBEB;
+    width: 800px;
+    height: 350px;
     margin-left: auto;
     margin-right: auto;
 
@@ -82,35 +82,27 @@ form {
     border-radius: 0px;
 }
 
-.knapp-center {
+
+#leggtil {
+    background-color: #FBE771;
+    height: 50px;
+    border-radius: 7px;
+    padding-top: 13px;
+}
+
+   .knapp-center {
     width: 100%;
     text-align: center;
 }
 
 .knapp {
-    width: 180px;
+    width: 250px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10px;
 }
 
-.knappbilde {
-    width: 120px;
-    height: 40px;
-    margin-top: 10px;
-    border-radius: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    padding-top: 7px;
-
-}
-
-
-.knapp a{
-    color: white !important;
-}
-
-#leggtilu {
-    background-color: #FFEB79;
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
 }

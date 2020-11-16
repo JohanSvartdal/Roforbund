@@ -23,7 +23,7 @@
             </div>
 
             <div class = "col-sm" >
-                <a href = "linkTilSiden">
+                <a href = "MinProfil">
                     <div class = "knapp">
                         <div class = "knappbilde" id = "minprofil"> <img src = "../UtoverDash/Ikoner/person.png"></div>
                         Min profil
@@ -35,9 +35,14 @@
     <footer>
         <div class = "container">
             <div class = "row">
-                <div class = "col-sm" > Hei </div>
-                <div class = "col-sm" > Hei </div>
-                <div class = "col-sm" > Hei </div>
+                <div class = "col-sm">10.02.2020</div>
+                <div class = "col-sm">23.01.2020</div>
+                <div class = "col-sm">18.01.2020</div>
+            </div>
+            <div class="row">
+                <div class = "col-sm">Placeholder</div>
+                <div class = "col-sm">Placeholder</div>
+                <div class = "col-sm">Placeholder</div>
             </div>
         </div>
     </footer>

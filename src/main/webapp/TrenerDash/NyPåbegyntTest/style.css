@@ -1,7 +1,22 @@
 body {
     background-color: #F7FAFF !important;
     background-image: none !important;
-    font-size: 18px;
+}
+
+#loginBox {
+    background-color: #F7FAFF;
+    width: 1000px;
+    height: 300px;
+    margin-top: 350px;
+    text-align: center;
+    box-shadow: none !important;
+}
+
+#loginBox h1 {
+    font-size: 30px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
 }
 
 .titleBar {
@@ -14,6 +29,13 @@ body {
 .titleBar a {
     color: black !important;
     text-decoration: none;
+}
+
+.titleBar .backButton {
+    width: 100px;
+    height: 40px;
+    margin-left: 10px;
+    display: inline;
 }
 
 .titleBar h1 {
@@ -44,17 +66,6 @@ body {
     transform: translateX(-50%);
 }
 
-.container {
-    margin-top: 40px;
-    text-align: center;
-}
-
-#dashboard {
-    background-color: #B0B5C3;
-    height: 40px;
-    border-radius: 7px;
-    padding-top: 7px;
-}
 
 .knapp-center {
     width: 100%;
@@ -65,6 +76,24 @@ body {
     width: 180px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 100px;
+}
+
+.knappbilde {
+    width: 140px;
+    height: 50px;
+    margin-top: 10px;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    padding-top: 12px;
+
+}
+
+
+.knapp a{
+    color: white !important;
 }
 
 a {
@@ -73,15 +102,23 @@ a {
     color: black;
 }
 
-h2 {
-    font-size: 25px;
-    font-weight: 300;
+
+#nytest {
+    background-color: #777a7a;
+}
+
+#påbegynttest {
+    background-color: #B0B5C3;
+}
+
+
+.col-sm {
+    text-align: center;
+    margin-top: 30px;
 }
 
 h1 {
-    font-size: 30px;
-}
-
-img {
-    height: 70px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
 }
