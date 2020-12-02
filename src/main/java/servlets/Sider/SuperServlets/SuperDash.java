@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+//Siden henter bruker ID fra en cookie og sjekker om du har tilgang.
+//Formål: Henter fornavn til bruker. Brukes i velkomstmelding.
 
 @WebServlet(name= "SuperDash", urlPatterns = "/SuperDash/")
 public class SuperDash extends AbstractAppServlet {
@@ -29,6 +31,8 @@ public class SuperDash extends AbstractAppServlet {
 
     }
 
+    //Henter bruker ID fra cookies
+    //return: Fornavn til brukeren som besøker siden.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
@@ -40,6 +44,7 @@ public class SuperDash extends AbstractAppServlet {
                 UID = Integer.parseInt(uidString);
             }
         }
+        //Feilmelding. Fant ikke bruker.
         if (UID == -1) {
             request.setAttribute("title", "Fant ikke UID");
             request.setAttribute("description", "Vennligst kontakt IT avdelingen for hjelp");
@@ -52,8 +57,9 @@ public class SuperDash extends AbstractAppServlet {
 
         String name = DatabaseReader.getString("roforbund.bruker","Bruker_id", UID, "Fornavn");
 
+        //Velkomstmelding
         request.setAttribute("WelcomeMessage", "Velkommen, " + name + "!");
-        RequestDispatcher rq = request.getRequestDispatcher("../SuperDash/index.jsp");
+        RequestDispatcher rq = request.getRequestDispatcher("../SuperDash/index.jsp");  //Linken til index side.
         rq.forward(request, response);
     }
 
