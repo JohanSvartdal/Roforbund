@@ -1,7 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Superuser homepage</title>
+    <title>Administrer utøvere</title>
     <meta charset="UTF-8">
     <%@ page contentType="text/html; charset=UTF-8" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,6 +46,7 @@
             <input type="text" placeholder="Søk" id = "sokefelt"/>
         </div>
     </center>
+
     <div class = "row">
         <div class = "col-sm"><b>Navn:</b></div>
         <div class = "col-sm"><b>E-post:</b></div>
@@ -53,5 +55,12 @@
         <div class = "col-sm"><b>Gruppe:</b></div>
     </div>
     <hr/>
+    <div class = "row">
+        <div class = "col-sm"><u>Elina W. Antonsen</u></div>
+        <div class = "col-sm">elina99@live.no</div>
+        <div class = "col-sm">92233443</div>
+        <div class = "col-sm">Arenfeldt 20</div>
+        <div class = "col-sm">Junior 20</div>
+    </div>
 </div>
 </body>

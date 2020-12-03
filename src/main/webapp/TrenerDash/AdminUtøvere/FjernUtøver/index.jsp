@@ -16,12 +16,12 @@
     <div class = "backButton">
         <a href = "../">
             <img src = "../../../images/ikoner/back_button.png">
-            <h3>Administrer utøvere</h3>
+            <h3>Tilbake</h3>
         </a>
     </div>
     <div class="centerObjects">
         <img src = "">
-        <h1>Legg til ny utøver</h1>
+        <h1>Administrer utøvere</h1>
     </div>
 </div>
 
@@ -40,9 +40,18 @@
 
 <div id ="fjernutBox">
     <div class = "row">
+        <div class = "col-sm" > </div>
         <div class = "col-sm" > <b>Navn:</b> </div>
         <div class = "col-sm" > <b>E-post:</b> </div>
         <div class = "col-sm" > <b> Mobil: </b> </div>
 </div>
+    <div class = "row">
+        <div class = "col-sm" > <div class = "fjernButton">
+            <img src="../../../images/ikoner/fjern%20u.png"> </div></div>
+        <div class = "col-sm" > Ella </div>
+        <div class = "col-sm" > ella@uia.no</div>
+        <div class = "col-sm" >  90003000</div>
+    </div>
+
 </div>
 </body>

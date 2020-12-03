@@ -12,10 +12,8 @@
 </head>
 <body>
 <div class =  "titleBar">
-    <div class = "bellButton">
-        <a href = "../">
-            <img src = "../images/ikoner/bell.png">
-        </a>
+    <div class = "bellButton" id = "bellButton">
+        <img src = "../images/ikoner/bell.png">
     </div>
 </div>
 <div class = "container">
@@ -31,7 +29,7 @@
             </a>
         </div>
         <div class = "col-sm" >
-            <a href = "../TrenerDash/OpprettTest">
+            <a href = "../TrenerDash/NyPåbegyntTest">
                 <div class = "knapp">
                     <div class = "knappbilde" id = "opprettnytest"> <img src = "../TrenerDash/Ikoner/klokke.png"></div>
                     Opprett ny test
@@ -56,6 +54,11 @@
         </div>
     </div>
 </div>
+<div id="notificationPopup" class="hidden">
+    <img src = "../images/ikoner/remove_button.png" width="80px" height="80px" id = "closeMenuButton">
+    <br/>
+    Her kan popupen legges inn
+</div>
 <footer>
     <div class = "container">
         <div class = "row">
@@ -70,4 +73,5 @@
         </div>
     </div>
 </footer>
+<script src = "javascript.js" type="text/javascript"></script>
 </body>
