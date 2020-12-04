@@ -1,13 +1,36 @@
 package tools.repository;
 
-import java.io.PrintWriter;
 import java.sql.*;
 import java.util.ArrayList;
 
-import tools.DbTool;
 import tools.pools.HikariCPDataSource;
 
 public class DatabaseReader {
+
+    public static ResultSet getLastRecord(String database, String primaryKey) {
+        Connection db = null;
+        PreparedStatement prepareStatement = null;
+
+        ResultSet rs = null;
+        try {
+            db = HikariCPDataSource.getConnection();
+            String query = "SELECT * FROM " + database + " ORDER BY " + primaryKey + " DESC LIMIT 1";
+
+            prepareStatement = db.prepareStatement(query);
+            rs = prepareStatement.executeQuery();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        return rs;
+    }
 
     public static Integer getInt(String database, String searchKey, int searchInt, String whatData) {
         return getInt(database, searchKey, null, String.valueOf(searchInt), whatData);
