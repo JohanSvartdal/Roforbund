@@ -33,6 +33,7 @@ public class HentOvelse extends AbstractAppServlet {
             Ovelse ovelse = new Ovelse();
             String ovelseNavn = DatabaseReader.getString("roforbund.ovelser", "Ovelse_id", ovelseIds.get(i), "Navn");
             ovelse.setOvelseNavn(ovelseNavn);
+            ovelse.setOvelseID(ovelseIds.get(i));
             ovelseList.add(ovelse);
         }
 

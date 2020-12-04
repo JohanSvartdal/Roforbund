@@ -20,7 +20,8 @@
 </div>
 
 <div class="container">
-    <h1> Legge inn resultater til <b>øvelse 1</b>- 3000m:</h1>
+    <%System.out.println("Nå skal jeg hente");%>
+    <h1> Legge inn resultater til <b>øvelse <%=request.getAttribute("currentOvelseIndex")%></b> - <%=request.getAttribute("currentOvelsesNavn")%>>:</h1>
 </div>
         <div class = "row">
             <div class = "col-sm-3"><b>Navn:</b></div>
@@ -30,31 +31,10 @@
         </div>
 
         <div class = "row">
-            <div class = "col-sm-4">Svartdal Johan </div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value="456"/></div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value="12:34"/></div>
+            <div class = "col-sm-4">Svartdal Johan</div>
+            <div class = "col-sm-2"><input type = "number" class="textField" value="456"/></div>
+            <div class = "col-sm-2"><input type = "number" class="textField" value="12:34"/></div>
             <div class = "col-sm-3"><input type = "text" class="textField" value="Vonde knær."/></div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-sm-4">Ramsey Gordon </div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value="678"/></div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value="11:04"/></div>
-            <div class = "col-sm-3"><input type = "text" class="textField" value=""/></div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-sm-4"></div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value=""/></div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value=""/></div>
-            <div class = "col-sm-3"><input type = "text" class="textField" value=""/></div>
-        </div>
-
-        <div class = "row">
-            <div class = "col-sm-4"></div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value=""/></div>
-            <div class = "col-sm-2"><input type = "int" class="textField" value=""/></div>
-            <div class = "col-sm-3"><input type = "text" class="textField" value=""/></div>
         </div>
     </div>
 <footer>
@@ -67,7 +47,11 @@
     <a href = "../RegTestResult1">
     <div class = "footerButton" id ="footerRight">
         <img src = "../../../images/ikoner/forward_button.png">
-        <h2>Neste øvelse</h2>
+        <form action='RegTestResult' method='POST'>
+            <button type="submit">
+                Neste øvelse
+            </button>
+        </form>
     </div>
     </a>
 </footer>
