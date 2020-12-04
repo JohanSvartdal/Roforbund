@@ -1,6 +1,5 @@
 package tools.repository;
 
-import tools.DbTool;
 import tools.pools.HikariCPDataSource;
 
 import java.sql.Connection;
