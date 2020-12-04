@@ -5,6 +5,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 import tools.DbTool;
+import tools.pools.HikariCPDataSource;
 
 public class DatabaseReader {
 
@@ -27,7 +28,7 @@ public class DatabaseReader {
 
         Integer toReturn = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
             prepareStatement = db.prepareStatement(query);
@@ -76,7 +77,7 @@ public class DatabaseReader {
 
         String toReturn = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
             prepareStatement = db.prepareStatement(query);
@@ -124,7 +125,7 @@ public class DatabaseReader {
 
         Timestamp toReturn = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
             prepareStatement = db.prepareStatement(query);
@@ -172,7 +173,7 @@ public class DatabaseReader {
 
         Date toReturn = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
             prepareStatement = db.prepareStatement(query);
@@ -216,7 +217,7 @@ public class DatabaseReader {
 
         ArrayList<Integer> returnList = new ArrayList<>();
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
             prepareStatement = db.prepareStatement(query);
@@ -254,7 +255,7 @@ public class DatabaseReader {
 
         ArrayList<Integer> returnList = new ArrayList<>();
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + databaseNavn;
             prepareStatement = db.prepareStatement(query);
@@ -295,7 +296,7 @@ public class DatabaseReader {
 
         ResultSet rs = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             String query = null;
             if (searchKey != null) {
                 query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
@@ -340,7 +341,7 @@ public class DatabaseReader {
 
         Boolean toReturn = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
             prepareStatement = db.prepareStatement(query);

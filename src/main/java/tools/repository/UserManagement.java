@@ -2,6 +2,7 @@ package tools.repository;
 
 import models.UserModel;
 import tools.DbTool;
+import tools.pools.HikariCPDataSource;
 
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -15,7 +16,7 @@ public class UserManagement {
         Connection db = null;
         PreparedStatement insertNewUser = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             String query =
                     "INSERT INTO `user` (User_firstName, User_lastName,User_Email, User_password ) values (?,?,?,?)";
 
@@ -43,7 +44,7 @@ public class UserManagement {
 
         ArrayList<ArrayList<String>> userProfiles = new ArrayList<>();
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM roforbund.bruker where Klubb_id = ?";
             prepareStatement = db.prepareStatement(query);
@@ -77,7 +78,7 @@ public class UserManagement {
         String toReturn = null;
 
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             ResultSet rs = null;
             String query = "SELECT * FROM roforbund.bruker where Epost = ?";
             prepareStatement = db.prepareStatement(query);

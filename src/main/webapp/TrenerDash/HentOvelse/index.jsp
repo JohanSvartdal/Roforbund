@@ -22,29 +22,39 @@
 
     <div class="container">
         <h1>Velg øvelser:</h1>
-    </div>
-        <div class = "row">
-            <div class = "col-sm-3"><b>Øvelse:</b></div>
-            <div class = "col-sm-3"><b>Velg:</b></div>
-        </div>
-            <%ArrayList<Ovelse> ovelseList = (ArrayList<Ovelse>) request.getAttribute("ovelseList");
-                for(int i = 0; i < ovelseList.size(); i++) {     %>
 
-                    <div class = "row">
-                         <div class = "col-sm-3" ><%=ovelseList.get(i).getOvelseNavn()%></div>
-                         <div class = "col-sm-3" ><input type = "checkbox"></div>
-                    </div>
-                <%}%>
-            <footer>
-                <a href ="../OpprettTest">
-                    <div class = "footerButton" id ="footerLeft">
-                        <img src = "../../images/ikoner/back_button.png">
-                        <h2>Tilbake</h2>
-                    </div> </a>
-                <a href = "../HentOvelse/RegTestResult">
-                <div class = "footerButton" id ="footerRight">
-                    <img src = "../../images/ikoner/forward_button.png">
-                    <h2>Gå til test</h2>
-                </div> </a>
-            </footer>
+        <div class = "row">
+            <div class = "col-sm-6"><b>Øvelse:</b></div>
+            <div class = "col-sm-6"><b>Velg:</b></div>
+        </div>
+        <%ArrayList<Ovelse> ovelseList = (ArrayList<Ovelse>) request.getAttribute("ovelseList");
+            for(int i = 0; i < ovelseList.size(); i++) {     %>
+
+        <div class = "row">
+            <div class = "col-sm-6" ><%=ovelseList.get(i).getOvelseNavn()%></div>
+            <div class = "col-sm-6" ><input class = "possibleOvelseCheckBox" id = "<%=ovelseList.get(i).getOvelseID()%>" type = "checkbox"></div>
+        </div>
+        <%}%>
+    </div>
+
+    <footer>
+        <div class = "footerButton" id ="footerLeft">
+            <img src = "../../images/ikoner/back_button.png">
+            <h2>Tilbake</h2>
+        </div>
+        <div class = "footerButton" id ="footerRight">
+            <img src = "../../images/ikoner/forward_button.png">
+
+            <h2>Start test</h2>
+            <!--
+            <form action='RegTestResult' method='POST'>
+                <button type="submit">
+
+                </button>
+            </form>
+            -->
+
+        </div>
+    </footer>
+    <script src = "javascript.js" type="text/javascript"></script>
 </body>

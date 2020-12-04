@@ -1,6 +1,7 @@
 package tools.repository;
 
 import tools.DbTool;
+import tools.pools.HikariCPDataSource;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,7 +48,7 @@ public class DatabaseWriter {
         Connection db = null;
         PreparedStatement preparedStatement = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             PreparedStatement dbUse = db.prepareStatement("USE roforbund");
             dbUse.executeQuery();
 
@@ -101,7 +102,7 @@ public class DatabaseWriter {
 
         String toReturn = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             PreparedStatement dbUse = db.prepareStatement("USE roforbund");
             dbUse.executeQuery();
 
@@ -151,7 +152,7 @@ public class DatabaseWriter {
         Connection db = null;
         PreparedStatement preparedStatement = null;
         try {
-            db = DbTool.getINSTANCE().dbLoggIn();
+            db = HikariCPDataSource.getConnection();
             PreparedStatement dbUse = db.prepareStatement("USE roforbund");
             dbUse.executeQuery();
 
