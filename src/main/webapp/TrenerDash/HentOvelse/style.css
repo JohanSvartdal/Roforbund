@@ -5,89 +5,15 @@ body {
 }
 
 .titleBar {
-    width: 100%;
-    height: 50px;
     background-color: #B0B5C3;
-    color: black;
-}
-
-.titleBar a {
-    color: black !important;
-    text-decoration: none;
-}
-
-.titleBar .backButton {
-    width: 100px;
-    height: 40px;
-    margin-left: 10px;
-    display: inline;
-}
-
-.titleBar h1 {
-    font-size: 19px;
-    margin-top: 15px;
-    margin-left: 5px;
-    font-weight: 300;
-}
-
-.titleBar h3 {
-    margin-top: 15px;
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-.titleBar * {
-    display: inline-flex;
-}
-
-.titleBar img {
-    margin-top: 10px;
-    height: 30px;
-}
-
-.centerObjects {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 .container {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.sideButton {
-    height: 60px;
-    position: absolute;
-    margin-top: 10px;
-}
-
-.sideButton img {
-    height: 100%;
-}
-
-
-.row {
-    height: 55px;
-}
-
-.rowFirst {
-    color: #6E8BD6;
-}
-
-
-a {
-    color: black;
-    text-decoration: none;
+    margin-bottom: 20px;
 }
 
 footer {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0px;
     background-color: #ebf0f4;
-    color: black;
 }
 
 .footerButton {
@@ -97,48 +23,8 @@ footer {
     text-align: center;
 }
 
-.footerButton h2 {
-    margin-top: 16px;
-    font-size: 18px;
-}
-
-.footerButton img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-}
-
-#footerLeft img {
-    left: 2px;
-}
-
-#footerRight img {
-    right: 2px;
-}
-
-#footerLeft {
-    float: left;
-}
-
-#footerRight {
-    float: right;
-}
-
 .checkbox {
     margin-right: 90px;
-}
-
-
-h1 {
-    margin-bottom: 50px;
-    color: black;
-    font-weight: 200;
-    font-size: 23px;
-    font-family: 'Helvetica', serif;
-}
-
-h1 b {
-    font-weight: 500;
 }
 
 .row {
@@ -154,9 +40,18 @@ h1 b {
 }
 
 
-.col-sm-3 {
+.col-sm-6 {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: black;
+    font-weight: 200;
+    font-size: 28px;
+    text-align: center;
+    font-family: 'Helvetica', serif;
 }
 
