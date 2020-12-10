@@ -1,7 +1,6 @@
 package tools.repository;
 
 import models.UserModel;
-import tools.DbTool;
 import tools.pools.HikariCPDataSource;
 
 import java.io.PrintWriter;
