@@ -1,5 +1,7 @@
 package servlets;
 
+// Constructor for Ovelse, brukes av ? for å sette/hente ting fra databasen
+
 public class Ovelse {
     private int ovelseID;
     private String ovelseNavn;

@@ -1,5 +1,7 @@
 package servlets;
 
+// constructor for Resultatobjekt. Brukes til/fra databasen ved innsending og henting av resultater
+
 public class Resultat {
     private int ovelsesID;
     private int resultatID;

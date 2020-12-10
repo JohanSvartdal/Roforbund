@@ -1,5 +1,8 @@
 package servlets;
 
+// Denne klassen lager utoverobjektet med de attributten som trengs
+// for å skrive og lese av databasen.
+
 public class Utover {
     private String fornavn;
     private String etternavn;
