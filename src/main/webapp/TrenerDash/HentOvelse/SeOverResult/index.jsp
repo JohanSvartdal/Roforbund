@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="servlets.Ovelse" %>
+<%@ page import="models.test.Ovelse" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

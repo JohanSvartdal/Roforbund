@@ -1,9 +1,9 @@
 package servlets.Sider.TrenerServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.StaticValues;
-import servlets.Utover;
-import tools.repository.DatabaseReader;
+import tools.config.StaticValues;
+import models.bruker.Utover;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,8 +46,6 @@ public class OpprettTest extends AbstractAppServlet {
             return;
         }
 
-
-
         int klubbID = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Klubb_id");
         ArrayList<Integer> brukerIds = DatabaseReader.getListOfIds("roforbund.bruker", "Klubb_id",klubbID, "Bruker_id");
 
@@ -57,12 +55,12 @@ public class OpprettTest extends AbstractAppServlet {
             if (rolle != StaticValues.UTOVER) {
                 continue;
             }
-            Utover utover = new Utover();
+
             String fornavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", brukerIds.get(i), "Fornavn");
             String etternavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", brukerIds.get(i), "Etternavn");
-            utover.setFornavn(fornavn);
-            utover.setEtternavn(etternavn);
-            utover.setBrukerID(brukerIds.get(i));
+
+            Utover utover = new Utover(fornavn, etternavn, brukerIds.get(i));
+
             utoverList.add(utover);
         }
 

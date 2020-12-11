@@ -1,10 +1,10 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.Klubb;
-import tools.repository.DatabaseReader;
-import tools.repository.DatabaseValue;
-import tools.repository.DatabaseWriter;
+import models.Klubb;
+import tools.database.DatabaseReader;
+import tools.database.DatabaseValue;
+import tools.database.DatabaseWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

@@ -1,8 +1,8 @@
 package servlets.Sider.TrenerServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.Ovelse;
-import tools.repository.DatabaseReader;
+import models.test.Ovelse;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

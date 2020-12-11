@@ -1,8 +1,8 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.Trener;
-import tools.repository.DatabaseReader;
+import models.bruker.Trener;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -31,12 +31,8 @@ public class LeggTilTrenere extends AbstractAppServlet {
         ArrayList<Trener> trenerListe = new ArrayList<>();
 
         for (int i = 0; i < trenerIds.size(); i++) {
-            Trener current = new Trener();
-
             String fornavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Fornavn");
             String etternavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Etternavn");
-            current.setFornavn(fornavn);
-            current.setEtternavn(etternavn);
 
             String adresseID = DatabaseReader.getString("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Adresse_id");
             String gatenavn = DatabaseReader.getString("roforbund.adresser", "Adresse_id", adresseID, "Gatenavn");
@@ -44,13 +40,12 @@ public class LeggTilTrenere extends AbstractAppServlet {
             Integer postnummer = DatabaseReader.getInt("roforbund.adresser", "Adresse_id", adresseID, "Postnummer");
             String poststed = DatabaseReader.getString("roforbund.postnummere", "Postnummer", postnummer, "Poststed");
 
-            current.setAdresse(gatenavn + " " + husnummer + ", " + postnummer + " " + poststed);
-
-            current.setID(trenerIds.get(i));
+            String adresse = gatenavn + " " + husnummer + ", " + postnummer + " " + poststed;
 
 
             Integer tlf = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", trenerIds.get(i), "Tlf");
-            current.setTlf(tlf);
+
+            Trener current = new Trener(fornavn, etternavn, tlf, adresse, trenerIds.get(i));
 
             trenerListe.add(current);
         }

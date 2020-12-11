@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="servlets.Trener" %>
+<%@ page import="models.bruker.Trener" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,7 +51,7 @@
         <div class = "col-sm-3" ><div class = "rowFirst"><%=trenerListe.get(i).getFornavn() + " " + trenerListe.get(i).getEtternavn()%></div></div>
         <div class = "col-sm-4" ><%=trenerListe.get(i).getAdresse()%></div>
         <div class = "col-sm-2" ><%=trenerListe.get(i).getTlf()%></div>
-        <div class = "col-sm-3" ><input type = "checkbox" class = "checker" id = "<%=trenerListe.get(i).getID()%>"></div>
+        <div class = "col-sm-3" ><input type = "checkbox" class = "checker" id = "<%=trenerListe.get(i).getBrukerID()%>"></div>
     </div>
     <%
         }

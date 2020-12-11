@@ -1,4 +1,4 @@
-package servlets;
+package models.test;
 
 import java.util.ArrayList;
 //Constructor for OvelsesResultat, brukes hvor?

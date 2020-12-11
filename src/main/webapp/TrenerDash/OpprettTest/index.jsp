@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="servlets.Utover" %>
+<%@ page import="models.bruker.Utover" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
