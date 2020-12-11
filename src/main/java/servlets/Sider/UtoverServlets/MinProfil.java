@@ -1,6 +1,7 @@
 package servlets.Sider.UtoverServlets;
 
 import servlets.AbstractAppServlet;
+import servlets.StaticValues;
 import tools.repository.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
@@ -39,6 +40,10 @@ public class MinProfil extends AbstractAppServlet {
             System.out.println("User not found");
         }
 
+        String fornavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", UID, "Fornavn");
+        String etternavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", UID, "Etternavn");
+        String navn = fornavn + " " + etternavn;
+
         Date fodseldato = DatabaseReader.getDate("roforbund.bruker", "Bruker_id", UID, "Fodseldato");
         String epost = DatabaseReader.getString("roforbund.bruker", "Bruker_id", UID, "Epost");
         Integer tlf = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Tlf");
@@ -47,25 +52,40 @@ public class MinProfil extends AbstractAppServlet {
         String gatenavn = DatabaseReader.getString("roforbund.adresser", "Adresse_id", adresseID, "Gatenavn");
         String husnummer = DatabaseReader.getString("roforbund.adresser", "Adresse_id", adresseID, "Husnummer");
 
-        Integer postnummer = DatabaseReader.getInt("roforbund.adresser", "Adresser_id", adresseID, "Postnummer");
-        String poststed = DatabaseReader.getString("roforbund.postnummer", "Postnummer", postnummer, "Poststed");
+        Integer postnummer = DatabaseReader.getInt("roforbund.adresser", "Adresse_id", adresseID, "Postnummer");
+        String poststed = DatabaseReader.getString("roforbund.postnummere", "Postnummer", postnummer, "Poststed");
+
+        String adresse = gatenavn + " " + husnummer + ", " + String.valueOf(postnummer) + " " + poststed;
 
 
         Integer hoyde = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Hoyde");
         Integer vekt = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Fodseldato");
         Integer rolle = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Rolle");
 
+        String rolleString = "";
+
+        switch(rolle) {
+            case StaticValues
+                    .UTOVER:
+                rolleString = "Utøver";
+            case StaticValues
+                    .TRENER:
+                rolleString = "Trener";
+            case StaticValues
+                    .SUPERBRUKER:
+                rolleString = "Superbruker";
+        }
+
 
         System.out.println(String.valueOf(fodseldato));
+        request.setAttribute("navn", navn);
         request.setAttribute("fodseldato", fodseldato);
         request.setAttribute("epost", epost);
         request.setAttribute("tlf", tlf);
-        request.setAttribute("gatenavn", gatenavn);
-        request.setAttribute("husnummer", husnummer);
-        request.setAttribute("poststed", poststed);
+        request.setAttribute("adresse", adresse);
         request.setAttribute("hoyde", hoyde);
         request.setAttribute("vekt", vekt);
-        request.setAttribute("rolle", rolle);
+        request.setAttribute("rolle", rolleString);
 
 
 
