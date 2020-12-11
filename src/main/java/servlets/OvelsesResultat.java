@@ -1,6 +1,7 @@
 package servlets;
 
 import java.util.ArrayList;
+//Constructor for OvelsesResultat, brukes hvor?
 
 public class OvelsesResultat {
     private String ovelsesNavn;

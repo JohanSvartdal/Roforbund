@@ -1,5 +1,9 @@
 package servlets;
 
+// Denne klassen lager testobjektet med de attributten som trengs
+// for å skrive og lese av databasen. Denne brukes i opprett test
+
+
 public class Test {
     private Integer Test_id;
 
