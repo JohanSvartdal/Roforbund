@@ -1,5 +1,7 @@
 package servlets;
 
+//Constructor for Klubb, brukes av ? for å hente/sette attributter som igjen hentes/sendes til database
+
 public class Klubb {
     private int klubbID;
     private String navn;

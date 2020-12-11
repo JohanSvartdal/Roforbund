@@ -1,5 +1,8 @@
 package servlets;
 
+// Denne klassen lager trenerobjektet med de attributten som trengs
+// for å skrive og lese av databasen.
+
 public class Trener {
     private int ID;
     private String fornavn;
