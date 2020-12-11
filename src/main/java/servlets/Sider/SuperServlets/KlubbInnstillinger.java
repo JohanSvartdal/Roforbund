@@ -1,10 +1,7 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.StaticValues;
-import tools.repository.DatabaseReader;
-import tools.repository.DatabaseValue;
-import tools.repository.DatabaseWriter;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

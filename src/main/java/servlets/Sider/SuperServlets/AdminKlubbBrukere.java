@@ -1,10 +1,9 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.Klubb;
-import servlets.StaticValues;
-import servlets.Utover;
-import tools.repository.DatabaseReader;
+import tools.config.StaticValues;
+import models.bruker.Utover;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -57,13 +56,8 @@ public class AdminKlubbBrukere extends AbstractAppServlet {
             while (resultSet.next()) {
                 System.out.println("While: ");
                 if (resultSet.getInt("Rolle") == wantedUserRole) {
-                    Utover utover = new Utover();
-                    utover.setFornavn(resultSet.getString("Fornavn"));
-                    utover.setEtternavn(resultSet.getString("Etternavn"));
-                    utover.setEpost(resultSet.getString("Epost"));
-                    utover.setTlf(resultSet.getInt("Tlf"));
+                    Utover utover = new Utover(resultSet.getString("Fornavn"), resultSet.getString("Etternavn"), resultSet.getInt("Tlf"), resultSet.getInt("Bruker_id"),resultSet.getString("Epost"));
                     utover.setKlasseNavn("Junior");
-                    utover.setBrukerID(resultSet.getInt("Bruker_id"));
                     utoverList.add(utover);
                 }
             }

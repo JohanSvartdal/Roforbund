@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="servlets.Klubb" %>
+<%@ page import="models.Klubb" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,7 +58,7 @@
         for(int i = 0; i < klubbListe.size(); i++) {
     %>
     <div class = "row listRow">
-        <div class = "col-sm-1 deleteListElement hidden" style="text-align: center;"><a href = "../AdminKlubber?fjernKlubb=<%=klubbListe.get(i).getKlubbID()%>"><img src = "../../images/ikoner/fjern_klubb.png" class="removeListButton"></a></div>
+        <div class = "col-sm-1 deleteListElement hidden" style="text-align: center;"><a href = "../AdminKlubber?fjernKlubb=<%=klubbListe.get(i).getKlubbID()%>"><img src = "../../images/ikoner/fjern_knapp.png" class="removeListButton"></a></div>
         <div class = "col-sm-3" ><div class = "rowFirst"><a href = "KlubbInnstillinger?klubbID=<%=klubbListe.get(i).getKlubbID()%>"><%=klubbListe.get(i).getNavn()%></a></div></div>
         <div class = "col-sm-4" ><%=klubbListe.get(i).getAdresse()%></div>
         <div class = "col-sm-2" ><%=klubbListe.get(i).getTlf()%></div>

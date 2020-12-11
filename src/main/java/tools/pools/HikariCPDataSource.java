@@ -2,6 +2,7 @@ package tools.pools;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import tools.config.StaticValues;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -12,8 +13,11 @@ public class HikariCPDataSource {
     private static HikariDataSource ds;
 
     static {
-        config.setJdbcUrl("jdbc:mariadb://localhost:3308/");
-        //RIKTIG URL FOR Å KJØRE: Docker IP: 172.17.0.1
+        if (StaticValues.TEST_MODE) {
+            config.setJdbcUrl("jdbc:mariadb://localhost:3308/");
+        }else {
+            config.setJdbcUrl("jdbc:mariadb://172.17.0.1:3308/");
+        }
         config.setUsername("root");
         config.setPassword("12345");
         config.addDataSourceProperty("cachePrepStmts", "true");

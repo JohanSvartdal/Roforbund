@@ -1,5 +1,5 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="servlets.Trener" %>
+<%@ page import="models.bruker.Trener" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>

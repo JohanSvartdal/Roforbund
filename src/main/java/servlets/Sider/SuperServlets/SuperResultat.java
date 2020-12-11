@@ -1,10 +1,10 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.OvelsesResultat;
-import servlets.Resultat;
-import servlets.StaticValues;
-import tools.repository.DatabaseReader;
+import models.test.OvelsesResultat;
+import models.test.Resultat;
+import tools.config.StaticValues;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,6 +44,8 @@ public class SuperResultat extends AbstractAppServlet {
         try {
             while (resultaterITest.next()) {
                 Resultat resultat = new Resultat();
+
+
                 resultat.setResultatID(resultaterITest.getInt("Resultat_id"));
                 resultat.setTestID(testID);
 

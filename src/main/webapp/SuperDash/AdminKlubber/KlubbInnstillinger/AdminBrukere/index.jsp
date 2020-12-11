@@ -1,6 +1,6 @@
 <%@ page import="java.util.ArrayList" %>
-<%@ page import="servlets.Klubb" %>
-<%@ page import="servlets.Utover" %>
+<%@ page import="models.Klubb" %>
+<%@ page import="models.bruker.Utover" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
