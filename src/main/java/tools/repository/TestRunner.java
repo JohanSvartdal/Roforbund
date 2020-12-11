@@ -4,8 +4,6 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-
 public class TestRunner {
     static String [] expectedOutput;
     static String [] methodOutput;

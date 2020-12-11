@@ -23,9 +23,11 @@ public class CheckLogin extends AbstractAppServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
 
+        //Hent input fra bruker.
         String email = request.getParameter("uname");
         String password = request.getParameter("password");
 
+        //Kjører tester.
         if (email.equals("test") && password.equals("test")) {
             TestRunner testRunner = new TestRunner();
             testRunner.runTests();
@@ -34,8 +36,8 @@ public class CheckLogin extends AbstractAppServlet {
 
             if (password.equals(passwordFromDB)) {
                 int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Bruker_id");
-                Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
-                ck.setMaxAge(2700000);//changing the maximum age to 0 seconds
+                Cookie ck=new Cookie("UID",String.valueOf(userID)); //deleting value of cookie
+                ck.setMaxAge(2700000); //endrer max alder til 0 sekunder.
                 ck.setPath("/");
                 response.addCookie(ck);
 
