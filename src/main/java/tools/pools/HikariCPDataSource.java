@@ -20,6 +20,7 @@ public class HikariCPDataSource {
         }
         config.setUsername("root");
         config.setPassword("12345");
+        config.setMinimumIdle(2200);
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
