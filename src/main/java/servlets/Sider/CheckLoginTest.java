@@ -7,7 +7,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CheckLoginTest {
     @Test
-    public void testLogin () {
-        assertTrue(DatabaseReader.loginCorrect("johan.svartdal30@gmail.com", "root"));
+    public void testLoginUtover () {
+        assertTrue(DatabaseReader.loginCorrect("mari@hotmail.com", "root"));
+    }
+
+    @Test
+    public void testLoginTrener () {
+        assertTrue(DatabaseReader.loginCorrect("gordon.ramsey@kitchen.com", "root"));
+    }
+
+    @Test
+    public void testLoginSuperbruker () {
+        assertTrue(DatabaseReader.loginCorrect("superbruker@roing.no", "root"));
     }
 }

@@ -48,47 +48,35 @@ public class DatabaseReader {
             searchInt = Integer.parseInt(searchInter);
         }
 
-        Connection db = null;
-        PreparedStatement prepareStatement = null;
+        ResultSet rs = null;
+        int toReturn = 0;
 
-        Integer toReturn = null;
-        try {
-            db = HikariCPDataSource.getConnection();
-            ResultSet rs = null;
-            String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
-            prepareStatement = db.prepareStatement(query);
-            if (searchInter == null) {
-                prepareStatement.setString(1, searchString);
-            }else {
-                prepareStatement.setInt(1, searchInt);
-            }
+        if (searchInter != null) {
+            rs = getResultSet(database, searchKey, searchInt);;
+        }else {
+            rs = getResultSet(database, searchKey, searchString);
+        }
 
-            rs = prepareStatement.executeQuery();
-            while (rs.next()) {
-                toReturn = rs.getInt(whatData);
-                System.out.println(searchKey + "= " + searchInter + ". Her lastet jeg tallet: " + toReturn);
-            }
-            rs.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
+        if (rs != null) {
             try {
-                db.close();
+                while (rs.next()) {
+                    toReturn = rs.getInt(whatData);
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
+        System.out.println("Tried to get column: " + whatData + " for " + searchKey + ":" + searchString + "/" + searchInter + " and received: " + toReturn);
         return toReturn;
+    }
+
+    public static String getString(String databaseNavn, String searchKey, String searchString, String whatData) {
+        return getString(databaseNavn, searchKey, searchString, null, whatData);
     }
 
     public static String getString(String database, String searchKey, int searchInt, String whatData) {
         return getString(database, searchKey, null, String.valueOf(searchInt), whatData);
-    }
-
-    public static String getString(String database, String searchKey, String searchString, String whatData) {
-        return getString(database, searchKey, searchString, null, whatData);
     }
 
     public static String getString(String database, String searchKey, String searchString, String searchInter, String whatData) {
@@ -97,37 +85,26 @@ public class DatabaseReader {
             searchInt = Integer.parseInt(searchInter);
         }
 
-        Connection db = null;
-        PreparedStatement prepareStatement = null;
-
+        ResultSet rs = null;
         String toReturn = null;
-        try {
-            db = HikariCPDataSource.getConnection();
-            ResultSet rs = null;
-            String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
-            prepareStatement = db.prepareStatement(query);
-            if (searchInter == null) {
-                prepareStatement.setString(1, searchString);
-            }else {
-                prepareStatement.setInt(1, searchInt);
-            }
 
-            rs = prepareStatement.executeQuery();
-            while (rs.next()) {
-                toReturn = rs.getString(whatData);
-            }
-            rs.close();
+        if (searchInter != null) {
+            rs = getResultSet(database, searchKey, searchInt);;
+        }else {
+            rs = getResultSet(database, searchKey, searchString);
+        }
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
+        if (rs != null) {
             try {
-                db.close();
+                while (rs.next()) {
+                    toReturn = rs.getString(whatData);
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
+        System.out.println("Tried to get column: " + whatData + " for " + searchKey + ":" + searchString + "/" + searchInter + " and received: " + toReturn);
         return toReturn;
     }
 
@@ -145,37 +122,26 @@ public class DatabaseReader {
             searchInt = Integer.parseInt(searchInter);
         }
 
-        Connection db = null;
-        PreparedStatement prepareStatement = null;
-
+        ResultSet rs = null;
         Timestamp toReturn = null;
-        try {
-            db = HikariCPDataSource.getConnection();
-            ResultSet rs = null;
-            String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
-            prepareStatement = db.prepareStatement(query);
-            if (searchInter == null) {
-                prepareStatement.setString(1, searchString);
-            }else {
-                prepareStatement.setInt(1, searchInt);
-            }
 
-            rs = prepareStatement.executeQuery();
-            while (rs.next()) {
-                toReturn = rs.getTimestamp(whatData);
-            }
-            rs.close();
+        if (searchInter != null) {
+            rs = getResultSet(database, searchKey, searchInt);;
+        }else {
+            rs = getResultSet(database, searchKey, searchString);
+        }
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
+        if (rs != null) {
             try {
-                db.close();
+                while (rs.next()) {
+                    toReturn = rs.getTimestamp(whatData);
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
+        System.out.println("Tried to get column: " + whatData + " for " + searchKey + ":" + searchString + "/" + searchInter + " and received: " + toReturn);
         return toReturn;
     }
 
@@ -193,83 +159,63 @@ public class DatabaseReader {
             searchInt = Integer.parseInt(searchInter);
         }
 
-        Connection db = null;
-        PreparedStatement prepareStatement = null;
-
+        ResultSet rs = null;
         Date toReturn = null;
-        try {
-            db = HikariCPDataSource.getConnection();
-            ResultSet rs = null;
-            String query = "SELECT * FROM " + database + " where " + searchKey + " = ?";
-            prepareStatement = db.prepareStatement(query);
-            if (searchInter == null) {
-                prepareStatement.setString(1, searchString);
-            }else {
-                prepareStatement.setInt(1, searchInt);
-            }
 
-            rs = prepareStatement.executeQuery();
-            while (rs.next()) {
-                toReturn = rs.getDate(whatData);
-            }
-            rs.close();
+        if (searchInter != null) {
+            rs = getResultSet(database, searchKey, searchInt);;
+        }else {
+            rs = getResultSet(database, searchKey, searchString);
+        }
 
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
+        if (rs != null) {
             try {
-                db.close();
+                while (rs.next()) {
+                    toReturn = rs.getDate(whatData);
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
+        System.out.println("Tried to get column: " + whatData + " for " + searchKey + ":" + searchString + "/" + searchInter + " and received: " + toReturn);
         return toReturn;
     }
 
     public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey, String searchString, String returnColumn) {
-        return getListOfIds(databaseNavn, searchKey, 0, searchString, returnColumn);
+        return getListOfIds(databaseNavn, searchKey, "0", searchString, returnColumn);
     }
 
     public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey, int searchInt, String returnColumn) {
-        return getListOfIds(databaseNavn, searchKey, searchInt, null, returnColumn);
+        return getListOfIds(databaseNavn, searchKey, String.valueOf(searchInt), null, returnColumn);
     }
 
-    //DENNE ER IKKE TESTET OM FUNKER ENDA
-    public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey,int searchInt, String searchString, String returnColumn) {
-        Connection db = null;
-        PreparedStatement prepareStatement = null;
+    public static ArrayList<Integer> getListOfIds(String databaseNavn, String searchKey, String searchInter, String searchString, String returnColumn) {
+        int searchInt = 0;
+        if (searchInter != null) {
+            searchInt = Integer.parseInt(searchInter);
+        }
 
+        ResultSet rs = null;
         ArrayList<Integer> returnList = new ArrayList<>();
-        try {
-            db = HikariCPDataSource.getConnection();
-            ResultSet rs = null;
-            String query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
-            prepareStatement = db.prepareStatement(query);
-            if (searchString == null) {
-                prepareStatement.setInt(1, searchInt);
-            }else {
-                prepareStatement.setString(1, searchString);
-            }
 
-            System.out.println(prepareStatement.toString());
-            rs = prepareStatement.executeQuery();
+        if (searchInter != null) {
+            rs = getResultSet(databaseNavn, searchKey, searchInt);;
+        }else {
+            rs = getResultSet(databaseNavn, searchKey, searchString);
+        }
 
-            while (rs.next()) {
-                returnList.add(rs.getInt(returnColumn));
-            }
-            rs.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
+        if (rs != null) {
             try {
-                db.close();
+                while (rs.next()) {
+                    returnList.add(rs.getInt(returnColumn));
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
+        System.out.println("Tried to get data: " + returnColumn + " for " + searchKey + ":" + searchString + "/" + searchInter + " and received: " + returnList);
         return returnList;
     }
 
@@ -295,12 +241,49 @@ public class DatabaseReader {
         }finally {
             try {
                 db.close();
-            } catch (SQLException throwables) {
+            }catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
         }
 
         return returnList;
+    }
+
+    public static Boolean getBoolean(String databaseNavn, String searchKey, String searchString, String whatData) {
+        return getBoolean(databaseNavn, searchKey, null, searchString, whatData);
+    }
+
+    public static Boolean getBoolean(String databaseNavn, String searchKey, int searchInt, String whatData) {
+        return getBoolean(databaseNavn, searchKey, String.valueOf(searchInt), null, whatData);
+    }
+
+    public static Boolean getBoolean(String databaseNavn, String searchKey, String searchInter, String searchString, String whatData) {
+        int searchInt = 0;
+        if (searchInter != null) {
+            searchInt = Integer.parseInt(searchInter);
+        }
+
+        ResultSet rs = null;
+        Boolean toReturn = null;
+
+        if (searchInter != null) {
+            rs = getResultSet(databaseNavn, searchKey, searchInt);;
+        }else {
+            rs = getResultSet(databaseNavn, searchKey, searchString);
+        }
+
+        if (rs != null) {
+            try {
+                while (rs.next()) {
+                    toReturn = rs.getBoolean(whatData);
+                }
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+        System.out.println("Tried to get column: " + whatData + " for " + searchKey + ":" + searchString + "/" + searchInter + " and received: " + toReturn);
+        return toReturn;
     }
 
     public static ResultSet getResultSet(String databaseNavn) {
@@ -350,49 +333,6 @@ public class DatabaseReader {
         }
 
         return rs;
-    }
-
-    public static Boolean getBoolean(String databaseNavn, String searchKey, String searchString, String whatData) {
-        return getBoolean(databaseNavn, searchKey, -1, searchString, whatData);
-    }
-
-    public static Boolean getBoolean(String databaseNavn, String searchKey, int searchInt, String whatData) {
-        return getBoolean(databaseNavn, searchKey, searchInt, null, whatData);
-    }
-
-    public static Boolean getBoolean(String databaseNavn, String searchKey, int searchInt, String searchString, String whatData) {
-        Connection db = null;
-        PreparedStatement prepareStatement = null;
-
-        Boolean toReturn = null;
-        try {
-            db = HikariCPDataSource.getConnection();
-            ResultSet rs = null;
-            String query = "SELECT * FROM " + databaseNavn + " where " + searchKey + " = ?";
-            prepareStatement = db.prepareStatement(query);
-            if (searchString != null) {
-                prepareStatement.setString(1, searchString);
-            }else {
-                prepareStatement.setInt(1, searchInt);
-            }
-
-            rs = prepareStatement.executeQuery();
-            while (rs.next()) {
-                toReturn = rs.getBoolean(whatData);
-            }
-            rs.close();
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }finally {
-            try {
-                db.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-        }
-
-        return toReturn;
     }
 
     public static boolean loginCorrect(String email, String password) {
