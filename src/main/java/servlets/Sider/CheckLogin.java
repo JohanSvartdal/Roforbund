@@ -3,7 +3,6 @@ package servlets.Sider;
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
 import tools.database.DatabaseReader;
-import tools.database.UserManagement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +19,12 @@ public class CheckLogin extends AbstractAppServlet {
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
+
+        //Hent input fra bruker.
         String email = request.getParameter("uname");
         String password = request.getParameter("password");
 
+        //Kjører tester.
         if (DatabaseReader.loginCorrect(email, password)) {
             int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Bruker_id");
             Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
