@@ -238,9 +238,13 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            }catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
-
-        //TODO: denne closer ikke databaseconnection
 
         return returnList;
     }
@@ -320,6 +324,12 @@ public class DatabaseReader {
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
         }
 
         return rs;
