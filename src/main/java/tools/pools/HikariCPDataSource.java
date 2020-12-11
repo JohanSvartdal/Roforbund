@@ -12,7 +12,8 @@ public class HikariCPDataSource {
     private static HikariDataSource ds;
 
     static {
-        config.setJdbcUrl("jdbc:mariadb://172.17.0.1:3308/");
+        config.setJdbcUrl("jdbc:mariadb://localhost:3308/");
+        //RIKTIG URL FOR Å KJØRE: Docker IP: 172.17.0.1
         config.setUsername("root");
         config.setPassword("12345");
         config.addDataSourceProperty("cachePrepStmts", "true");
