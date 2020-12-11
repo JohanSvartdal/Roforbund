@@ -80,8 +80,10 @@ public class DatabaseWriter {
             throwables.printStackTrace();
         } finally {
             try {
-                db.close();
-            } catch (SQLException throwables) {
+                if (db != null) {
+                    db.close();
+                }
+            } catch (Exception throwables) {
                 throwables.printStackTrace();
             }
         }
@@ -163,6 +165,32 @@ public class DatabaseWriter {
             }else {
                 preparedStatement.setInt(1, searchInt);
             }
+
+            System.out.println("PrepState:" + preparedStatement.toString());
+            preparedStatement.executeQuery();
+        } catch (SQLException throwables) {
+            System.out.println("Feil");
+            throwables.printStackTrace();
+        } finally {
+            try {
+                db.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+
+    public static void removeLastRow(String tableName, String orderByColumn) {
+        Connection db = null;
+        PreparedStatement preparedStatement = null;
+        try {
+            db = HikariCPDataSource.getConnection();
+            PreparedStatement dbUse = db.prepareStatement("USE roforbund");
+            dbUse.executeQuery();
+
+            String query = "DELETE FROM " + tableName + " ORDER BY " + orderByColumn + " DESC LIMIT 1";
+
+            preparedStatement = db.prepareStatement(query);
 
             System.out.println("PrepState:" + preparedStatement.toString());
             preparedStatement.executeQuery();
