@@ -1,4 +1,4 @@
-<%@ page import="servlets.Test" %>
+<%@ page import="models.test.Test" %>
 <%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">

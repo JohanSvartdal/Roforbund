@@ -1,4 +1,4 @@
-package servlets;
+package models.test;
 
 // constructor for Resultatobjekt. Brukes til/fra databasen ved innsending og henting av resultater
 

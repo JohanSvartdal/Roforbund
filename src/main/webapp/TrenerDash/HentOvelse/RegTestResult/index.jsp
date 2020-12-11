@@ -18,41 +18,45 @@
         <h1>Opprett ny test</h1>
     </div>
 </div>
-
-<div class="container">
-    <%System.out.println("Nå skal jeg hente");%>
-    <h1> Legge inn resultater til <b>øvelse <%=request.getAttribute("currentOvelseIndex")%></b> - <%=request.getAttribute("currentOvelsesNavn")%>>:</h1>
-</div>
+<form action='../RegTestResult' method='POST'>
+    <div class="container">
+        <%System.out.println("Nå skal jeg hente");%>
+        <h1> Legge inn resultater til <b>øvelse <%=(int)request.getAttribute("currentOvelseIndex") + 1%></b> - <%=request.getAttribute("currentOvelsesNavn")%></h1>
         <div class = "row">
             <div class = "col-sm-3"><b>Navn:</b></div>
             <div class = "col-sm-2"><b>Watt:</b></div>
             <div class = "col-sm-2"><b>Tid:</b></div>
             <div class = "col-sm-3"><b>Notater:</b></div>
         </div>
-
+        <%
+            String[] brukerIDs = (String[]) request.getAttribute("brukerIDs");
+            String[] brukerNavn = (String[]) request.getAttribute("brukerNavn");
+            for (int i = 0; i < brukerNavn.length; i++) {
+        %>
         <div class = "row">
-            <div class = "col-sm-4">Svartdal Johan</div>
-            <div class = "col-sm-2"><input type = "number" class="textField" value="456"/></div>
-            <div class = "col-sm-2"><input type = "number" class="textField" value="12:34"/></div>
-            <div class = "col-sm-3"><input type = "text" class="textField" value="Vonde knær."/></div>
+            <div class = "col-sm-4"><%=brukerNavn[i]%></div>
+            <div class = "col-sm-2"><input name="<%=brukerIDs[i]%>Watt" type = "number" class="textField" value="456"/></div>
+            <div class = "col-sm-2"><input name="<%=brukerIDs[i]%>Tid" type = "number" class="textField" value="12:34"/></div>
+            <div class = "col-sm-3"><input name="<%=brukerIDs[i]%>Notater" type = "text" class="textField" value="Vonde knær."/></div>
         </div>
+        <%}%>
     </div>
-<footer>
-    <a href = "../../">
-        <div class = "footerButton" id ="footerLeft">
-            <img src = "../../../images/ikoner/avbryt.png">
-            <h2>Avbryt test</h2>
-        </div>
-    </a>
-    <a href = "../RegTestResult1">
-    <div class = "footerButton" id ="footerRight">
-        <img src = "../../../images/ikoner/forward_button.png">
-        <form action='RegTestResult' method='POST'>
+    <input type = "text" name="brukereTilStede" value="<%=request.getParameter("brukereTilStede")%>" class="hidden">
+    <input type = "text" name = "ovelserValgt" value="<%=request.getParameter("ovelserValgt")%>" class="hidden">
+    <input type = "number" name = "currentOvelseIndex" value="<%=request.getParameter("currentOvelseIndex")%>" class="hidden">
+    <footer>
+        <a href = "../../">
+            <div class = "footerButton" id ="footerLeft">
+                <img src = "../../../images/ikoner/avbryt.png">
+                <h2>Avbryt test</h2>
+            </div>
+        </a>
+        <div class = "footerButton" id ="footerRight">
+            <img src = "../../../images/ikoner/forward_button.png">
             <button type="submit">
                 Neste øvelse
             </button>
-        </form>
-    </div>
-    </a>
-</footer>
+        </div>
+    </footer>
+</form>
 </body>

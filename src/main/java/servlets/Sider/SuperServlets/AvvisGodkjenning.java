@@ -1,9 +1,9 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.StaticValues;
-import tools.repository.DatabaseValue;
-import tools.repository.DatabaseWriter;
+import tools.config.StaticValues;
+import tools.database.DatabaseValue;
+import tools.database.DatabaseWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

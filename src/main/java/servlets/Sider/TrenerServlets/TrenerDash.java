@@ -1,7 +1,7 @@
 package servlets.Sider.TrenerServlets;
 
 import servlets.AbstractAppServlet;
-import tools.repository.DatabaseReader;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

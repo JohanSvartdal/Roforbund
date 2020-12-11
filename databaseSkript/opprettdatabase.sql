@@ -258,6 +258,21 @@ insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passor
 values ('Johan', 'Svartdal', '2000-10-02', 46968676, 'Johan.svartdal30@gmail.com', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Jon Petter', 'Iversen', '1998-07-02', 40640382, 'jonpetter@roing.no', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Berit', 'Antonsen', '1998-07-02', 40640382, 'beritanotnsen@roing.no', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Magnus', 'Hoslemo', '1998-07-02', 40640382, 'magnushoslemo@roing.no', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Berta', 'Ingerta', '1998-07-02', 40640382, 'bertaingerta@roing.no', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
+values ('Kristine', 'Arbodebers', '1998-07-02', 40640382, 'jonpetter@roing.no', 'root', '3015cappelensgate61', 1, 1, 1, 75, 181);
+
+insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)
 values ('Gordon', 'Ramsey', '1966-10-02', 93724120, 'gordon.ramsey@kitchen.com', 'root', '3015rosengransgate112', 1, 2, null, 90, 188);
 
 insert into roforbund.bruker (Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde)

@@ -1,9 +1,9 @@
 package servlets.Sider.UtoverServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.OvelsesResultat;
-import servlets.StaticValues;
-import tools.repository.DatabaseReader;
+import models.test.OvelsesResultat;
+import tools.config.StaticValues;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -39,12 +39,12 @@ public class Resultat extends AbstractAppServlet {
         int godkjentStatus = DatabaseReader.getInt("roforbund.tester", "Test_id", testID, "Godkjent");
         String datoString = dato.toString();
 
-        ArrayList<servlets.Resultat> resultatList = new ArrayList<>();
+        ArrayList<models.test.Resultat> resultatList = new ArrayList<>();
 
         ResultSet resultaterITest = DatabaseReader.getResultSet("roforbund.resultater", "Test_id", testIDString);
         try {
             while (resultaterITest.next()) {
-                servlets.Resultat resultat = new servlets.Resultat();
+                models.test.Resultat resultat = new models.test.Resultat();
                 resultat.setResultatID(resultaterITest.getInt("Resultat_id"));
                 resultat.setTestID(testID);
 
@@ -77,7 +77,7 @@ public class Resultat extends AbstractAppServlet {
 
         ArrayList<OvelsesResultat> ovelsesResultatList = new ArrayList<>();
 
-        for (servlets.Resultat currentResultat: resultatList) {
+        for (models.test.Resultat currentResultat: resultatList) {
             System.out.println("Skal nå jobbe med resultat: " + currentResultat.getResultatID());
             boolean alreadyAdded = false;
             for (int i = 0; i < ovelsesResultatList.size(); i++) {

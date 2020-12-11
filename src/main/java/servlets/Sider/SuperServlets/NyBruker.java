@@ -1,9 +1,8 @@
 package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.Klubb;
-import servlets.StaticValues;
-import tools.repository.*;
+import tools.config.StaticValues;
+import tools.database.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -15,7 +14,6 @@ import java.io.PrintWriter;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 @WebServlet(name= "NyBruker", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/AdminBrukere/NyBruker/"})
 public class NyBruker extends AbstractAppServlet {
@@ -160,6 +158,10 @@ public class NyBruker extends AbstractAppServlet {
         }
 
 
+        fieldCheck(request, response, wantedUserRole, klubbID, brukerID);
+    }
+
+    private void fieldCheck(HttpServletRequest request, HttpServletResponse response, int wantedUserRole, int klubbID, int brukerID) throws ServletException, IOException {
         String errorMessage = "";
 
         String fornavn = request.getParameter("fornavn");

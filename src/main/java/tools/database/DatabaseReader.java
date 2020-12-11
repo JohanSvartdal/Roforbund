@@ -1,4 +1,4 @@
-package tools.repository;
+package tools.database;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import tools.pools.HikariCPDataSource;
 
 public class DatabaseReader {
+
+    //TODO: abstrakt klasse "database", som handler alt med connections og errors med connections osv. Databasereader og writer skal kun lese og skrive.
 
     public static ResultSet getLastRecord(String database, String primaryKey) {
         Connection db = null;
@@ -391,5 +393,15 @@ public class DatabaseReader {
         }
 
         return toReturn;
+    }
+
+    public static boolean loginCorrect(String email, String password) {
+        String passwordFromDB = DatabaseReader.getString("roforbund.bruker", "Epost", email, "Passord");
+
+        if (passwordFromDB != null && password != null) {
+            return password.equals(passwordFromDB);
+        }else {
+            return false;
+        }
     }
 }

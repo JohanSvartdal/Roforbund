@@ -1,4 +1,4 @@
-package tools.repository;
+package tools.database;
 
 public class DatabaseColumn {
     private String columnName;

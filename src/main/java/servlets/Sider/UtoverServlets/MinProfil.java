@@ -1,8 +1,8 @@
 package servlets.Sider.UtoverServlets;
 
 import servlets.AbstractAppServlet;
-import servlets.StaticValues;
-import tools.repository.DatabaseReader;
+import tools.config.StaticValues;
+import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

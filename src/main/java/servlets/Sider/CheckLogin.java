@@ -1,9 +1,9 @@
 package servlets.Sider;
 
 import servlets.AbstractAppServlet;
-import tools.repository.DatabaseReader;
-import tools.repository.TestRunner;
-import tools.repository.UserManagement;
+import tools.config.StaticValues;
+import tools.database.DatabaseReader;
+import tools.database.UserManagement;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 
 @WebServlet(name= "CheckLogin", urlPatterns = {"/login/CheckLogin"})
@@ -28,33 +26,26 @@ public class CheckLogin extends AbstractAppServlet {
         String password = request.getParameter("password");
 
         //Kjører tester.
-        if (email.equals("test") && password.equals("test")) {
-            TestRunner testRunner = new TestRunner();
-            testRunner.runTests();
-        }else {
-            String passwordFromDB = UserManagement.getUserPassword(email);
+        if (DatabaseReader.loginCorrect(email, password)) {
+            int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Bruker_id");
+            Cookie ck=new Cookie("UID",String.valueOf(userID));//deleting value of cookie
+            ck.setMaxAge(2700000);//changing the maximum age to 0 seconds
+            ck.setPath("/");
+            response.addCookie(ck);
 
-            if (password.equals(passwordFromDB)) {
-                int userID = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Bruker_id");
-                Cookie ck=new Cookie("UID",String.valueOf(userID)); //deleting value of cookie
-                ck.setMaxAge(2700000); //endrer max alder til 0 sekunder.
-                ck.setPath("/");
-                response.addCookie(ck);
+            System.out.println("Searhcing for: " + email);
 
-                System.out.println("Searhcing for: " + email);
+            Integer userRole = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Rolle");
+            String welcomeName = DatabaseReader.getString("roforbund.bruker", "Epost", email, "Fornavn");
 
-                Integer userRole = DatabaseReader.getInt("roforbund.bruker", "Epost", email, "Rolle");
-                String welcomeName = DatabaseReader.getString("roforbund.bruker", "Epost", email, "Fornavn");
-
-                if (userRole == 1) {
-                    response.sendRedirect("../UtoverDash/");
-                }else if (userRole == 2) {
-                    response.sendRedirect("../TrenerDash/");
-                }else if (userRole == 3) {
-                    response.sendRedirect("../SuperDash/");
-                }else {
-                    return;
-                }
+            if (userRole == StaticValues.UTOVER) {
+                response.sendRedirect("../UtoverDash/");
+            }else if (userRole == StaticValues.TRENER) {
+                response.sendRedirect("../TrenerDash/");
+            }else if (userRole == StaticValues.SUPERBRUKER) {
+                response.sendRedirect("../SuperDash/");
+            }else {
+                return;
             }
         }
     }

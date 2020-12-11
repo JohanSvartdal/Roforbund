@@ -1,4 +1,4 @@
-package servlets;
+package models.test;
 
 // Denne klassen lager testobjektet med de attributten som trengs
 // for å skrive og lese av databasen. Denne brukes i opprett test
