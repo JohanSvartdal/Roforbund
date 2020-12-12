@@ -119,7 +119,7 @@ public class RegTestResult extends AbstractAppServlet {
                 new DatabaseValue(ovelserSplit.length),
                 new DatabaseValue("")};
 
-        DatabaseWriter.addRowToTable("tester", DatabaseInfo.TESTER_KOLONNER, databaseValues);
+        DatabaseWriter.addRowToTable("roforbund","tester", DatabaseInfo.TESTER_KOLONNER, databaseValues);
 
         ResultSet lastRecord = DatabaseReader.getLastRecord("roforbund.tester", "Test_id");
         try {
@@ -152,7 +152,7 @@ public class RegTestResult extends AbstractAppServlet {
                     new DatabaseValue(resultat.getBrukerID()),
                     new DatabaseValue(resultat.getTid()),
                     new DatabaseValue(resultat.getWatt())};
-            DatabaseWriter.addRowToTable("resultater", DatabaseInfo.RESULTATER_KOLONNER, databaseValues);
+            DatabaseWriter.addRowToTable("roforbund", "resultater", DatabaseInfo.RESULTATER_KOLONNER, databaseValues);
         }
     }
 

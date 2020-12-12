@@ -33,7 +33,7 @@ public class AdminKlubber extends AbstractAppServlet {
 
         if (removeKlubbIDString != null) {
             int removeKlubbID = Integer.parseInt(removeKlubbIDString);
-            DatabaseWriter.changeCellValue("klubber", "Klubb_id", removeKlubbID, "Deaktivert", new DatabaseValue(true));
+            DatabaseWriter.changeCellValue("roforbund", "klubber", "Klubb_id", removeKlubbID, "Deaktivert", new DatabaseValue(true));
         }
 
         ArrayList<Integer> klubbIds = DatabaseReader.getAllEntries("roforbund.klubber", "Klubb_id");

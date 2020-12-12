@@ -261,17 +261,17 @@ public class NyBruker extends AbstractAppServlet {
             DatabaseValue fodselsdatoValue = new DatabaseValue(date);
 
             if (brukerID != 0) {
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Fornavn", fornavnValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Etternavn", etternavnValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Fodseldato", fodselsdatoValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Tlf", tlfValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Epost", epostValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Adresse_id", adresseIDValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Vekt", vektValue);
-                DatabaseWriter.changeCellValue("roforbund.bruker", "Bruker_id", brukerID, "Hoyde", hoydeValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Fornavn", fornavnValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Etternavn", etternavnValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Fodseldato", fodselsdatoValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Tlf", tlfValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Epost", epostValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Adresse_id", adresseIDValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Vekt", vektValue);
+                DatabaseWriter.changeCellValue("roforbund", "roforbund.bruker", "Bruker_id", brukerID, "Hoyde", hoydeValue);
             }else {
                 DatabaseValue[] brukerValues = {fornavnValue, etternavnValue, fodselsdatoValue, tlfValue, epostValue, passwordValue, adresseIDValue, klubbIDValue, rolleValue, rankingValue, vektValue, hoydeValue};
-                DatabaseWriter.addRowToTable("bruker", DatabaseInfo.BRUKER_KOLONNER, brukerValues);
+                DatabaseWriter.addRowToTable("roforbund","bruker", DatabaseInfo.BRUKER_KOLONNER, brukerValues);
             }
             response.sendRedirect("../../../");
         }

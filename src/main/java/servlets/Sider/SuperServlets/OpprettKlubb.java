@@ -45,13 +45,13 @@ public class OpprettKlubb extends AbstractAppServlet {
         String klubbNavn = request.getParameter("Navn");
 
         DatabaseValue[] klubbVerdier = {new DatabaseValue(klubbNavn), new DatabaseValue(adresseId), new DatabaseValue(tlf)};
-        DatabaseWriter.addRowToTable("klubber", klubbKolonner, klubbVerdier);
+        DatabaseWriter.addRowToTable("roforbund", "klubber", klubbKolonner, klubbVerdier);
 
         int klubbId = DatabaseReader.getInt("roforbund.klubber","Navn", klubbNavn, "Klubb_id");
 
         for (int i = 0; i < trenerListe.length; i++) {
             //TODO lag en metode for å endre en celle i databasen
-            DatabaseWriter.changeCellValue("bruker", "Bruker_id", trenerListe[i], "Klubb_id", new DatabaseValue(klubbId));
+            DatabaseWriter.changeCellValue("roforbund", "bruker", "Bruker_id", trenerListe[i], "Klubb_id", new DatabaseValue(klubbId));
         }
 
 
