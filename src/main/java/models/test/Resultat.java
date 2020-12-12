@@ -8,10 +8,15 @@ public class Resultat {
     private int testID;
     private int brukerID;
     private String brukerNavn;
+    private String notat;
     private int tid = -9000;
     private int watt = -9000;
     private int kg = -9000;
     private int repetisjoner = -9000;
+
+    public Resultat() {
+
+    }
 
     public int getOvelsesID() {
         return ovelsesID;
@@ -83,5 +88,13 @@ public class Resultat {
 
     public void setBrukerNavn(String brukerNavn) {
         this.brukerNavn = brukerNavn;
+    }
+
+    public String getNotat() {
+        return notat;
+    }
+
+    public void setNotat(String notat) {
+        this.notat = notat;
     }
 }

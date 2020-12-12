@@ -1,8 +1,10 @@
 package servlets.Sider.TrenerServlets;
 
 import servlets.AbstractAppServlet;
+import tools.LocalStorage;
 import tools.config.StaticValues;
 import models.bruker.Utover;
+import tools.database.DatabaseInfo;
 import tools.database.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
@@ -28,26 +30,11 @@ public class OpprettTest extends AbstractAppServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Cookie cookies[] = request.getCookies();
-        int UID = -1;
-        for (Cookie cookie: cookies) {
-            if (cookie.getName().equals("UID")) {
-                String uidString = cookie.getValue();
-                UID = Integer.parseInt(uidString);
-            }
-        }
-        if (UID == -1) {
-            request.setAttribute("title", "Fant ikke UID");
-            request.setAttribute("description", "Vennligst kontakt IT avdelingen for hjelp");
-            request.setAttribute("backlink", "../");
-
-            RequestDispatcher rq = request.getRequestDispatcher("../Error/index.jsp");
-            rq.forward(request, response);
-            return;
-        }
+        int UID = LocalStorage.getUID(request, response);
 
         int klubbID = DatabaseReader.getInt("roforbund.bruker", "Bruker_id", UID, "Klubb_id");
-        ArrayList<Integer> brukerIds = DatabaseReader.getListOfIds("roforbund.bruker", "Klubb_id",klubbID, "Bruker_id");
+
+        ArrayList<Integer> brukerIds = DatabaseReader.getListOfIds("roforbund.bruker", "Klubb_id", klubbID, "Bruker_id");
 
         ArrayList<Utover> utoverList = new ArrayList<>();
         for (int i = 0; i < brukerIds.size(); i++) {

@@ -18,7 +18,7 @@
         <h1>Opprett ny test</h1>
     </div>
 </div>
-<form action='../RegTestResult' method='POST'>
+<form action='' method='POST'>
     <div class="container">
         <%System.out.println("Nå skal jeg hente");%>
         <h1> Legge inn resultater til <b>øvelse <%=(int)request.getAttribute("currentOvelseIndex") + 1%></b> - <%=request.getAttribute("currentOvelsesNavn")%></h1>
@@ -36,14 +36,15 @@
         <div class = "row">
             <div class = "col-sm-4"><%=brukerNavn[i]%></div>
             <div class = "col-sm-2"><input name="<%=brukerIDs[i]%>Watt" type = "number" class="textField" value="456"/></div>
-            <div class = "col-sm-2"><input name="<%=brukerIDs[i]%>Tid" type = "number" class="textField" value="12:34"/></div>
+            <div class = "col-sm-2"><input name="<%=brukerIDs[i]%>Tid" type = "number" class="textField" value="13"/></div>
             <div class = "col-sm-3"><input name="<%=brukerIDs[i]%>Notater" type = "text" class="textField" value="Vonde knær."/></div>
         </div>
         <%}%>
     </div>
     <input type = "text" name="brukereTilStede" value="<%=request.getParameter("brukereTilStede")%>" class="hidden">
     <input type = "text" name = "ovelserValgt" value="<%=request.getParameter("ovelserValgt")%>" class="hidden">
-    <input type = "number" name = "currentOvelseIndex" value="<%=request.getParameter("currentOvelseIndex")%>" class="hidden">
+    <input type = "number" name = "currentOvelseIndex" value="<%=request.getAttribute("currentOvelseIndex")%>" class="hidden">
+    <input type = "number" name = "testID" value="<%=request.getAttribute("testID")%>" class="hidden">
     <footer>
         <a href = "../../">
             <div class = "footerButton" id ="footerLeft">
@@ -53,9 +54,7 @@
         </a>
         <div class = "footerButton" id ="footerRight">
             <img src = "../../../images/ikoner/forward_button.png">
-            <button type="submit">
-                Neste øvelse
-            </button>
+            <input type="submit" value = "<%=request.getAttribute("nesteKnapp")%>"/>
         </div>
     </footer>
 </form>

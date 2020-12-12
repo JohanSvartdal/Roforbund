@@ -1,101 +1,5 @@
-body {
-    background-color: #F7FAFF !important;
-    background-image: none !important;
-    font-size: 18px;
-}
-
 .titleBar {
-    width: 100%;
-    height: 50px;
     background-color: #B0B5C3;
-    color: black;
-}
-
-.titleBar a {
-    color: black !important;
-    text-decoration: none;
-}
-
-.titleBar h1 {
-    font-size: 19px;
-    margin-top: 15px;
-    margin-left: 5px;
-    font-weight: 300;
-}
-
-.titleBar h3 {
-    margin-top: 15px;
-    margin-left: 10px;
-    font-size: 18px;
-}
-
-.titleBar * {
-    display: inline-flex;
-}
-
-.titleBar img {
-    margin-top: 10px;
-    height: 30px;
-}
-
-.centerObjects {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.container {
-    margin-top: 40px;
-}
-
-
-a {
-    color: black;
-    text-decoration: none;
-}
-
-footer {
-    width: 100%;
-    height: 50px;
-    position: absolute;
-    bottom: 0px;
-    background-color: #ebf0f4;
-    color: black;
-}
-
-.footerButton {
-    width: 200px;
-    height: 100%;
-    background-color: #B0B5C3;
-    text-align: center;
-}
-
-.footerButton h2 {
-    margin-top: 16px;
-    font-size: 18px;
-}
-
-.footerButton img {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-}
-
-#footerLeft img {
-    left: 2px;
-}
-
-#footerRight img {
-    right: 2px;
-}
-
-#footerLeft {
-    float: left;
-}
-
-#footerRight {
-    float: right;
-    background-color: #3ECC43;
 }
 
 h1 {
@@ -116,19 +20,33 @@ h3 {
     font-size: 20px;
     font-family: 'Helvetica', serif;
     margin-bottom: -50px;
+    margin-top: 40px;
 }
 
-#resultBox {
+.resultBox {
     background-color: white;
-    width: 800px;
     height: 360px;
     margin-left: auto;
     margin-right: auto;
 
     margin-top: 70px;
+    margin-bottom: 30px;
     padding: 20px;
     box-shadow: 0px 2px 5px #6E8BD6;
     text-align: center;
 
     border-radius: 0px;
+}
+
+footer {
+    background-color: #ebf0f4;
+}
+
+.footerButton {
+    background-color: #B0B5C3;
+}
+
+.row {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }

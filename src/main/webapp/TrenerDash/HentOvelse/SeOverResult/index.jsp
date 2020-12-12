@@ -23,18 +23,102 @@
 
 <div class="container">
     <h1><b>Se over resultatene før du sender inn. Rediger et felt ved å trykke på blyanten.</b></h1>
-</div>
-
-<div class = "container">
     <h3> Resultater til <b>øvelse 1</b>- 3000m: </h3>
-</div>
 
-<div id ="resultBox">
-    <div class = "row">
-        <div class = "col-sm" > <b>Navn:</b> </div>
-        <div class = "col-sm" > <b>Tid:</b> </div>
-        <div class = "col-sm" > <b> Watt: </b> </div>
-        <div class = "col-sm" > <b>Notater:</b></div>
+    <div class ="resultBox">
+        <div class = "row">
+            <div class = "col-sm"><b>Navn:</b></div>
+            <div class = "col-sm"><b>Tid:</b></div>
+            <div class = "col-sm"><b>Watt:</b></div>
+            <div class = "col-sm"><b>Notater:</b></div>
+        </div>
+        <hr/>
+        <div class = "row">
+            <div class = "col-sm"><b>Johan Svartdal</b></div>
+            <div class = "col-sm">13 min</div>
+            <div class = "col-sm">2000</div>
+            <div class = "col-sm"></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm"><b>Oscar Pedersen</b> </div>
+            <div class = "col-sm">19 min</div>
+            <div class = "col-sm">1000</div>
+            <div class = "col-sm"><i>Skadet fot</i></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm"><b>Rita Henriksen</b></div>
+            <div class = "col-sm">17 min</div>
+            <div class = "col-sm">1290</div>
+            <div class = "col-sm"><i>Glemt astmamedisin</i></div>
+        </div>
+    </div>
+
+
+
+    <h3> Resultater til <b>øvelse 2</b>- 1000m roing: </h3>
+    <div class ="resultBox">
+        <div class = "row">
+            <div class = "col-sm"><b>Navn:</b></div>
+            <div class = "col-sm"><b>Tid:</b></div>
+            <div class = "col-sm"><b>Watt:</b></div>
+            <div class = "col-sm"><b>Notater:</b></div>
+        </div>
+        <hr/>
+        <div class = "row">
+            <div class = "col-sm"><b>Johan Svartdal</b></div>
+            <div class = "col-sm">17 min</div>
+            <div class = "col-sm">20</div>
+            <div class = "col-sm"><i>Mistet arm under øvelse</i></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm"><b>Oscar Pedersen</b> </div>
+            <div class = "col-sm">11 min</div>
+            <div class = "col-sm">10</div>
+            <div class = "col-sm"></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm"><b>Rita Henriksen</b></div>
+            <div class = "col-sm">6 min</div>
+            <div class = "col-sm">15</div>
+            <div class = "col-sm"><i>Lettere robåt</i></div>
+        </div>
+    </div>
+
+
+
+    <h3> Resultater til <b>øvelse 3</b>- spensthopp: </h3>
+    <div class ="resultBox">
+        <div class = "row">
+            <div class = "col-sm"><b>Navn:</b></div>
+            <div class = "col-sm"><b>Tid:</b></div>
+            <div class = "col-sm"><b>Antall:</b></div>
+            <div class = "col-sm"><b>Notater:</b></div>
+        </div>
+        <hr/>
+        <div class = "row">
+            <div class = "col-sm"><b>Johan Svartdal</b></div>
+            <div class = "col-sm">17 min</div>
+            <div class = "col-sm">68</div>
+            <div class = "col-sm"><i>Ingen arm</i></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm"><b>Oscar Pedersen</b> </div>
+            <div class = "col-sm">11 min</div>
+            <div class = "col-sm">54</div>
+            <div class = "col-sm"><i>Skadet fot</i></div>
+        </div>
+
+        <div class = "row">
+            <div class = "col-sm"><b>Rita Henriksen</b></div>
+            <div class = "col-sm">6 min</div>
+            <div class = "col-sm">56</div>
+            <div class = "col-sm"></div>
+        </div>
     </div>
 </div>
 

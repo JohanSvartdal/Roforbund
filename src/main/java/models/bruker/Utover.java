@@ -9,8 +9,8 @@ public class Utover extends Bruker {
         super.setEpost(epost);
     }
 
-    public Utover(String fornavn, String etternavn, Integer tlf) {
-        super(fornavn,etternavn,tlf);
+    public Utover(String fornavn, String etternavn, Integer brukerID) {
+        super(fornavn,etternavn,brukerID);
     }
 
     public int getKlasseID() {

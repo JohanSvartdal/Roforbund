@@ -25,4 +25,10 @@ public class DatabaseInfo {
 
     public static final String ADRESSER_KOLONNER =
             "Adresse_id, Gatenavn, Husnummer, Postnummer";
+
+    public static final String TESTER_KOLONNER =
+            "Klubb_id, Trener_id, Godkjent, Antall_ovelser, Kommentar";
+
+    public static final String RESULTATER_KOLONNER =
+            "Ovelse_id, Test_id, Bruker_id, Tid, Watt";
 }
