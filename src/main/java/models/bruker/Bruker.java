@@ -18,10 +18,10 @@ public abstract class Bruker {
         this.brukerID = brukerID;
     }
 
-    public Bruker(String fornavn, String etternavn, Integer tlf) {
+    public Bruker(String fornavn, String etternavn, Integer brukerID) {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
-        this.tlf = tlf;
+        this.brukerID = brukerID;
     }
 
     public int getBrukerID() {
