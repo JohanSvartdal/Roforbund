@@ -51,7 +51,7 @@ footer {
     padding-bottom: 15px;
 }
 
-.bekreftInnsending {
+#bekreftInnsending {
     position: fixed;
     width: 800px;
     padding-top: 30px;
@@ -62,13 +62,15 @@ footer {
     left: 50%;
     right: 50%;
 
+    border: 2px lightgray solid;
+
     transform: translate3d(-50%, -50%, 0px);
 
 
     background-color: white;
 }
 
-.backgroundDimmer {
+#backgroundDimmer {
     position: fixed;
     top: 0px;
     left: 0px;
@@ -76,4 +78,18 @@ footer {
     height: 100%;
     background-color: black;
     opacity: 0.3;
+}
+
+#closeDialog {
+    cursor: pointer;
+}
+
+.bigButton {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 90px;
+}
+
+h2 {
+    font-weight: 100;
 }

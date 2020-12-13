@@ -25,9 +25,6 @@ public class RegTestResult extends AbstractAppServlet {
 
     @Override
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        for (int i = 0; i < 50; i++) {
-            System.out.println("Yalla habibi");
-        }
         String people = request.getParameter("brukereTilStede");
         String ovelser = request.getParameter("ovelserValgt");
         String[] ovelserSplit = ovelser.split(",");
@@ -35,15 +32,12 @@ public class RegTestResult extends AbstractAppServlet {
         String[] ovelsesIds = ovelser.split(",");
         String[] brukerIds = people.split(",");
         String[] brukerNavn = new String[brukerIds.length];
-        System.out.println("Vi kommer hit altså1");
 
         for (int i = 0; i < brukerIds.length; i++) {
             String fornavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", Integer.parseInt(brukerIds[i]), "Fornavn");
             String etternavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", Integer.parseInt(brukerIds[i]), "Etternavn");
             brukerNavn[i] = fornavn + " " + etternavn;
         }
-
-        System.out.println("Vi kommer hit altså2");
 
         int currentOvelseIndex = getCurrentOvelsesIndex(request);
         currentOvelseIndex = currentOvelseIndex + 1;
@@ -106,7 +100,7 @@ public class RegTestResult extends AbstractAppServlet {
 
         if (currentOvelsesIndex == ovelserSplit.length-1) {
             //Nettop sendt inn siste øvelse
-            response.sendRedirect("../SeOverResult");
+            response.sendRedirect("../SeOverResult?testID=" + testID);
         }else {
             super.doPost(request, response);
         }

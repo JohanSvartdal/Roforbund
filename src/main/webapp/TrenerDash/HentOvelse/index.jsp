@@ -46,14 +46,6 @@
             <img src = "../../images/ikoner/forward_button.png">
 
             <h2>Start test</h2>
-            <!--
-            <form action='RegTestResult' method='POST'>
-                <button type="submit">
-
-                </button>
-            </form>
-            -->
-
         </div>
     </footer>
     <script src = "javascript.js" type="text/javascript"></script>
