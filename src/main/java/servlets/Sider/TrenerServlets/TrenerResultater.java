@@ -4,7 +4,7 @@ import models.test.Test;
 import servlets.AbstractAppServlet;
 import tools.LocalStorage;
 import tools.config.StaticValues;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
