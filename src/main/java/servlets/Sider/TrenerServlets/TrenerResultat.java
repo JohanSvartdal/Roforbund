@@ -65,6 +65,7 @@ public class TrenerResultat extends AbstractAppServlet {
                 resultat.setRepetisjoner(resultaterITest.getInt("Repetisjoner"));
                 resultat.setWatt(resultaterITest.getInt("Watt"));
                 resultat.setTid(resultaterITest.getInt("Tid"));
+                resultat.setNotat("");
 
                 resultatList.add(resultat);
             }
