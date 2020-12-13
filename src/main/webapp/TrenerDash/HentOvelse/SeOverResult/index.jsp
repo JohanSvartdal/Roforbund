@@ -122,17 +122,37 @@
     </div>
 </div>
 
+<div id = "backgroundDimmer" class="hidden">
+
+</div>
+
+<div id = "bekreftInnsending" class="hidden">
+    <h2>Er du sikker på at du vil sende inn resultater?</h2>
+    <h3><b>OBS! Etter at resultatene er sendt inn vil de ikke være
+        mulige å redigere. Denne handlingen kan ikke angres.</b></h3>
+    <center>
+        <div id = "closeDialog" class = "bigButton" style="margin-top: 40px;background-color: lightgray;">
+            Tilbake til test
+        </div>
+        <a href = "../SendtGod?testID=<%=request.getParameter("testID")%>">
+            <div class = "bigButton" style="background-color: palegreen;">
+                Send inn test
+            </div>
+        </a>
+    </center>
+</div>
 
 <footer>
-    <a href ="../RegTestResult1">
+    <a href ="../RegTestResult">
         <div class = "footerButton" id ="footerLeft">
             <img src = "../../../images/ikoner/back_button.png">
             <h2>Tilbake</h2>
         </div> </a>
-    <a href = "../SendtGod">
-        <div class = "footerButton" id ="footerRight">
-            <img src = "../../../images/ikoner/forward_button.png">
-            <h2>Send inn</h2>
-        </div> </a>
+    <div class = "footerButton" id ="footerRight">
+        <img src = "../../../images/ikoner/forward_button.png">
+        <h2>Send inn</h2>
+    </div>
 </footer>
+
+<script type="text/javascript" src = "javascript.js"></script>
 </body>
