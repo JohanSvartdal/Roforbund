@@ -122,9 +122,24 @@
     </div>
 </div>
 
+<div class = "backgroundDimmer">
+
+</div>
+
+<div class = "bekreftInnsending">
+    <h2>Er du sikker på at du vil sende inn resultater?</h2>
+    <h3>OBS! Etter at resultatene er sendt inn vil de ikke være
+        mulige å redigere. Denne handlingen kan ikke angres. </h3>
+    <div class = "bigButton" style="margin-top: 40px;background-color: lightgray;">
+        Tilbake til test
+    </div>
+    <div class = "bigButton" style="background-color: palegreen;">
+        Send inn test
+    </div>
+</div>
 
 <footer>
-    <a href ="../RegTestResult1">
+    <a href ="../RegTestResult">
         <div class = "footerButton" id ="footerLeft">
             <img src = "../../../images/ikoner/back_button.png">
             <h2>Tilbake</h2>
