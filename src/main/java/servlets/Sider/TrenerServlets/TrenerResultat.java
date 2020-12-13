@@ -4,7 +4,7 @@ import models.test.OvelsesResultat;
 import models.test.Resultat;
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
