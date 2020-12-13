@@ -1,4 +1,4 @@
-package tools.database;
+package tools.databaseTools;
 
 import tools.pools.HikariCPDataSource;
 

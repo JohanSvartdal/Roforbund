@@ -2,8 +2,8 @@ package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
-import tools.database.DatabaseValue;
-import tools.database.DatabaseWriter;
+import tools.databaseTools.DatabaseValue;
+import tools.databaseTools.DatabaseWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -30,10 +30,10 @@ public class BekreftGodkjenning extends AbstractAppServlet {
         String godkjenne = request.getParameter("godkjenne");
 
         if (godkjenne.equals("ja")) {
-            DatabaseWriter.changeCellValue("roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_GODKJENT));
+            DatabaseWriter.changeCellValue("roforbund", "roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_GODKJENT));
             request.setAttribute("GodkjentStatus", "godkjent");
         }else if (godkjenne.equals("nei")) {
-            DatabaseWriter.changeCellValue("roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_AVVIST));
+            DatabaseWriter.changeCellValue("roforbund", "roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_AVVIST));
             request.setAttribute("GodkjentStatus", "ikke godkjent");
         }
 

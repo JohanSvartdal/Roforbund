@@ -2,9 +2,9 @@ package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
 import models.Klubb;
-import tools.database.DatabaseReader;
-import tools.database.DatabaseValue;
-import tools.database.DatabaseWriter;
+import tools.databaseTools.DatabaseReader;
+import tools.databaseTools.DatabaseValue;
+import tools.databaseTools.DatabaseWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -33,7 +33,7 @@ public class AdminKlubber extends AbstractAppServlet {
 
         if (removeKlubbIDString != null) {
             int removeKlubbID = Integer.parseInt(removeKlubbIDString);
-            DatabaseWriter.changeCellValue("klubber", "Klubb_id", removeKlubbID, "Deaktivert", new DatabaseValue(true));
+            DatabaseWriter.changeCellValue("roforbund", "klubber", "Klubb_id", removeKlubbID, "Deaktivert", new DatabaseValue(true));
         }
 
         ArrayList<Integer> klubbIds = DatabaseReader.getAllEntries("roforbund.klubber", "Klubb_id");

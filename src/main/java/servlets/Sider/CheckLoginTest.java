@@ -1,7 +1,7 @@
 package servlets.Sider;
 
 import org.junit.jupiter.api.Test;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import static org.junit.jupiter.api.Assertions.*;
 

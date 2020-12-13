@@ -2,7 +2,7 @@ package servlets.Sider.TrenerServlets;
 
 import servlets.AbstractAppServlet;
 import models.test.Ovelse;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

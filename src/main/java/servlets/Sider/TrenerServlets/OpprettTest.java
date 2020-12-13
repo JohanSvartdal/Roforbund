@@ -4,13 +4,11 @@ import servlets.AbstractAppServlet;
 import tools.LocalStorage;
 import tools.config.StaticValues;
 import models.bruker.Utover;
-import tools.database.DatabaseInfo;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;

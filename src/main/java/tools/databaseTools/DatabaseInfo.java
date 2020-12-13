@@ -1,4 +1,4 @@
-package tools.database;
+package tools.databaseTools;
 
 public class DatabaseInfo {
     public static final String BRUKER_KOLONNER =

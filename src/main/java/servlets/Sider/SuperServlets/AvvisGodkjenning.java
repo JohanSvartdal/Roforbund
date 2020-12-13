@@ -2,8 +2,8 @@ package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
-import tools.database.DatabaseValue;
-import tools.database.DatabaseWriter;
+import tools.databaseTools.DatabaseValue;
+import tools.databaseTools.DatabaseWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -44,8 +44,8 @@ public class AvvisGodkjenning extends AbstractAppServlet {
         if (comment != null && !comment.isEmpty()) {
             request.setAttribute("GodkjentStatus", "ikke godkjent");
 
-            DatabaseWriter.changeCellValue("roforbund.tester", "Test_id", testID, "Kommentar", new DatabaseValue(comment));
-            DatabaseWriter.changeCellValue("roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_AVVIST));
+            DatabaseWriter.changeCellValue("roforbund", "roforbund.tester", "Test_id", testID, "Kommentar", new DatabaseValue(comment));
+            DatabaseWriter.changeCellValue("roforbund","roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_AVVIST));
 
             RequestDispatcher rq = request.getRequestDispatcher("../BekreftGodkjenning/index.jsp");
             rq.forward(request, response);

@@ -1,14 +1,13 @@
 package servlets.Sider.TrenerServlets;
 
 import models.test.Resultat;
-import models.test.Test;
 import servlets.AbstractAppServlet;
 import tools.LocalStorage;
 import tools.config.StaticValues;
-import tools.database.DatabaseInfo;
-import tools.database.DatabaseReader;
-import tools.database.DatabaseValue;
-import tools.database.DatabaseWriter;
+import tools.databaseTools.DatabaseInfo;
+import tools.databaseTools.DatabaseReader;
+import tools.databaseTools.DatabaseValue;
+import tools.databaseTools.DatabaseWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -119,7 +118,7 @@ public class RegTestResult extends AbstractAppServlet {
                 new DatabaseValue(ovelserSplit.length),
                 new DatabaseValue("")};
 
-        DatabaseWriter.addRowToTable("tester", DatabaseInfo.TESTER_KOLONNER, databaseValues);
+        DatabaseWriter.addRowToTable("roforbund","tester", DatabaseInfo.TESTER_KOLONNER, databaseValues);
 
         ResultSet lastRecord = DatabaseReader.getLastRecord("roforbund.tester", "Test_id");
         try {
@@ -152,7 +151,7 @@ public class RegTestResult extends AbstractAppServlet {
                     new DatabaseValue(resultat.getBrukerID()),
                     new DatabaseValue(resultat.getTid()),
                     new DatabaseValue(resultat.getWatt())};
-            DatabaseWriter.addRowToTable("resultater", DatabaseInfo.RESULTATER_KOLONNER, databaseValues);
+            DatabaseWriter.addRowToTable("roforbund", "resultater", DatabaseInfo.RESULTATER_KOLONNER, databaseValues);
         }
     }
 

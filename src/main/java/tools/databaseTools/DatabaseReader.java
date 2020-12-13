@@ -1,4 +1,4 @@
-package tools.database;
+package tools.databaseTools;
 
 import java.sql.*;
 import java.util.ArrayList;

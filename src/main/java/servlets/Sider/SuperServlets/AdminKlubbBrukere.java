@@ -3,7 +3,7 @@ package servlets.Sider.SuperServlets;
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
 import models.bruker.Utover;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
