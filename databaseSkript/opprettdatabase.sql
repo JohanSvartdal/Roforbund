@@ -359,19 +359,19 @@ insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
 values (6, 8, 2, 3);
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
-values (1, 2, 6, 8);
+values (1, 2, 4, 8);
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
 values (1, 2, 2, 3);
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
-values (6, 8, 5, 10);
+values (6, 8, 3, 10);
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
 values (2, 4, 3, 4);
 
 insert into roforbund.tester (Klubb_id, Trener_id, Godkjent, Antall_ovelser)
-values (2, 4, 5, 5);
+values (2, 4, 1, 5);
 
 
 
