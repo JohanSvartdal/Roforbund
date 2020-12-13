@@ -2,7 +2,7 @@ package servlets.Sider.SuperServlets;
 
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
-import tools.database.*;
+import tools.databaseTools.*;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

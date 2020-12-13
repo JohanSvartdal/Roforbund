@@ -2,7 +2,7 @@ package servlets.Sider;
 
 import servlets.AbstractAppServlet;
 import tools.config.StaticValues;
-import tools.database.DatabaseReader;
+import tools.databaseTools.DatabaseReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

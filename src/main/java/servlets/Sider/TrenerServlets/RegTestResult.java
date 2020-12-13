@@ -1,14 +1,13 @@
 package servlets.Sider.TrenerServlets;
 
 import models.test.Resultat;
-import models.test.Test;
 import servlets.AbstractAppServlet;
 import tools.LocalStorage;
 import tools.config.StaticValues;
-import tools.database.DatabaseInfo;
-import tools.database.DatabaseReader;
-import tools.database.DatabaseValue;
-import tools.database.DatabaseWriter;
+import tools.databaseTools.DatabaseInfo;
+import tools.databaseTools.DatabaseReader;
+import tools.databaseTools.DatabaseValue;
+import tools.databaseTools.DatabaseWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

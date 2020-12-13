@@ -1,4 +1,4 @@
-package tools.database;
+package tools.databaseTools;
 
 import org.junit.jupiter.api.Test;
 
