@@ -1,3 +1,5 @@
+<%@ page import="models.test.Test" %>
+<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,44 +26,27 @@
     </div>
 </div>
 
-<div class="container">
-    <div class ="row">
-        <div class="col-sm"><b>Tidligere tester:</b></div>
-    </div>
-</div>
 
-<div class = "container">
+<div class="container">
     <div class = "row">
-        <div class = "col-sm-2"><b>Dato:</b></div>
-        <div class = "col-sm-3"><b>Antall øvelser:</b></div>
-        <div class = "col-sm-3"><b>Antall deltakere:</b></div>
-        <div class = "col-sm-2"><b>Gruppe:</b></div>
+        <div class = "col-sm-3"><b>Dato</b></div>
+        <div class = "col-sm-2"><b>Antall øvelser</b></div>
+        <div class = "col-sm-3"><b>Status</b></div>
+        <div class = "col-sm-4"><b>Kommentar</b></div>
     </div>
-    <hr>
-</div>
-
-<div class="container">
-    <div id = "venteBox">
-        <div class = "container">
-            <h2><b>Venter på godkjenning</b></h2>
-            <center><hr/></center>
-                         <div class ="row">
-                         <div class ="col-sm"></div>
-                         </div>
-                         <div class="row">
-                            <div class ="col-sm"></div>
-                        </div>
-                        <div class ="row">
-                            <div class ="col-sm"></div>
-                        </div>
-                        <div class = "row">
-                            <div class ="col-sm"></div>
-                         </div>
-                         <div class = "row">
-                            <div class ="col-sm"></div>
-                         </div>
-                </div>
-          </div>
+    <hr/>
+    <%
+        ArrayList<Test> testListe = (ArrayList<Test>) request.getAttribute("testliste");
+        for(int i = 0; i < testListe.size(); i++) {
+    %>
+    <div class = "row">
+        <div class = "col-sm-3" ><div class = "rowFirst"><a href = "Resultat?TestID=<%=testListe.get(i).getTest_id()%>"><%= testListe.get(i).getDato()%></a></div></div>
+        <div class = "col-sm-2" ><%= testListe.get(i).getAntallOvelser()%></div>
+        <div class = "col-sm-3" ><%= testListe.get(i).getGodkjentTekst()%></div>
+        <div class = "col-sm-4" ><%= testListe.get(i).getKommentar()%></div>
     </div>
+    <%
+        }
+    %>
 </div>
 </body>

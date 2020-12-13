@@ -16,6 +16,7 @@ public class Test {
     private Integer Trener_id;
     private String trenerNavn;
     private Integer Godkjent;
+    private String godkjentTekst;
     private String TestListe;
     private Integer AntallOvelser;
 
@@ -69,5 +70,13 @@ public void setAntallOvelser(Integer antallTester) {this.AntallOvelser = antallT
 
     public void setKommentar(String kommentar) {
         this.kommentar = kommentar;
+    }
+
+    public String getGodkjentTekst() {
+        return godkjentTekst;
+    }
+
+    public void setGodkjentTekst(String godkjentTekst) {
+        this.godkjentTekst = godkjentTekst;
     }
 }
