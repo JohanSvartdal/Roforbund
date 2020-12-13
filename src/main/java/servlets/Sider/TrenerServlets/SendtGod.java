@@ -4,10 +4,8 @@ import models.test.Resultat;
 import servlets.AbstractAppServlet;
 import tools.LocalStorage;
 import tools.config.StaticValues;
-import tools.database.DatabaseInfo;
-import tools.database.DatabaseReader;
-import tools.database.DatabaseValue;
-import tools.database.DatabaseWriter;
+import tools.databaseTools.DatabaseValue;
+import tools.databaseTools.DatabaseWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -46,7 +44,7 @@ public class SendtGod extends AbstractAppServlet {
         int testID = Integer.parseInt(testIDString);
 
 
-        DatabaseWriter.changeCellValue("roforbund.tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_KLAR));
+        DatabaseWriter.changeCellValue("roforbund", "tester", "Test_id", testID, "Godkjent", new DatabaseValue(StaticValues.RESULTAT_KLAR));
 
         RequestDispatcher rq = request.getRequestDispatcher("../SendtGod/index.jsp");
         rq.forward(request, response);

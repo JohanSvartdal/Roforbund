@@ -13,5 +13,5 @@ public class StaticValues {
     public static final int TRENER = 2;
     public static final int SUPERBRUKER = 3;
 
-    public static final boolean TEST_MODE = true;
+    public static final boolean TEST_MODE = false;
 }

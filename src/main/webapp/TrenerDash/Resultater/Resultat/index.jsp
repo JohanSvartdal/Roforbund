@@ -80,7 +80,7 @@
             <div class = "col-sm"><%= ovelsesResultatList.get(i).getResultater().get(b).getKg()%></div>
             <% } %>
 
-            <div class = "col-sm" ><%= ovelsesResultatList.get(i).getResultater().get(b).getTestID()%></div>
+            <div class = "col-sm" ><%= ovelsesResultatList.get(i).getResultater().get(b).getNotat()%></div>
         </div>
         <%
         }
