@@ -54,7 +54,7 @@
         </a>
         <div class = "footerButton" id ="footerRight">
             <img src = "../../../images/ikoner/forward_button.png">
-            <input type="submit" value = "<%=request.getAttribute("nesteKnapp")%>"/>
+            <input id = "nextButton" type="submit" value = "<%=request.getAttribute("nesteKnapp")%>"/>
         </div>
     </footer>
 </form>

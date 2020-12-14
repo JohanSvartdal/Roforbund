@@ -63,3 +63,13 @@ h1 b {
 form {
     display: contents;
 }
+
+#nextButton {
+    height: 100%;
+    background-color: rgba(0,0,0,0);
+    border: none;
+}
+
+#nextButton:hover {
+    color: #0056b3;
+}
