@@ -117,3 +117,7 @@ h1 b {
     margin-right: auto;
 }
 
+#footerRight:hover {
+    color: #0056b3;
+    cursor: pointer;
+}

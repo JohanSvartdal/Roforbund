@@ -55,6 +55,7 @@ body {
 .knapp {
     margin-left: auto;
     margin-right: auto;
+    transition-duration: 200ms;
 }
 
 .knappbilde {
@@ -120,3 +121,16 @@ h1 {
     margin-top: 100px;
     margin-bottom: 100px;
     text-align: center;
+}
+
+.knapp:hover {
+    transform: scale(1.1);
+}
+
+.knapp:active {
+    transform: scale(1.15);
+}
+
+.knapp:after {
+    transform: scale(1.1);
+}

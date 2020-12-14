@@ -93,3 +93,8 @@ footer {
 h2 {
     font-weight: 100;
 }
+
+#footerRight:hover {
+    color: #0056b3;
+    cursor: pointer;
+}

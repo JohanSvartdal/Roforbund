@@ -56,6 +56,7 @@ body {
     width: 180px;
     margin-left: auto;
     margin-right: auto;
+    transition-duration: 200ms;
 }
 
 .knappbilde {
@@ -66,7 +67,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
-
 }
 
 .knappbilde img {
@@ -141,4 +141,16 @@ h1 {
 
 #bellButton {
     cursor: pointer;
+}
+
+.knapp:hover {
+    transform: scale(1.1);
+}
+
+.knapp:active {
+    transform: scale(1.15);
+}
+
+.knapp:after {
+    transform: scale(1.1);
 }
