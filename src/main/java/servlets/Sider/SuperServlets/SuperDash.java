@@ -1,5 +1,6 @@
 package servlets.Sider.SuperServlets;
 
+import models.bruker.Bruker;
 import servlets.AbstractAppServlet;
 import tools.databaseTools.DatabaseReader;
 
@@ -62,26 +63,6 @@ public class SuperDash extends AbstractAppServlet {
         RequestDispatcher rq = request.getRequestDispatcher("../SuperDash/index.jsp");  //Linken til index side.
         rq.forward(request, response);
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

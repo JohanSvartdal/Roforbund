@@ -42,11 +42,8 @@ public class AdminKlubber extends AbstractAppServlet {
         ArrayList<Klubb> klubbListe = new ArrayList<>();
 
         for (int i = 0; i < klubbIds.size(); i++) {
-            Klubb current = new Klubb();
-
-            current.setKlubbID(klubbIds.get(i));
             String navn = DatabaseReader.getString("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Navn");
-            current.setNavn(navn);
+            Klubb current = new Klubb(klubbIds.get(i), navn);
 
             String adresseID = DatabaseReader.getString("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Adresse_id");
             Boolean deaktivert = DatabaseReader.getBoolean("roforbund.klubber", "Klubb_id", klubbIds.get(i), "Deaktivert");
