@@ -7,6 +7,9 @@ import tools.config.StaticValues;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+// Denne klassen oppretter en connection-pool til databasen som kan benyttes for spørringer til databasen
+// Formål: Lar oss koble til databasen og hente/skrive data til/fra
+// Bruker HikariCP library
 public class HikariCPDataSource {
 
     private static HikariConfig config = new HikariConfig();

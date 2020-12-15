@@ -1,7 +1,8 @@
 package models.test;
 
 import java.util.ArrayList;
-//Constructor for OvelsesResultat, brukes hvor?
+// Denne klassen lager OvelsesResultatobjektet og henter/definerer de ulike atributtene.
+// Formål: Brukes i OpprettTest for å lagre testresultater
 
 public class OvelsesResultat {
     private String ovelsesNavn;

@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// Denne servleten lar superbruker opprette en ny klubb og sender denne til databasen
+// Formål: Opprette nye roklubber i databasen
+
 @WebServlet(name= "FullscreenMessage", urlPatterns = {"/SuperDash/FullscreenMessage/"})
 public class OpprettKlubb extends AbstractAppServlet {
     @Override
@@ -23,7 +26,8 @@ public class OpprettKlubb extends AbstractAppServlet {
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
 
     }
-
+    // Denne metoden Get'er klubbinformasjonen fra .JSP-en OpprettKlubb, og skriver dette til
+    // databasen, så gir den brukeren en ferdigmelding og sender brukeren tilbake til index.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String gatenavn = request.getParameter("Gatenavn");
@@ -55,7 +59,7 @@ public class OpprettKlubb extends AbstractAppServlet {
         }
 
 
-
+        //Ferdigmelding
         request.setAttribute("doneMessage", "Ferdig, klubb opprettet!");
         RequestDispatcher rq = request.getRequestDispatcher("../FullscreenMessage/index.jsp");
         rq.forward(request, response);

@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+//Servlet for å administrere klubber under /SuperServlets
+
 @WebServlet(name= "AdminKlubber", urlPatterns = {"/SuperDash/AdminKlubber/"})
 public class AdminKlubber extends AbstractAppServlet {
     @Override
@@ -26,7 +28,7 @@ public class AdminKlubber extends AbstractAppServlet {
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
 
     }
-
+    // Denne metoden
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String removeKlubbIDString = request.getParameter("fjernKlubb");

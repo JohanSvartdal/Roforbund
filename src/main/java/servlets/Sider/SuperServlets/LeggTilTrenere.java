@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 
+// Denne servleten lar superbruker legge til nye trenere
+
 @WebServlet(name= "LeggTilTrenere", urlPatterns = {"/SuperDash/LeggTilTrenere/"})
 public class LeggTilTrenere extends AbstractAppServlet {
     @Override
@@ -24,7 +26,8 @@ public class LeggTilTrenere extends AbstractAppServlet {
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
 
     }
-
+    // Denne metoden lager en Arrayliste med Trenerinformasjon, lager et trenerobjekt med trenerinformasjon
+    //
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Integer> trenerIds = DatabaseReader.getListOfIds("roforbund.bruker", "Rolle", 2, "Bruker_id");

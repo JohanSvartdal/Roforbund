@@ -16,6 +16,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+// Denne servleten lar superbruker administrere hvilke brukere som tilhører en klubb
+// Formål: La superbruker organisere brukere på klubbnivå
+
 @WebServlet(name= "AdminKlubbBrukere", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/AdminBrukere/"})
 public class AdminKlubbBrukere extends AbstractAppServlet {
     @Override

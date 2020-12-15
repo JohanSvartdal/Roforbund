@@ -1,6 +1,7 @@
 package models.test;
 
-// Constructor for Ovelse, brukes av ? for å sette/hente ting fra databasen
+// Denne klassen lager et Ovelseobjekt med tilhørende atributter.
+// Formål: Lar oss hente/definere atributter til en Ovelse. Brukes i OpprettTest
 
 public class Ovelse {
     private int ovelseID;

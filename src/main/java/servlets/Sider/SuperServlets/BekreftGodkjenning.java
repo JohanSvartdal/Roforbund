@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+// Servlet for godkjenning av testresultater for superbruker
+// Formål: Sikre riktig data ved at superbruker godkjenner testresultater.
 
 @WebServlet(name= "BekreftGodkjenning", urlPatterns = {"/SuperDash/Resultater/Resultat/BekreftGodkjenning/"})
 public class BekreftGodkjenning extends AbstractAppServlet {
@@ -22,7 +24,8 @@ public class BekreftGodkjenning extends AbstractAppServlet {
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
     }
-
+    // Denne metoden henter et parameter fra BekreftGodkjenning.jsp
+    // Hvis dette er "ja", så godkjenner man test, hvis "nei" blir den ikke godkjent i databasen.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String testIDString = request.getParameter("testID");

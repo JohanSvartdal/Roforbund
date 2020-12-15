@@ -7,6 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+//Klasse for å sjekke innlogging. Egentlig ikke en del av prosjektet lenger men brukes da innlogging
+//er vår startside
+
 public class UserManagement {
     //Tenkte å endre denne til 'isUserAuthenticated', hvor programmet sjekker om brukeren er authenticated
     public static String getUserPassword(String username) {

@@ -1,7 +1,7 @@
 package models.test;
 
-// Denne klassen lager testobjektet med de attributten som trengs
-// for å skrive og lese av databasen. Denne brukes i opprett test
+// Denne klassen lager testobjektet med de attributten som er definert i klassen
+// formål: Lage objektet som brukes av flere servlets for å lese/skrive tester til/fra databasen
 
 
 public class Test {

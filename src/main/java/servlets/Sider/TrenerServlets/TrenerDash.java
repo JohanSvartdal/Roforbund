@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+// Servlet for trenerdashboard
+// Formål: "Hjemside" for trener, fungerer på samme måte som Superdash.
 
 
 @WebServlet(name= "TrenerDash", urlPatterns = "/TrenerDash/")

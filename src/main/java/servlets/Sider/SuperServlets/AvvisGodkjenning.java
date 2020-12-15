@@ -13,6 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// Servlet for å avvise innsendte resultater fra trener
+// Formål: Sikre korrekt testdata ved å sende resultater tilbake til trener.
+
 @WebServlet(name= "AvvisGodkjenning", urlPatterns = {"/SuperDash/Resultater/Resultat/AvvisGodkjenning/"})
 public class AvvisGodkjenning extends AbstractAppServlet {
 
@@ -25,7 +28,8 @@ public class AvvisGodkjenning extends AbstractAppServlet {
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
     }
-
+    //Denne metoden henter testID på test
+    //Formål: Sikre at man avviser riktig test
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String testIDString = request.getParameter("testID");
@@ -35,7 +39,8 @@ public class AvvisGodkjenning extends AbstractAppServlet {
         RequestDispatcher rq = request.getRequestDispatcher("../../../../SuperDash/Resultater/Resultat/AvvisGodkjenning/index.jsp");
         rq.forward(request, response);
     }
-
+    //Denne metoden setter status på test til ikke godkjent og tar superbruker tilbake til BekreftGodkjenning
+    // dersom
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         super.doPost(request, response);

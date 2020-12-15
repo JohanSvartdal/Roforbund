@@ -5,10 +5,16 @@ import java.util.ArrayList;
 
 import tools.pools.HikariCPDataSource;
 
+// Klasse for å lese data fra database.
+// Klassen inneholder en rekke ulike metoder for å spørre/hente Ints og Strings i databasen
+// Formål: Lar oss hente data fra databasen. Metodene her brukes i en rekke andre klasser
+// for å vise informasjon fra databasen.
+
 public class DatabaseReader {
 
     //TODO: abstrakt klasse "database", som handler alt med connections og errors med connections osv. Databasereader og writer skal kun lese og skrive.
-
+    //Denne metoden oppretter en tilkobling til Databasen fra pool
+    //
     public static ResultSet getLastRecord(String database, String primaryKey) {
         Connection db = null;
         PreparedStatement prepareStatement = null;

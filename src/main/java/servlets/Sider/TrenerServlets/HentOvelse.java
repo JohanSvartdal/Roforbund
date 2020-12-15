@@ -12,7 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-
+// Servlet for å hente øvelser.
+// Formål: Lager en liste med ulike øvelser fra databasen. Dette for å kun gi gyldige øvelser under en test.
+// Brukes i OpprettTest
 @WebServlet(name= "HentOvelse", urlPatterns = {"/TrenerDash/HentOvelse/"})
 public class HentOvelse extends AbstractAppServlet {
     @Override
@@ -23,7 +25,7 @@ public class HentOvelse extends AbstractAppServlet {
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
 
     }
-
+    // Denne metoden lager en arraylist med alle øvelsene fra databasen.
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ArrayList<Integer> ovelseIds = DatabaseReader.getAllEntries("roforbund.ovelser", "Ovelse_id");
@@ -36,7 +38,7 @@ public class HentOvelse extends AbstractAppServlet {
             ovelse.setOvelseID(ovelseIds.get(i));
             ovelseList.add(ovelse);
         }
-
+        //Sender deg videre med en liste over alle ovelsene.
         request.setAttribute("ovelseList", ovelseList);
         RequestDispatcher rq = request.getRequestDispatcher("../HentOvelse/index.jsp");
         rq.forward(request, response);

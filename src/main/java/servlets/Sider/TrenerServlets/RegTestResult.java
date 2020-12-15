@@ -19,6 +19,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+//Servlet for å registrere Testresultater. Avslutter "Opprett test" for å sende resultater til database og godkjenning
+//Formål: Kjernefunksjon i applikasjonen. Sender inn hele testen som ble utført under OpprettTest til datbasen
+// og venter på godkjenning.
+
 @WebServlet(name= "RegTestResult", urlPatterns = {"/TrenerDash/HentOvelse/RegTestResult/"})
 public class RegTestResult extends AbstractAppServlet {
 
