@@ -15,6 +15,9 @@ import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+// Servlet for å la superbruker legge til nye brukere. Finnes under
+// /AdminKlubber/KlubbInstillinger/AdminBrukere/NyBruker
+
 @WebServlet(name= "NyBruker", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/AdminBrukere/NyBruker/"})
 public class NyBruker extends AbstractAppServlet {
     @Override
@@ -26,7 +29,8 @@ public class NyBruker extends AbstractAppServlet {
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
 
     }
-
+    // Denne metoden
+    //
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String wantedUserRoleString = request.getParameter("role");

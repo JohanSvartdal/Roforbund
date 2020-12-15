@@ -1,5 +1,6 @@
 package tools.databaseTools;
-
+// Klasse for å definere hvilke kolonner de ulike tabellene i databasen består av.
+// Formål: Brukes av andre databasetools for å skrive/hente fra databasen
 public class DatabaseInfo {
     public static final String BRUKER_KOLONNER =
             "Fornavn, Etternavn, Fodseldato, Tlf, Epost, Passord, Adresse_id, Klubb_id, Rolle, Ranking, Vekt, Hoyde";

@@ -17,7 +17,8 @@ import java.io.PrintWriter;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-
+//Servlet for å sende testresultater til godkjenning.
+//Formål: Sette status på test til KLAR for godkjenning av superbruker.
 @WebServlet(name= "SendtGod", urlPatterns = {"/TrenerDash/HentOvelse/SendtGod/"})
 public class SendtGod extends AbstractAppServlet {
 

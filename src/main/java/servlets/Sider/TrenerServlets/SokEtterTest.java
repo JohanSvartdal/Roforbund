@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+// Servlet for å søke etter tester.
+// Formål: Lar brukeren søke etter tidligere tester.
 
 @WebServlet(name= "SokEtterTest")
 
@@ -25,6 +27,7 @@ public class SokEtterTest extends AbstractAppServlet {
     }
 
     @Override
+    // Denne metoden lager en arrayliste med alle testene til treneren som søker
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 
         ArrayList<Integer> trenerId = DatabaseReader.getAllEntries("roforbund.tester", "Test_id");
@@ -47,6 +50,7 @@ public class SokEtterTest extends AbstractAppServlet {
 
             TestListe.add(current);
         }
+        // Sender deg videre med testlisten
         request.setAttribute("TestListe", TestListe);
         RequestDispatcher rq = request.getRequestDispatcher("../Trenerdash/index.jsp");
         rq.forward(request, response);

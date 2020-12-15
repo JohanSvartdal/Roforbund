@@ -1,6 +1,8 @@
 package models.test;
 
-// constructor for Resultatobjekt. Brukes til/fra databasen ved innsending og henting av resultater
+// constructor for Resultatobjekt. Brukes til å definere/hente atributtene til resultatobjektet
+// Formål: Brukes av OpprettTest eller Resultater servlet for å
+// la oss lese eller skrive nye resultater.
 
 public class Resultat {
     private int ovelsesID;

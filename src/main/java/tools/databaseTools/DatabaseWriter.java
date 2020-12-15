@@ -5,23 +5,28 @@ import tools.pools.HikariCPDataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+// Klasse for å skrive data til databasen.
+// Klassen inneholder en rekke ulike metoder for å skrive Ints og Strings til databasen
+// Formål: Lar oss hente data fra databasen. Metodene her brukes i en rekke andre klasser
+// for å vise informasjon fra databasen.
+
 
 public class DatabaseWriter {
-
+    //Metode for å skrive adresse til databasen.
     public static String createAdress(String gatenavn, int husnummer, int postnummer, String poststed) {
         String compKey = postnummer + gatenavn + husnummer;
         compKey = compKey.toLowerCase();
         boolean adresseExist = DatabaseReader.getString("roforbund.adresser", "Adresse_id", compKey, "Husnummer") != null;
-
+        //Sjekker om adressen eksisterer og returnerer en feilmelding.
         if (adresseExist) {
             System.out.println("Adressen eksisterer allerede. Lager ingen ny");
             return compKey;
         }
-
+        //Returnerer adressen til brukeren
         System.out.println("Her er det: " + poststed+postnummer+gatenavn+husnummer);
 
         boolean postnummerExists = DatabaseReader.getString("roforbund.postnummere", "Postnummer", postnummer, "Poststed") != null;
-
+        //Sjekker om postnummer eksisterer i listen, skriver i databasen dersom den ikke allerede eksisterer.
         if (!postnummerExists) {
             System.out.println("Postnummer eksisterer ikke. Legger til " + postnummer);
             DatabaseValue[] postnummerTableVerdier = {new DatabaseValue(postnummer), new DatabaseValue(poststed)};

@@ -1,9 +1,11 @@
 package models.bruker;
 
-// Denne klassen lager utoverobjektet med de attributten som trengs
+// Denne klassen lager brukerobjektet med de attributten som trengs
 // for å skrive og lese av databasen.
+// Formål: Lar oss lage et brukerobjekt med tilhørende atributter som brukes i kommunikasjon med databasen
 
 public abstract class Bruker {
+    // definerer hvilke atributter en bruker kan ha
     private String fornavn;
     private String etternavn;
     private int tlf;
@@ -23,7 +25,8 @@ public abstract class Bruker {
         this.etternavn = etternavn;
         this.brukerID = brukerID;
     }
-
+    //Her er flere Set'ers og Get'ers for de ulike atributtene til brukeroppjektet
+    //Formål: Set'ers definerer de ulike atributtene, Get'ers henter de fra objektet.
     public int getBrukerID() {
         return brukerID;
     }

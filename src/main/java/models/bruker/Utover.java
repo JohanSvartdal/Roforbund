@@ -1,5 +1,10 @@
 package models.bruker;
 
+// Denne klassen lager utoverobjektet med de attributten som trengs
+// for å skrive og lese av databasen.
+// Formål: Lar oss lage et utoverobjekt med tilhørende atributter som brukes i kommunikasjon med databasen
+// Bygger videre på brukerklassen med noen ekstra felter som kun gjelder utover
+
 public class Utover extends Bruker {
     private int klasseID;
     private String klasseNavn;

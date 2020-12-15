@@ -11,6 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// Servlet for Klubbinnstillinger til superbruker
+// Formål: Administrere detaljer om klubber (?)
+
 @WebServlet(name= "KlubbInnstillinger", urlPatterns = {"/SuperDash/AdminKlubber/KlubbInnstillinger/"})
 public class KlubbInnstillinger extends AbstractAppServlet {
 
@@ -23,7 +26,7 @@ public class KlubbInnstillinger extends AbstractAppServlet {
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
     }
-
+    //
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         String klubbIDString = request.getParameter("klubbID");

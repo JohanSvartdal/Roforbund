@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+// Denne servleten henter brukerinformasjonen til superbruker, som besøker "min profil"
+// Formål: Hente brukerinformasjonen til brukeren og vise dette til bruker
+
 @WebServlet(name= "SuperMinProfil", urlPatterns = {"/SuperDash/MinProfil/"})
 
 public class SuperMinProfil extends AbstractAppServlet {
@@ -22,8 +25,10 @@ public class SuperMinProfil extends AbstractAppServlet {
     @Override
     protected void writeBody(HttpServletRequest req, PrintWriter out) {
     }
-
+    // Denne metoden henter all brukerinformasjonen til besøkende bruker.
     @Override
+    // Henter BrukerID fra en cookie
+    // Formål: Gi riktig bruker riktig brukerinformasjon
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         Cookie cookies[] = request.getCookies();
         int UID = -1;
@@ -33,6 +38,7 @@ public class SuperMinProfil extends AbstractAppServlet {
                 UID = Integer.parseInt(uidString);
             }
         }
+        // Gir en feilmelding dersom BrukerID ikke finnes.
         if (UID == -1) {
             request.setAttribute("title", "Fant ikke UID");
             request.setAttribute("description", "Vennligst kontakt IT avdelingen for hjelp");
@@ -42,7 +48,7 @@ public class SuperMinProfil extends AbstractAppServlet {
             rq.forward(request, response);
             return;
         }
-
+        // Henter brukerinformasjonen fra databasen via BrukerID og viser denne i MinProfil.jsp
         String fornavn = DatabaseReader.getString("roforbund.bruker", "Bruker_id", UID, "Fornavn");
         request.setAttribute("fornavn", fornavn);
 
