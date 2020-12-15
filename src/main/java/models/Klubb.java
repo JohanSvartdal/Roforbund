@@ -9,6 +9,11 @@ public class Klubb {
     private int tlf;
     private int antallMedlemmer;
 
+    public Klubb(int klubbID, String navn) {
+        this.klubbID = klubbID;
+        this.navn = navn;
+    }
+
     public String getNavn() {
         return navn;
     }
